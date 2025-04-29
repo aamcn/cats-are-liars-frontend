@@ -29,7 +29,11 @@ function LogInForm(){
         .then((res) => {
             console.log(res)
             const token = res.data.token;
+            const userId = res.data.userId
+            const username = res.data.username
             localStorage.setItem("storedToken", JSON.stringify(token));
+            localStorage.setItem("userId", JSON.stringify(userId));
+            localStorage.setItem("username", JSON.stringify(username));
         })
         .catch((error) => {
         console.error(error);
@@ -39,6 +43,7 @@ function LogInForm(){
     useEffect(() => {
         console.log(username)
         console.log(password)
+        
     }, [username, password])
 
 
