@@ -1,10 +1,12 @@
+import UserCatsDisplayTemplate from "./CatDisplayTemplate";
 
 
 function UsersCatsDisplay({ cats }){
+   
     return(
-        <div>
+        <div> 
             {cats.map(cat => {
-                return <p>{cat.name}</p>
+                return  <UserCatsDisplayTemplate cat={cat} />
             })}
         </div>
     )

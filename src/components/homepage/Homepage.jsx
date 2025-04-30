@@ -25,6 +25,7 @@ function Homepage(){
     }
 
     const getLastFeedEntry = (catName) => {
+        setLastFeedEntry([])
         axios.get(
             `http://localhost:3000/feed-history/cat-name/${catName}/get/`,
             { userId},
@@ -47,15 +48,10 @@ function Homepage(){
 
     useEffect(() => {
         cats.forEach(cat => {
-            console.log(cat.name)
             getLastFeedEntry(cat.name)
         })  
         console.log(lastFeedEntry)  
     }, [cats])
-
-    useEffect(() => {
-        console.log(lastFeedEntry)
-    }, [])
 
     return(
         <div>
