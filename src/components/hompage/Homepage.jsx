@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import UsersCatsDisplay from "../usersCatsDisplay.jsx/UsersCatsDisplay";
 function Homepage(){
 
     const [cats, setCats] = useState([])
@@ -30,7 +31,11 @@ function Homepage(){
             { method: "cors" },
             { withCredentials: true },
           )
-          .then((res) => setLastFeedEntry(lastFeedEntry => ([...lastFeedEntry, ...res.data])))
+          
+          .then((res) => {
+            const t = res.data
+            setLastFeedEntry(lastFeedEntry => ([...lastFeedEntry, t[0]]))
+          })
           .catch((error) => {
             console.error(error);
           });
@@ -42,23 +47,27 @@ function Homepage(){
 
     useEffect(() => {
         cats.forEach(cat => {
+            console.log(cat.name)
             getLastFeedEntry(cat.name)
         })  
         console.log(lastFeedEntry)  
     }, [cats])
 
+    useEffect(() => {
+        console.log(lastFeedEntry)
+    }, [])
+
     return(
         <div>
             <h1>home</h1>
             {username && <p>Welcome back {username}</p>}
-            {cats && cats.map(cat => {
-                return <p key={cat.catid} >{cat.name}</p>
-            })}
+            <UsersCatsDisplay cats={cats}/>
             <div>
                 {lastFeedEntry && lastFeedEntry.map(entry => {
-                    return <p>{entry.cat_name}{entry.date}</p>
+                    return <p key={entry.id}>{entry.cat_name}{entry.date}</p>
                 })}
             </div>
+            
         </div>
     )
 }
