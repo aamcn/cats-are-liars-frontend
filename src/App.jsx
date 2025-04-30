@@ -1,7 +1,6 @@
 
 import { Outlet } from 'react-router'
 import './App.css'
-import LandingPage from './components/landingPage/LandingPage'
 
 function App() {
 

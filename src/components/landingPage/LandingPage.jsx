@@ -2,14 +2,14 @@ import LogInForm from "./LogInForm";
 
 function LandingPage() {
 
-const t = localStorage.getItem("username").replaceAll('"', '')
+const username = localStorage.getItem("username").replaceAll('"', '')
 
     return(
         <div>
             <div>
                 <h1>Cats Are Liars</h1>
                 <LogInForm />
-                {t && <p>Welcome back {t}</p>}
+                {username && <p>Welcome back {username}</p>}
             </div>
         </div>
     )
