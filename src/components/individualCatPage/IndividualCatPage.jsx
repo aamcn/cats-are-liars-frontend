@@ -28,7 +28,6 @@ function IndividualCatPage(){
 
     useEffect(() => {
         getCatByName(param.catName)
-
     }, [])
 
     useEffect(() => {
