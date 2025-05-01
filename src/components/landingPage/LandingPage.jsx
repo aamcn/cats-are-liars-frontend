@@ -2,7 +2,7 @@ import LogInForm from "./LogInForm";
 
 function LandingPage() {
 
-const username = localStorage.getItem("username").replaceAll('"', '')
+const username = localStorage.getItem("username")
 
     return(
         <div>

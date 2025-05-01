@@ -35,9 +35,14 @@ function FeedHistoryPage(){
 
     return(
         <div>
-            {feedHistoryData && feedHistoryData.map(entry => {
+           <div>
+            <h1>Feed History</h1>
+           </div>
+           <div>
+           {feedHistoryData && feedHistoryData.map(entry => {
                 return <FeedHistoryDisplayTemplate entry={entry}/>
             })}
+           </div>
         </div>
     )
 }
