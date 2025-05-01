@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import UsersCatsDisplay from "../usersCatsDisplay/UsersCatsDisplay";
+import LastFeedTemplate from "./LastFeedTemplate";
 function Homepage(){
 
     const [cats, setCats] = useState([])
@@ -34,8 +35,11 @@ function Homepage(){
           )
           
           .then((res) => {
+            console.log(res.data)
             const t = res.data
+            if(t.length > 0){
             setLastFeedEntry(lastFeedEntry => ([...lastFeedEntry, t[0]]))
+            }
           })
           .catch((error) => {
             console.error(error);
@@ -59,8 +63,8 @@ function Homepage(){
             {username && <p>Welcome back {username}</p>}
             <UsersCatsDisplay cats={cats}/>
             <div>
-                {lastFeedEntry && lastFeedEntry.map(entry => {
-                    return <p key={entry.id}>{entry.cat_name}{entry.date}</p>
+            {lastFeedEntry && lastFeedEntry.map(entry => {
+                    return <LastFeedTemplate entry={entry}/>
                 })}
             </div>
             
