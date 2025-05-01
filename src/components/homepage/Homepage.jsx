@@ -35,7 +35,6 @@ function Homepage(){
           )
           
           .then((res) => {
-            console.log(res.data)
             const t = res.data
             if(t.length > 0){
             setLastFeedEntry(lastFeedEntry => ([...lastFeedEntry, t[0]]))
@@ -54,7 +53,6 @@ function Homepage(){
         cats.forEach(cat => {
             getLastFeedEntry(cat.name)
         })  
-        console.log(lastFeedEntry)  
     }, [cats])
 
     return(

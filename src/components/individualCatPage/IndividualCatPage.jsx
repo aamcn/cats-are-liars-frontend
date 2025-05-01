@@ -31,7 +31,6 @@ function IndividualCatPage(){
     }, [])
 
     useEffect(() => {
-        console.log(catData)
     }, [catData])
 
     const getFeederById = (feederId) => {
@@ -62,7 +61,6 @@ function IndividualCatPage(){
     }, [catData])
 
     useEffect(() => {
-      console.log(feeders)
     }, [feeders])
 
     return(

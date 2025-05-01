@@ -29,7 +29,6 @@ function FeedHistoryPage(){
     }, [])
 
     useEffect(() => {
-        console.log(feedHistoryData)
     }, [feedHistoryData])
 
 
