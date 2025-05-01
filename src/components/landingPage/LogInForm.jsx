@@ -55,7 +55,6 @@ function LogInForm(){
     useEffect(() => {
         console.log(username)
         console.log(password)
-        
     }, [username, password])
 
    

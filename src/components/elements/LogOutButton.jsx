@@ -29,7 +29,7 @@ function LogOutButton() {
 
     return (
         <div>
-            <button href="/" onClick={handleLogOutClick} type="submit">Log Out</button>
+            {logInSuccess && <button href="/" onClick={handleLogOutClick} type="submit">Log Out</button>}
         </div>
     )
 }

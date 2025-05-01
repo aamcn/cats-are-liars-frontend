@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import UsersCatsDisplay from "../usersCatsDisplay.jsx/UsersCatsDisplay";
+import UsersCatsDisplay from "../usersCatsDisplay/UsersCatsDisplay";
 function Homepage(){
 
     const [cats, setCats] = useState([])
