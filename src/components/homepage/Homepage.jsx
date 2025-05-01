@@ -73,7 +73,7 @@ function Homepage(){
                             <th>Fed By</th>
                             <th>Medication Needed</th>
                             <th>Medication Given</th>
-                            <th>notes</th>
+                            <th>Notes</th>
                         </tr>
                     </thead>
                     <tbody>

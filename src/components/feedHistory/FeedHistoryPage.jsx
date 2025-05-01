@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import FeedHistoryDisplayTemplate from "./feedHistoryDisplayTemplate";
+import FeedHistoryTableRow from "./FeedHistoryTableRow";
 function FeedHistoryPage(){
 
     const [feedHistoryData, setFeedHistoryData] = useState([])
@@ -43,15 +43,17 @@ function FeedHistoryPage(){
                 <thead>
                     <tr>
                     <th>Date</th>
-                    <th>Name</th>
-                    <th>Feeder</th>
+                    <th>Cat Name</th>
+                    <th>Fed By</th>
                     <th>Time</th>
+                    <th>Medication Needed</th>
+                    <th>Medication Given</th>
                     <th>Notes</th>
                     </tr>
                 </thead>
                 <tbody>
            {feedHistoryData && feedHistoryData.map(entry => {
-                return <FeedHistoryDisplayTemplate entry={entry}/>
+                return <FeedHistoryTableRow entry={entry}/>
             })}
            </tbody>
             </table>
