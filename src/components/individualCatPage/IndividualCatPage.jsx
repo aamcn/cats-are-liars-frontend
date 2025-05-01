@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 function IndividualCatPage(){
 
     const [catData, setCatData] = useState(null)
-
+    const [feeders, setFeeders] = useState([])
     const param = useParams()
 
 
@@ -34,6 +34,37 @@ function IndividualCatPage(){
         console.log(catData)
     }, [catData])
 
+    const getFeederById = (feederId) => {
+        axios.get(
+            `http://localhost:3000/users/user-by-id/${feederId}`,
+            { userId},
+            { method: "cors" },
+            { withCredentials: true },
+          )
+          .then((res) => {
+            if(!res.data[0].username == 'undefined'){
+                return null;
+            }
+            const data = res.data
+            setFeeders(feeders => ([...feeders, data[0].username]))
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+    }
+    
+    useEffect(() => {
+        if(catData != null){
+            catData[0].feeder_userid.forEach(id =>{
+                getFeederById(id)
+            })
+        }
+    }, [catData])
+
+    useEffect(() => {
+      console.log(feeders)
+    }, [feeders])
+
     return(
         <div>
             <p>hi</p>
@@ -43,10 +74,10 @@ function IndividualCatPage(){
                 {catData[0].meals}
                 <br></br>
                 {catData[0].medication}
-                <br></br>
-                {catData[0].feeder_userid}
-                
                 </p>}
+                {feeders && feeders.map(feeder => {
+                    return <p>{feeder}</p>
+                })}
         </div>
     )
 }
