@@ -1,11 +1,33 @@
+import { Link } from "react-router"
 
-function LastFeedTemplate({entry}){
+function LastFeedTemplate({ entry }) {
 
-    return(
-        <div>
-             <p key={entry.id}>{entry.cat_name}{entry.date}</p>
+    const splitDate = entry.date.split('T')
+    const formattedDate = splitDate[0].split('-').reverse().join('-')
+    const catName = entry.cat_name
+    return (
 
-        </div>
+        <tr>
+            <td><p>{formattedDate}</p></td>
+            <td>
+                <p>{entry.time}</p>
+            </td>
+            <td>
+                <Link to={`/cat-view/${catName}`}>{catName}</Link>
+            </td>
+            <td>
+                <p>{entry.feeder_username}</p>
+            </td>
+            <td>
+                <p>{entry.medication_needed ? 'Yes' : 'No'}</p>
+            </td>
+            <td>
+                <p>{entry.medication_needed ? 'Yes' : 'No'}</p>
+            </td>
+            <td>
+                <p>{entry.notes}</p>
+            </td>
+        </tr>
     )
 }
 

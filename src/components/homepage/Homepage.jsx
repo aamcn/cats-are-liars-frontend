@@ -63,9 +63,26 @@ function Homepage(){
             {username && <p>Welcome back {username}</p>}
             <UsersCatsDisplay cats={cats}/>
             <div>
-            {lastFeedEntry && lastFeedEntry.map(entry => {
+                <h5>Last Feed</h5>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Name</th>
+                            <th>Time</th>
+                            <th>Fed By</th>
+                            <th>Medication Needed</th>
+                            <th>Medication Given</th>
+                            <th>notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {lastFeedEntry && lastFeedEntry.map(entry => {
                     return <LastFeedTemplate entry={entry}/>
                 })}
+                    </tbody>
+                </table>
+           
             </div>
             
         </div>
