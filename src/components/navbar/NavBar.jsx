@@ -7,6 +7,7 @@ function NavBar(){
         <div>
             <div>
             <Link to="/home">Home</Link>
+            <Link to="/cat-control-page">My Cats</Link>
             <Link to="/feed-history">Feed History</Link>
             </div> 
             <LogOutButton />
@@ -15,3 +16,4 @@ function NavBar(){
 }
 
 export default NavBar;
+

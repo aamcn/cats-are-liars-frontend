@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import UsersCatsDisplay from "../usersCatsDisplay/UsersCatsDisplay";
 import axios from "axios";
+import AddCatForm from "./AddCatForm";
 function UserCatsControlPage(){
 
     const [cats, setCats] = useState([])
@@ -29,6 +30,7 @@ function UserCatsControlPage(){
 
     return(
         <div>
+            <AddCatForm />
             <UsersCatsDisplay cats={cats} />
         </div>
     )

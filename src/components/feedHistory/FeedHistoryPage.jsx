@@ -39,9 +39,23 @@ function FeedHistoryPage(){
             <h1>Feed History</h1>
            </div>
            <div>
+            <table>
+                <thead>
+                    <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Feeder</th>
+                    <th>Time</th>
+                    <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
            {feedHistoryData && feedHistoryData.map(entry => {
                 return <FeedHistoryDisplayTemplate entry={entry}/>
             })}
+           </tbody>
+            </table>
+           
            </div>
         </div>
     )
