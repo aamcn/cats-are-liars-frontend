@@ -3,10 +3,12 @@ import axios from "axios";
 import UsersCatsDisplay from "../usersCatsDisplay/UsersCatsDisplay";
 import LastFeedTemplate from "./LastFeedTemplate";
 import AddFeedingForm from "../addFeedingForm/AddFeedingForm";
+
 function Homepage() {
   const [cats, setCats] = useState([]);
   const [lastFeedEntry, setLastFeedEntry] = useState([]);
-
+  const [isHidden, setIsHidden] = useState(true)
+    
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
   const b = localStorage.getItem("storedToken").replaceAll('"', "");
@@ -37,9 +39,9 @@ function Homepage() {
       )
 
       .then((res) => {
-        const t = res.data;
-        if (t.length > 0) {
-          setLastFeedEntry((lastFeedEntry) => [...lastFeedEntry, t[0]]);
+        const feedData = res.data;
+        if (feedData.length > 0) {
+          setLastFeedEntry((lastFeedEntry) => [...lastFeedEntry, feedData[feedData.length -1]]);
         }
       })
       .catch((error) => {
@@ -57,12 +59,21 @@ function Homepage() {
     });
   }, [cats]);
 
+  const handleToggleDisplay = () =>{
+    if(isHidden == true){
+      setIsHidden(false)
+    } else {
+      setIsHidden(true)
+    }
+  }
+
   return (
     <div>
       <h1>home</h1>
+      <button onClick={handleToggleDisplay}>Add Feeding +</button>
       {username && <p>Welcome back {username}</p>}
       <UsersCatsDisplay cats={cats} />
-      <AddFeedingForm cats={cats} />
+      {!isHidden && <AddFeedingForm cats={cats} />}
       <div>
         <h5>Last Feed</h5>
         <table>
