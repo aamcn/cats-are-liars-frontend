@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 import "./App.css";
-import NavBar from "./components/navbar/NavBar";
+import Header from "./components/header/Header";
 import { createContext, useEffect, useState } from "react";
 
 export const appContext = createContext({
@@ -21,7 +21,7 @@ function App() {
     <>
       <appContext.Provider value={{ logInSuccess, changeLogInSuccess }}>
         <div>
-          <NavBar />
+          <Header />
           <Outlet />
         </div>
       </appContext.Provider>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import UsersCatsDisplay from "../usersCatsDisplay/UsersCatsDisplay";
 import LastFeedTemplate from "./LastFeedTemplate";
+import AddFeedingForm from "../addFeedingForm/AddFeedingForm";
 function Homepage() {
   const [cats, setCats] = useState([]);
   const [lastFeedEntry, setLastFeedEntry] = useState([]);
@@ -61,6 +62,7 @@ function Homepage() {
       <h1>home</h1>
       {username && <p>Welcome back {username}</p>}
       <UsersCatsDisplay cats={cats} />
+      <AddFeedingForm cats={cats} />
       <div>
         <h5>Last Feed</h5>
         <table>
