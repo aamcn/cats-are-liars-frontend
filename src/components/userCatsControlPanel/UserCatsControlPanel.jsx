@@ -1,10 +1,5 @@
-
-function UserCatsControlPanel(){
-    return(
-        <div>
-
-        </div>
-    )
+function UserCatsControlPanel() {
+  return <div></div>;
 }
 
-export default UserCatsControlPanel
+export default UserCatsControlPanel;

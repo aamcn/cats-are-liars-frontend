@@ -1,65 +1,62 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import FeedHistoryTableRow from "./FeedHistoryTableRow";
-function FeedHistoryPage(){
+function FeedHistoryPage() {
+  const [feedHistoryData, setFeedHistoryData] = useState([]);
 
-    const [feedHistoryData, setFeedHistoryData] = useState([])
+  const username = localStorage.getItem("username").replaceAll('"', "");
+  const userId = localStorage.getItem("userId").replaceAll('"', "");
+  const b = localStorage.getItem("storedToken").replaceAll('"', "");
+  axios.defaults.headers.common["Authorization"] = `bearer ${b}`;
 
-    const username = localStorage.getItem("username").replaceAll('"', '')
-    const userId = localStorage.getItem("userId").replaceAll('"', '')
-    const b = localStorage.getItem("storedToken").replaceAll('"', "");
-    axios.defaults.headers.common["Authorization"] = `bearer ${b}`;
+  const getFeedHistory = () => {
+    axios
+      .get(
+        "http://localhost:3000/feed-history/all",
+        { userId },
+        { method: "cors" },
+        { withCredentials: true },
+      )
+      .then((res) => setFeedHistoryData(res.data))
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
-    const getFeedHistory = () => {
-        axios.get(
-            "http://localhost:3000/feed-history/all",
-            { userId},
-            { method: "cors" },
-            { withCredentials: true },
-          )
-          .then((res) => setFeedHistoryData(res.data))
-          .catch((error) => {
-            console.error(error);
-          });
-    }
+  useEffect(() => {
+    getFeedHistory();
+  }, []);
 
-    useEffect(() => {
-        getFeedHistory()
+  useEffect(() => {}, [feedHistoryData]);
 
-    }, [])
-
-    useEffect(() => {
-    }, [feedHistoryData])
-
-
-    return(
-        <div>
-           <div>
-            <h1>Feed History</h1>
-           </div>
-           <div>
-            <table>
-                <thead>
-                    <tr>
-                    <th>Date</th>
-                    <th>Cat Name</th>
-                    <th>Fed By</th>
-                    <th>Time</th>
-                    <th>Medication Needed</th>
-                    <th>Medication Given</th>
-                    <th>Notes</th>
-                    </tr>
-                </thead>
-                <tbody>
-           {feedHistoryData && feedHistoryData.map(entry => {
-                return <FeedHistoryTableRow entry={entry}/>
-            })}
-           </tbody>
-            </table>
-           
-           </div>
-        </div>
-    )
+  return (
+    <div>
+      <div>
+        <h1>Feed History</h1>
+      </div>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Cat Name</th>
+              <th>Fed By</th>
+              <th>Time</th>
+              <th>Medication Needed</th>
+              <th>Medication Given</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {feedHistoryData &&
+              feedHistoryData.map((entry) => {
+                return <FeedHistoryTableRow entry={entry} />;
+              })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 }
 
 export default FeedHistoryPage;
