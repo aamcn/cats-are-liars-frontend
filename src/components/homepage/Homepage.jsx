@@ -74,7 +74,7 @@ function Homepage() {
       {username && <p>Welcome back {username}</p>}
       <UsersCatsDisplay cats={cats} />
       {!isHidden && <AddFeedingForm cats={cats} />}
-      <div>
+      <div className="table">
         <h5>Last Feed</h5>
         <table>
           <thead>
