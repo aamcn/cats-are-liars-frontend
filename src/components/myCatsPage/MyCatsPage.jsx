@@ -2,8 +2,10 @@ import { use, useEffect, useState } from "react";
 import UsersCatsDisplay from "../usersCatsDisplay/UsersCatsDisplay";
 import axios from "axios";
 import AddCatForm from "./AddCatForm";
+import styles from "./css/myCatsPage.module.css"
 
-function UserCatsControlPage() {
+
+function MyCatsPage() {
   const [cats, setCats] = useState([]);
   const [isHidden, setIsHidden] = useState(true);
 
@@ -39,8 +41,9 @@ function UserCatsControlPage() {
   };
 
   return (
-    <div>
-      <button onClick={handleAddCatClick}>
+    <div className={styles.myCatsPageContainer}>
+      <h1 className={styles.pageTitle}>My Cats</h1>
+      <button className={styles.addCatButton} onClick={handleAddCatClick}>
         {isHidden ? "Add A Cat" : "Cancel"}
       </button>
       {!isHidden && <AddCatForm />}
@@ -49,4 +52,4 @@ function UserCatsControlPage() {
   );
 }
 
-export default UserCatsControlPage;
+export default MyCatsPage;

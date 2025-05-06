@@ -1,8 +1,8 @@
 import UserCatsDisplayTemplate from "./CatDisplayTemplate";
-
+import styles from "./css/userCatsDisplay.module.css"
 function UsersCatsDisplay({ cats }) {
   return (
-    <div>
+    <div className={styles.userCatsTable}>
       <table>
         <thead>
           <tr>

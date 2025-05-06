@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import FeedHistoryTableRow from "./FeedHistoryTableRow";
+import styles from "./css/feedHistoryPage.module.css"
+
 function FeedHistoryPage() {
   const [feedHistoryData, setFeedHistoryData] = useState([]);
 
@@ -30,11 +32,16 @@ function FeedHistoryPage() {
   useEffect(() => {}, [feedHistoryData]);
 
   return (
-    <div>
-      <div>
-        <h1>Feed History</h1>
-      </div>
-      <div>
+    <div className={styles.pageContainer}>
+     
+        <h1 className={styles.pageTitle}>Feed History</h1>
+      <div className={styles.tableOptions}>
+        <button>option</button>
+        <button>option</button>
+        <button>option</button>
+        <button>option</button>
+     </div>
+      <div className={styles.feedHistoryTable}>
         <table>
           <thead>
             <tr>
@@ -42,8 +49,8 @@ function FeedHistoryPage() {
               <th>Cat Name</th>
               <th>Fed By</th>
               <th>Time</th>
-              <th>Medication Needed</th>
-              <th>Medication Given</th>
+              <th>Meds Needed</th>
+              <th>Meds Given</th>
               <th>Notes</th>
             </tr>
           </thead>

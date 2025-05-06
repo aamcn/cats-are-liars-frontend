@@ -1,6 +1,6 @@
 function FeedHistoryTableRow({ entry }) {
   const correctDate = entry.date.split("T");
-  const formattedDate = correctDate[0].split("-").reverse().join("-");
+  const formattedDate = correctDate[0].split("-").reverse().join("/");
 
   return (
     <tr>
