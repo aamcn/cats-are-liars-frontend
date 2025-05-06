@@ -20,10 +20,8 @@ function App() {
   return (
     <>
       <appContext.Provider value={{ logInSuccess, changeLogInSuccess }}>
-        <div>
           <Header />
           <Outlet />
-        </div>
       </appContext.Provider>
     </>
   );

@@ -1,0 +1,32 @@
+
+
+.logInForm{
+    background-color: grey;
+    border-radius: 1em;
+    text-align: left;
+    border:solid;
+    margin: 0px 1em 0px 1em;
+    padding: 1em;
+}
+
+.formContainer{
+    grid-row: 3;
+    grid-column: 2;
+}
+
+.inputLabel{
+
+}
+
+.textInput{
+    margin: 1em;
+}
+
+.fieldset{
+    border-radius: 1em;
+}
+
+.submitButton{
+    background-color: wheat;
+    border:solid;
+}

@@ -3,6 +3,7 @@ import axios from "axios";
 import UsersCatsDisplay from "../usersCatsDisplay/UsersCatsDisplay";
 import LastFeedTemplate from "./LastFeedTemplate";
 import AddFeedingForm from "../addFeedingForm/AddFeedingForm";
+import styles from "./homepage.module.css"
 
 function Homepage() {
   const [cats, setCats] = useState([]);
@@ -71,34 +72,33 @@ function Homepage() {
   };
 
   return (
-    <div>
-      <h1>home</h1>
-      <button onClick={handleToggleDisplay}>Add Feeding +</button>
-      {username && <p>Welcome back {username}</p>}
-      <UsersCatsDisplay cats={cats} />
+    <div className={styles.homepageContainer}>
+      <h1 className={styles.pageTitle}>home</h1>
+      {username && <p className={styles.welcomeMessage} >Welcome back {username}</p>}
+      <div className={styles.toggleButtons}>
+          <button className={styles.toggleButton} onClick={handleToggleDisplay}>Add Feeding +</button>
+          <button className={styles.toggleButton} onClick={handleToggleDisplay}>Last Fed</button>
+      </div>
       {!isHidden && <AddFeedingForm cats={cats} />}
-      <div className="table">
-        <h5>Last Feed</h5>
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Name</th>
+        {/* <table className={styles.lastFeedTable}>
+          <thead className={styles.tableHead}>
+            <tr className={styles.tableRows}>
+              <th >Date</th>
               <th>Time</th>
+              <th>Name</th>
               <th>Fed By</th>
               <th>Medication Needed</th>
               <th>Medication Given</th>
               <th>Notes</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className={styles.tableBody}>
             {lastFeedEntry &&
               lastFeedEntry.map((entry) => {
                 return <LastFeedTemplate entry={entry} />;
               })}
           </tbody>
-        </table>
-      </div>
+        </table> */}
     </div>
   );
 }

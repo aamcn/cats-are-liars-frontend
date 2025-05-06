@@ -1,6 +1,6 @@
 import App from "./App.jsx";
 import Homepage from "./components/homepage/Homepage.jsx";
-import LandingPage from "./components/landingPage/LandingPage.jsx";
+import LandingPage from "./components/landingLogInPage/LandingPage.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";
 import IndividualCatPage from "./components/individualCatPage/IndividualCatPage.jsx";
 import FeedHistoryPage from "./components/feedHistory/FeedHistoryPage.jsx";

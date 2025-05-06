@@ -3,6 +3,8 @@ import axios from "axios";
 import { useContext } from "react";
 import { appContext } from "../../App";
 import { useNavigate } from "react-router-dom";
+import styles from "./css/logInForm.module.css"
+
 
 function LogInForm() {
   let navigate = useNavigate();
@@ -58,11 +60,12 @@ function LogInForm() {
   }, [username, password]);
 
   return (
-    <div>
-      <form method="POST" onSubmit={formSubmission}>
-        <fieldset>
-          <label htmlFor="username">Username:</label>
+    <div className={styles.formContainer}>
+      <form className={styles.logInForm} method="POST" onSubmit={formSubmission}>
+        <fieldset className={styles.fieldset} >
+          <label className={styles.inputLabel} htmlFor="username">Username:</label>
           <input
+            className={styles.textInput}
             onChange={handleUsernameChange}
             type="text"
             name="username"
@@ -70,8 +73,10 @@ function LogInForm() {
             aria-label="username"
             required
           ></input>
-          <label htmlFor="password">Password: </label>
+          <br></br>
+          <label className={styles.inputLabel}  htmlFor="password">Password: </label>
           <input
+            className={styles.textInput}
             onChange={handlePasswordChange}
             type="password"
             id="password"
@@ -79,7 +84,7 @@ function LogInForm() {
             required
           ></input>
         </fieldset>
-        <button>Submit</button>
+        <button className={styles.submitButton}>Log In</button>
       </form>
     </div>
   );

@@ -1,0 +1,56 @@
+
+
+
+
+.homepageContainer{
+    display: grid;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-rows: 2fr 1fr 3fr 6fr;
+    height:95vh;
+}
+
+.pageTitle{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.welcomeMessage{
+    grid-column: 2;
+    grid-row:2;
+}
+
+.toggleButtons{
+    grid-column: 2;
+    grid-row:3;
+    display:flex;
+    flex-direction: row;
+}
+
+.lastFeedTable{
+    grid-column: 2;
+    grid-row: 4;
+    color:wheat;
+    width:90%;
+}
+
+thead{
+    width: 90%;
+}
+
+tbody{
+    width:90%;
+}
+
+tr{
+    width:90%;
+    border:solid;
+}
+
+td{
+    width:90%;
+}
+
+th{
+    display: none;
+    border:solid;
+}
