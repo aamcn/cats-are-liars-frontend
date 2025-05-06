@@ -44,7 +44,7 @@ function IndividualCatPage() {
       )
       .then((res) => {
         if (!res.data[0].username == "undefined") {
-          return null;
+          return;
         }
         const data = res.data;
         setFeeders((feeders) => [...feeders, data[0].username]);
