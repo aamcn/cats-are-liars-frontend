@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
+import UpdateCatForm from "../updateCatForm/UpdateCatForm";
 function IndividualCatPage() {
   const [catData, setCatData] = useState(null);
   const [feeders, setFeeders] = useState([]);
@@ -19,7 +20,10 @@ function IndividualCatPage() {
         { method: "cors" },
         { withCredentials: true },
       )
-      .then((res) => setCatData(res.data))
+      .then((res) => {
+        const data = res.data
+        setCatData(data[0])
+      })
       .catch((error) => {
         console.error(error);
       });
@@ -29,7 +33,6 @@ function IndividualCatPage() {
     getCatByName(param.catName);
   }, []);
 
-  useEffect(() => {}, [catData]);
 
   const getFeederById = (feederId) => {
     axios
@@ -53,32 +56,39 @@ function IndividualCatPage() {
 
   useEffect(() => {
     if (catData != null) {
-      catData[0].feeder_userid.forEach((id) => {
+      catData.feeder_userid.forEach((id) => {
         getFeederById(id);
       });
     }
   }, [catData]);
 
-  useEffect(() => {}, [feeders]);
-
   return (
     <div>
-      <p>hi</p>
-      {catData && (
-        <p>
-          {catData[0].name}
-          <br></br>
-          {catData[0].meals}
-          <br></br>
-          {catData[0].medication}
-        </p>
-      )}
-      {feeders &&
-        feeders.map((feeder) => {
-          return <p>{feeder}</p>;
-        })}
+      {catData  &&  <h1>{catData.name}</h1>}
+
+      <h3>Meals:</h3>
+      <ul>
+      {catData  &&  catData.meals.map(item => {
+        return <li>{item}</li>
+      })}
+      </ul>
+      
+      <h3>Meds:</h3>
+      <ul>
+      {catData  &&  catData.medication.map(item => {
+        return <li>{item}</li>
+      })}
+      </ul>
+      
+      <h3>Feeders:</h3>
+      <ul>
+      {catData  &&  feeders.map(item => {
+        return <li>{item}</li>
+      })}
+      </ul>
+
+      {catData && <UpdateCatForm catData={catData}/>}
     </div>
   );
 }
-
 export default IndividualCatPage;

@@ -7,8 +7,8 @@ import AddFeedingForm from "../addFeedingForm/AddFeedingForm";
 function Homepage() {
   const [cats, setCats] = useState([]);
   const [lastFeedEntry, setLastFeedEntry] = useState([]);
-  const [isHidden, setIsHidden] = useState(true)
-    
+  const [isHidden, setIsHidden] = useState(true);
+
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
   const b = localStorage.getItem("storedToken").replaceAll('"', "");
@@ -41,7 +41,10 @@ function Homepage() {
       .then((res) => {
         const feedData = res.data;
         if (feedData.length > 0) {
-          setLastFeedEntry((lastFeedEntry) => [...lastFeedEntry, feedData[feedData.length -1]]);
+          setLastFeedEntry((lastFeedEntry) => [
+            ...lastFeedEntry,
+            feedData[feedData.length - 1],
+          ]);
         }
       })
       .catch((error) => {
@@ -59,13 +62,13 @@ function Homepage() {
     });
   }, [cats]);
 
-  const handleToggleDisplay = () =>{
-    if(isHidden == true){
-      setIsHidden(false)
+  const handleToggleDisplay = () => {
+    if (isHidden == true) {
+      setIsHidden(false);
     } else {
-      setIsHidden(true)
+      setIsHidden(true);
     }
-  }
+  };
 
   return (
     <div>

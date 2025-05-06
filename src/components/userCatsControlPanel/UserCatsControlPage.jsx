@@ -4,9 +4,8 @@ import axios from "axios";
 import AddCatForm from "./AddCatForm";
 
 function UserCatsControlPage() {
-
   const [cats, setCats] = useState([]);
-  const [isHidden, setIsHidden] = useState(true)
+  const [isHidden, setIsHidden] = useState(true);
 
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
@@ -32,16 +31,18 @@ function UserCatsControlPage() {
   }, []);
 
   const handleAddCatClick = () => {
-    if(isHidden){
-      setIsHidden(false)
-    } else{
-      setIsHidden(true)
+    if (isHidden) {
+      setIsHidden(false);
+    } else {
+      setIsHidden(true);
     }
-  }
+  };
 
   return (
     <div>
-      <button onClick={handleAddCatClick}>{isHidden ? 'Add A Cat' : 'Cancel'}</button>
+      <button onClick={handleAddCatClick}>
+        {isHidden ? "Add A Cat" : "Cancel"}
+      </button>
       {!isHidden && <AddCatForm />}
       <UsersCatsDisplay cats={cats} />
     </div>
