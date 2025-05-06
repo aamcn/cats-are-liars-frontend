@@ -75,21 +75,15 @@ function Homepage() {
     <div className={styles.homepageContainer}>
       <h1 className={styles.pageTitle}>home</h1>
       {username && <p className={styles.welcomeMessage} >Welcome back {username}</p>}
-      <div className={styles.toggleButtons}>
-          <button className={styles.toggleButton} onClick={handleToggleDisplay}>Add Feeding +</button>
-          <button className={styles.toggleButton} onClick={handleToggleDisplay}>Last Fed</button>
-      </div>
-      {!isHidden && <AddFeedingForm cats={cats} />}
-        {/* <table className={styles.lastFeedTable}>
+      
+      {!isHidden && <div className={styles.addFeedFormContainer}><AddFeedingForm cats={cats} /></div>}
+        <table className={styles.lastFeedTable}>
           <thead className={styles.tableHead}>
             <tr className={styles.tableRows}>
-              <th >Date</th>
+              <th>Date</th>
               <th>Time</th>
               <th>Name</th>
               <th>Fed By</th>
-              <th>Medication Needed</th>
-              <th>Medication Given</th>
-              <th>Notes</th>
             </tr>
           </thead>
           <tbody className={styles.tableBody}>
@@ -98,7 +92,11 @@ function Homepage() {
                 return <LastFeedTemplate entry={entry} />;
               })}
           </tbody>
-        </table> */}
+        </table>
+        <div className={styles.toggleButtons}>
+          <button className={styles.toggleButton} onClick={handleToggleDisplay}>Add Feeding +</button>
+          <button className={styles.toggleButton} onClick={handleToggleDisplay}>Last Fed</button>
+      </div>
     </div>
   );
 }

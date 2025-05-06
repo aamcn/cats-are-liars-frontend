@@ -6,6 +6,7 @@ function LastFeedTemplate({ entry }) {
   const catName = entry.cat_name;
   return (
     <tr>
+      
       <td>
         <p>{formattedDate}</p>
       </td>
@@ -17,15 +18,6 @@ function LastFeedTemplate({ entry }) {
       </td>
       <td>
         <p>{entry.feeder_username}</p>
-      </td>
-      <td>
-        <p>{entry.medication_needed ? "Yes" : "No"}</p>
-      </td>
-      <td>
-        <p>{entry.medication_needed ? "Yes" : "No"}</p>
-      </td>
-      <td>
-        <p>{entry.notes}</p>
       </td>
     </tr>
   );
