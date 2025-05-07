@@ -31,7 +31,7 @@ function MyCatsPage() {
     getCats();
   }, []);
 
-  const handleAddCatClick = () => {
+  const toggleAddCatForm= () => {
     if (isHidden) {
       setIsHidden(false);
     } else {
@@ -42,10 +42,10 @@ function MyCatsPage() {
   return (
     <div className={styles.myCatsPageContainer}>
       <h1 className={styles.pageTitle}>My Cats</h1>
-      <button className={styles.addCatButton} onClick={handleAddCatClick}>
+      <button className={styles.addCatButton} onClick={toggleAddCatForm}>
         {isHidden ? "Add A Cat" : "Cancel"}
       </button>
-      {!isHidden && <AddCatForm />}
+      {!isHidden && <AddCatForm toggleAddCatForm={toggleAddCatForm} />}
       <UsersCatsDisplay cats={cats} />
     </div>
   );

@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
-function AddCatForm() {
+import styles from "./css/addCatForm.module.css"
+
+function AddCatForm( { toggleAddCatForm}) {
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
   const b = localStorage.getItem("storedToken").replaceAll('"', "");
@@ -31,10 +33,12 @@ function AddCatForm() {
   };
 
   return (
-    <div>
+    <div className={styles.formContainer}>
+     <h3>Add a New Cat</h3>
+      <button className={styles.closeFormButton} onClick={toggleAddCatForm}>x</button>
       <form onSubmit={handleNewCatFormSubmit}>
         <fieldset>
-          <label htmlFor="newCatName">Cat Name: </label>
+          <label htmlFor="newCatName">Name: </label>
           <input
             type="text"
             name="newCatName"
@@ -49,6 +53,8 @@ function AddCatForm() {
           <textarea
             name="newCatMeals"
             id="newCatMeals"
+            rows="5" 
+            cols="30"
             placeholder="Cat Meals seperate each with a comma"
             aria-label="Cats Meals Input"
           ></textarea>
@@ -58,11 +64,16 @@ function AddCatForm() {
           <textarea
             name="newCatMedication"
             id="newCatMedication"
+            rows="5" 
+            cols="30"
             placeholder="Leave blank if no medication needed"
             aria-label="Cats Medication Input"
           ></textarea>
         </fieldset>
-        <button>Submit</button>
+          <div className={styles.formButtons}>
+          <button>Submit</button>
+          <button onClick={toggleAddCatForm}>Cancel</button>
+          </div>
       </form>
     </div>
   );
