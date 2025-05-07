@@ -15,7 +15,9 @@ function App() {
     setLoginSuccess(loginStatus);
   };
 
-  useEffect(() => {}, [logInSuccess]);
+  useEffect(() => {
+
+  }, [logInSuccess]);
 
   return (
     <>

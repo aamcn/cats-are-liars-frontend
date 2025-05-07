@@ -10,6 +10,7 @@ function LogInForm() {
   let navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessages, setErrorMessage] = useState("")
   const { logInSuccess, changeLogInSuccess } = useContext(appContext);
 
   const handleUsernameChange = (event) => {
@@ -25,7 +26,6 @@ function LogInForm() {
   }
 
   const formSubmission = (event) => {
-    console.log(username, password);
     event.preventDefault();
     axios
       .post(
@@ -38,20 +38,20 @@ function LogInForm() {
         console.log(res);
         if (res.data === "fail") {
           changeLogInSuccess();
+          setErrorMessage("Username or password not recognised")
           return;
         }
-        const token = res.data.token;
-        const userId = res.data.userId;
-        const username = res.data.username;
-        localStorage.setItem("storedToken", JSON.stringify(token));
-        localStorage.setItem("userId", JSON.stringify(userId));
-        localStorage.setItem("username", JSON.stringify(username));
+        localStorage.setItem("storedToken", JSON.stringify(res.data.token));
+        localStorage.setItem("userId", JSON.stringify(res.data.userId));
+        localStorage.setItem("username", JSON.stringify(res.data.username));
         changeLogInSuccess(true);
         redirectHome();
       })
       .catch((error) => {
+        setErrorMessage(error.message)
         console.error(error);
       });
+    event.target.reset()
   };
 
   useEffect(() => {
@@ -61,6 +61,7 @@ function LogInForm() {
 
   return (
     <div className={styles.formContainer}>
+      {errorMessages && <p>{errorMessages}</p>}
       <form className={styles.logInForm} method="POST" onSubmit={formSubmission}>
         <fieldset className={styles.fieldset} >
           <label className={styles.inputLabel} htmlFor="username">Username:</label>
@@ -70,11 +71,12 @@ function LogInForm() {
             type="text"
             name="username"
             id="username"
+            minLength={2}
             aria-label="username"
             required
           ></input>
           <br></br>
-          <label className={styles.inputLabel}  htmlFor="password">Password: </label>
+          <label className={styles.inputLabel} htmlFor="password">Password: </label>
           <input
             className={styles.textInput}
             onChange={handlePasswordChange}

@@ -6,7 +6,6 @@ function LastFeedTemplate({ entry }) {
   const catName = entry.cat_name;
   return (
     <tr>
-      
       <td>
         <p>{formattedDate}</p>
       </td>

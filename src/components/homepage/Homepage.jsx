@@ -38,7 +38,6 @@ function Homepage() {
         { method: "cors" },
         { withCredentials: true },
       )
-
       .then((res) => {
         const feedData = res.data;
         if (feedData.length > 0) {
