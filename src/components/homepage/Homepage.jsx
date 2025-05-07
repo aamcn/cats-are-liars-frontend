@@ -3,7 +3,7 @@ import axios from "axios";
 import UsersCatsDisplay from "../usersCatsDisplay/UsersCatsDisplay";
 import LastFeedTemplate from "./LastFeedTemplate";
 import AddFeedingForm from "../addFeedingForm/AddFeedingForm";
-import styles from "./homepage.module.css"
+import styles from "./homepage.module.css";
 
 function Homepage() {
   const [cats, setCats] = useState([]);
@@ -74,7 +74,7 @@ function Homepage() {
 
   const handleToggleDisplay = () => {
     if (formVisibility == true) {
-      setLastFeedVisibility(false)
+      setLastFeedVisibility(false);
       setFormVisibility(false);
     } else {
       setFormVisibility(true);
@@ -84,10 +84,17 @@ function Homepage() {
   return (
     <div className={styles.homepageContainer}>
       <h1 className={styles.pageTitle}>home</h1>
-      {username && <p className={styles.welcomeMessage} >Welcome back {username}</p>}
-      
-      {!formVisibility && <div className={styles.addFeedFormContainer}><AddFeedingForm cats={cats} /></div>}
-       {lastFeedVisibility && <table className={styles.lastFeedTable}>
+      {username && (
+        <p className={styles.welcomeMessage}>Welcome back {username}</p>
+      )}
+
+      {!formVisibility && (
+        <div className={styles.addFeedFormContainer}>
+          <AddFeedingForm cats={cats} />
+        </div>
+      )}
+      {lastFeedVisibility && (
+        <table className={styles.lastFeedTable}>
           <thead className={styles.tableHead}>
             <tr className={styles.tableRows}>
               <th>Date</th>
@@ -102,11 +109,19 @@ function Homepage() {
                 return <LastFeedTemplate entry={entry} />;
               })}
           </tbody>
-        </table> } 
-        
-        <div className={styles.toggleButtons}>
-          <button className={styles.toggleButton} onClick={handleToggleDisplay}>Add Feeding +</button>
-          <button className={styles.toggleButton} onClick={handleToggleLastFeedTable}>Last Fed</button>
+        </table>
+      )}
+
+      <div className={styles.toggleButtons}>
+        <button className={styles.toggleButton} onClick={handleToggleDisplay}>
+          Add Feeding +
+        </button>
+        <button
+          className={styles.toggleButton}
+          onClick={handleToggleLastFeedTable}
+        >
+          Last Fed
+        </button>
       </div>
     </div>
   );

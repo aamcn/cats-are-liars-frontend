@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "./addFeedingForm.module.css"
+import styles from "./addFeedingForm.module.css";
 
 function AddFeedingForm({ cats }) {
   const [selectedCat, setSelectedCat] = useState(cats[0]);
@@ -11,7 +11,6 @@ function AddFeedingForm({ cats }) {
   const b = localStorage.getItem("storedToken").replaceAll('"', "");
   axios.defaults.headers.common["Authorization"] = `bearer ${b}`;
 
-  
   const handleCatSelectChange = (event) => {
     event.preventDefault();
     const findCat = cats.filter((cat) => {
@@ -19,7 +18,6 @@ function AddFeedingForm({ cats }) {
     });
     setSelectedCat(findCat[0]);
   };
-
 
   useEffect(() => {
     if (selectedCat && selectedCat.medication == "none") {

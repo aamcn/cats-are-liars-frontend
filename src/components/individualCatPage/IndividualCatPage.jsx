@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
-import UpdateCatForm from "../updateCatForm/UpdateCatForm";
+import UpdateCatForm from "./UpdateCatForm";
+import styles from "./css/individualCatPage.module.css"
 function IndividualCatPage() {
   const [catData, setCatData] = useState(null);
   const [feeders, setFeeders] = useState([]);
@@ -77,14 +78,18 @@ function IndividualCatPage() {
 
     <div>
       {catData &&
-        <div>
-          <h1>{catData.name}</h1>
+        <div className={styles.catPageContainer}>
+          <h1 className={styles.pageTitle}>{catData.name}</h1>
 
-          <div>
+          <div className={styles.toggleButtonsContainer}>
             <button onClick={toggleUpdateForm}>Update {catData.name}'s Details</button>
           </div>
 
-          <div>
+          <div className={styles.catPhotoContainer}>
+            <img src='' alt="Cat Photo"/>
+          </div>
+
+          <div className={styles.catDetailsContainer}>
             <h3>Meals:</h3>
             <ul>
               {catData.meals.map(item => {
@@ -98,8 +103,7 @@ function IndividualCatPage() {
                 return <li>{item}</li>
               })}
             </ul>
-
-
+            
             <h3>Feeders:</h3>
             <ul>
               {feeders.map(item => {
@@ -111,7 +115,6 @@ function IndividualCatPage() {
         </div>}
     </div>
   );
-
 }
 
 export default IndividualCatPage;

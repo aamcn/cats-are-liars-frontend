@@ -1,20 +1,18 @@
-
-.landingPageContainer{
-    display: grid;
-    grid-template-columns: 1fr 10fr 1fr;
-    grid-template-rows: 2fr 1fr 9fr;
-    height:95vh;
+.landingPageContainer {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-rows: 2fr 1fr 9fr;
+  height: 95vh;
 }
 
-.pageTitle{
-    grid-row: 1;
-    grid-column: 2;
-    text-align: center;
+.pageTitle {
+  grid-row: 1;
+  grid-column: 2;
+  text-align: center;
 }
 
-.welcomeMessage{
-    grid-row: 2;
-    grid-column: 2;
-    text-align: center;
+.welcomeMessage {
+  grid-row: 2;
+  grid-column: 2;
+  text-align: center;
 }
-

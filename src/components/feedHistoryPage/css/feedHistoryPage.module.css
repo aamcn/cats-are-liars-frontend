@@ -1,26 +1,25 @@
-
-.pageContainer{
-    display: grid;
-    grid-template-columns: 1fr 10fr 1fr;
-    grid-template-rows: 2fr 1fr 9fr;
-    height:95vh;
+.pageContainer {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-rows: 2fr 1fr 9fr;
+  height: 95vh;
 }
 
-.feedHistoryTable{
-    grid-row:4;
-    grid-column: 2;
-    border:solid;
-    padding:1em;
-    font-size:3.5vw;
+.feedHistoryTable {
+  grid-row: 4;
+  grid-column: 2;
+  border: solid;
+  padding: 1em;
+  font-size: 3.5vw;
 }
 
-.pageTitle{
-    grid-row: 1;
-    grid-column: 2;
-    text-align: center;
+.pageTitle {
+  grid-row: 1;
+  grid-column: 2;
+  text-align: center;
 }
 
-.tableOptions{
-    grid-row: 3;
-    grid-column: 2;
+.tableOptions {
+  grid-row: 3;
+  grid-column: 2;
 }

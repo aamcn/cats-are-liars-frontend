@@ -2,8 +2,7 @@ import { use, useEffect, useState } from "react";
 import UsersCatsDisplay from "../usersCatsDisplay/UsersCatsDisplay";
 import axios from "axios";
 import AddCatForm from "./AddCatForm";
-import styles from "./css/myCatsPage.module.css"
-
+import styles from "./css/myCatsPage.module.css";
 
 function MyCatsPage() {
   const [cats, setCats] = useState([]);

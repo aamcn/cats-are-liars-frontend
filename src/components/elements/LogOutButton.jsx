@@ -7,7 +7,6 @@ function LogOutButton() {
   let navigate = useNavigate();
   const { logInSuccess, changeLogInSuccess } = useContext(appContext);
 
-
   function redirectLogIn() {
     navigate("/", { replace: true });
   }
@@ -26,7 +25,7 @@ function LogOutButton() {
         localStorage.clear("userId");
         localStorage.clear("username");
         changeLogInSuccess(false);
-        redirectLogIn()
+        redirectLogIn();
       })
       .catch((error) => {
         console.error(error);

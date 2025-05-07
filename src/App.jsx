@@ -15,15 +15,13 @@ function App() {
     setLoginSuccess(loginStatus);
   };
 
-  useEffect(() => {
-
-  }, [logInSuccess]);
+  useEffect(() => {}, [logInSuccess]);
 
   return (
     <>
       <appContext.Provider value={{ logInSuccess, changeLogInSuccess }}>
-          <Header />
-          <Outlet />
+        <Header />
+        <Outlet />
       </appContext.Provider>
     </>
   );
