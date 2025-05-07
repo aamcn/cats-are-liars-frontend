@@ -8,7 +8,8 @@ import styles from "./homepage.module.css"
 function Homepage() {
   const [cats, setCats] = useState([]);
   const [lastFeedEntry, setLastFeedEntry] = useState([]);
-  const [isHidden, setIsHidden] = useState(true);
+  const [formVisibility, setFormVisibility] = useState(true);
+  const [lastFeedVisibility, setLastFeedVisibility] = useState(true);
 
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
@@ -62,11 +63,21 @@ function Homepage() {
     });
   }, [cats]);
 
-  const handleToggleDisplay = () => {
-    if (isHidden == true) {
-      setIsHidden(false);
+  const handleToggleLastFeedTable = () => {
+    if (lastFeedVisibility == true) {
+      setLastFeedVisibility(false);
     } else {
-      setIsHidden(true);
+      setFormVisibility(true);
+      setLastFeedVisibility(true);
+    }
+  };
+
+  const handleToggleDisplay = () => {
+    if (formVisibility == true) {
+      setLastFeedVisibility(false)
+      setFormVisibility(false);
+    } else {
+      setFormVisibility(true);
     }
   };
 
@@ -75,8 +86,8 @@ function Homepage() {
       <h1 className={styles.pageTitle}>home</h1>
       {username && <p className={styles.welcomeMessage} >Welcome back {username}</p>}
       
-      {!isHidden && <div className={styles.addFeedFormContainer}><AddFeedingForm cats={cats} /></div>}
-        <table className={styles.lastFeedTable}>
+      {!formVisibility && <div className={styles.addFeedFormContainer}><AddFeedingForm cats={cats} /></div>}
+       {lastFeedVisibility && <table className={styles.lastFeedTable}>
           <thead className={styles.tableHead}>
             <tr className={styles.tableRows}>
               <th>Date</th>
@@ -91,10 +102,11 @@ function Homepage() {
                 return <LastFeedTemplate entry={entry} />;
               })}
           </tbody>
-        </table>
+        </table> } 
+        
         <div className={styles.toggleButtons}>
           <button className={styles.toggleButton} onClick={handleToggleDisplay}>Add Feeding +</button>
-          <button className={styles.toggleButton} onClick={handleToggleDisplay}>Last Fed</button>
+          <button className={styles.toggleButton} onClick={handleToggleLastFeedTable}>Last Fed</button>
       </div>
     </div>
   );
