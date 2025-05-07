@@ -1,12 +1,12 @@
 .pageContainer {
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
-  grid-template-rows: 2fr 1fr 9fr;
+  grid-template-rows: 2fr 1fr 9fr 2fr;
   height: 95vh;
 }
 
 .feedHistoryTable {
-  grid-row: 4;
+  grid-row: 3;
   grid-column: 2;
   border: solid;
   padding: 1em;
@@ -20,6 +20,6 @@
 }
 
 .tableOptions {
-  grid-row: 3;
+  grid-row: 2;
   grid-column: 2;
 }

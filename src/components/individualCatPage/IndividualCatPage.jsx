@@ -3,8 +3,9 @@ import axios from "axios";
 import { useParams } from "react-router";
 import UpdateCatForm from "./UpdateCatForm";
 import styles from "./css/individualCatPage.module.css"
+import UpdateCatFeederForm from "./UpdateCatFeederForm";
 function IndividualCatPage() {
-  const [catData, setCatData] = useState(null);
+  const [catData, setCatData] = useState();
   const [feeders, setFeeders] = useState([]);
   const param = useParams();
   const [updateFormHidden, setUpdateFormHidden] = useState(true)
@@ -83,10 +84,11 @@ function IndividualCatPage() {
 
           <div className={styles.toggleButtonsContainer}>
             <button onClick={toggleUpdateForm}>Update {catData.name}'s Details</button>
+            <button>Update {catData.name}'s Feeders</button>
           </div>
 
           <div className={styles.catPhotoContainer}>
-            <img src='' alt="Cat Photo"/>
+            <img src={null} alt="Cat Photo"/>
           </div>
 
           <div className={styles.catDetailsContainer}>
@@ -112,7 +114,9 @@ function IndividualCatPage() {
             </ul>
           </div>
           {!updateFormHidden && <UpdateCatForm catData={catData} />}
+          {/* { catData && <UpdateCatFeederForm catData={catData}/>} */}
         </div>}
+        
     </div>
   );
 }
