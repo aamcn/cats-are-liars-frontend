@@ -11,6 +11,7 @@ function AddFeedingForm({ cats }) {
   const b = localStorage.getItem("storedToken").replaceAll('"', "");
   axios.defaults.headers.common["Authorization"] = `bearer ${b}`;
 
+  
   const handleCatSelectChange = (event) => {
     event.preventDefault();
     const findCat = cats.filter((cat) => {
@@ -18,8 +19,9 @@ function AddFeedingForm({ cats }) {
     });
     setSelectedCat(findCat[0]);
   };
+
+
   useEffect(() => {
-    console.log(selectedCat);
     if (selectedCat && selectedCat.medication == "none") {
       setMedsNeeded(false);
     } else {

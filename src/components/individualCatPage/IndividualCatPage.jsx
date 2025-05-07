@@ -6,6 +6,7 @@ function IndividualCatPage() {
   const [catData, setCatData] = useState(null);
   const [feeders, setFeeders] = useState([]);
   const param = useParams();
+  const [updateFormHidden, setUpdateFormHidden] = useState(true)
 
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
@@ -62,33 +63,55 @@ function IndividualCatPage() {
     }
   }, [catData]);
 
+  const toggleUpdateForm = () => {
+    if (updateFormHidden == true) {
+
+      setUpdateFormHidden(false)
+    } else {
+      setUpdateFormHidden(true)
+    }
+  }
+
+
   return (
+
     <div>
-      {catData  &&  <h1>{catData.name}</h1>}
+      {catData &&
+        <div>
+          <h1>{catData.name}</h1>
 
-      <h3>Meals:</h3>
-      <ul>
-      {catData  &&  catData.meals.map(item => {
-        return <li>{item}</li>
-      })}
-      </ul>
-      
-      <h3>Meds:</h3>
-      <ul>
-      {catData  &&  catData.medication.map(item => {
-        return <li>{item}</li>
-      })}
-      </ul>
-      
-      <h3>Feeders:</h3>
-      <ul>
-      {catData  &&  feeders.map(item => {
-        return <li>{item}</li>
-      })}
-      </ul>
+          <div>
+            <button onClick={toggleUpdateForm}>Update {catData.name}'s Details</button>
+          </div>
 
-      {catData && <UpdateCatForm catData={catData}/>}
+          <div>
+            <h3>Meals:</h3>
+            <ul>
+              {catData.meals.map(item => {
+                return <li>{item}</li>
+              })}
+            </ul>
+
+            <h3>Meds:</h3>
+            <ul>
+              {catData.medication.map(item => {
+                return <li>{item}</li>
+              })}
+            </ul>
+
+
+            <h3>Feeders:</h3>
+            <ul>
+              {feeders.map(item => {
+                return <li>{item}</li>
+              })}
+            </ul>
+          </div>
+          {!updateFormHidden && <UpdateCatForm catData={catData} />}
+        </div>}
     </div>
   );
+
 }
+
 export default IndividualCatPage;

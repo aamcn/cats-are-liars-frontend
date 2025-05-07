@@ -8,8 +8,6 @@ function NavBar() {
 
   const { logInSuccess, changeLogInSuccess } = useContext(appContext);
 
-
-  console.log(logInSuccess)
   return (
     <div className={styles.navBarContainer}>
      

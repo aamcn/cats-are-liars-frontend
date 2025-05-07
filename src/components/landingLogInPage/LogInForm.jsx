@@ -21,7 +21,6 @@ function LogInForm() {
     setPassword(event.target.value);
   };
   function redirectHome() {
-    console.log("pop");
     navigate("/home", { replace: true });
   }
 
