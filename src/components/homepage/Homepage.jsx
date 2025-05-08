@@ -3,7 +3,7 @@ import axios from "axios";
 import UsersCatsDisplay from "../usersCatsDisplay/UsersCatsDisplay";
 import LastFeedTemplate from "./LastFeedTemplate";
 import AddFeedingForm from "../addFeedingForm/AddFeedingForm";
-import styles from "./homepage.module.css";
+import styles from "./css/homepage.module.css";
 
 function Homepage() {
   const [cats, setCats] = useState([]);
