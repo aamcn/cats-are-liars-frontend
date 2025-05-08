@@ -1,7 +1,7 @@
 .homepageContainer {
   display: grid;
   grid-template-columns: 0fr 10fr 0fr;
-  grid-template-rows: 1fr 0.5fr 6fr 3fr;
+  grid-template-rows: 1fr 0.5fr 3fr 6fr 1fr;
   height: 95vh;
 }
 
@@ -47,21 +47,44 @@
 
 .addFeedFormContainer {
   grid-column: 2;
-  grid-row: 3;
+  grid-row: 4;
   margin: 1em;
+}
+
+.userCatsTab{
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  grid-row:3;
+  grid-column: 2;
+  border:solid teal;
+  border-radius: 1em;
+
+}
+.catDp{
+  display: flex;
+  flex-direction: column;
+  height:100%;
+}
+img{
+  border:solid;
+  border-radius: 50%;
+  min-height:25vw;
+  min-width:25vw;
 }
 
 .lastFeedTable {
   border-radius: 1em;
   overflow: auto;
   grid-column: 2;
-  grid-row: 3;
+  grid-row: 4;
   width: 100%;
   border: 4px solid teal;
   white-space: nowrap;
   border-spacing: 0;
   text-align: center;
   box-shadow: 1px 5px 15px 0px rgb(100, 90, 77);
+  margin-bottom: 2em;
 }
 
 .columnTitle{

@@ -4,6 +4,7 @@ import UsersCatsDisplay from "../usersCatsDisplay/UsersCatsDisplay";
 import LastFeedTemplate from "./LastFeedTemplate";
 import AddFeedingForm from "../addFeedingForm/AddFeedingForm";
 import styles from "./css/homepage.module.css";
+import CatTabTemplate from "./CatTabTemplate";
 
 function Homepage() {
   const [cats, setCats] = useState([]);
@@ -87,6 +88,12 @@ function Homepage() {
       {username && (
         <p className={styles.welcomeMessage}>Welcome back {username}</p>
       )}
+
+      <div className={styles.userCatsTab}>
+       {cats.map(cat => {
+        return <CatTabTemplate cat={cat} />
+       })}
+      </div>
 
       {!formVisibility && (
         <div className={styles.addFeedFormContainer}>
