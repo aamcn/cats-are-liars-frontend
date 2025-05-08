@@ -1,20 +1,21 @@
 .homepageContainer {
   display: grid;
   grid-template-columns: 0fr 10fr 0fr;
-  grid-template-rows: 2fr 1fr 1fr 6fr;
+  grid-template-rows: 1fr 0.5fr 6fr 3fr;
   height: 95vh;
 }
 
 .pageTitle {
-  position: absolute;
-  top:0%;
+  height:100%;
   place-self: center;
+  align-content: center;
   width:100%;
   background-color: teal;
   color: wheat;
   grid-column: 2;
   grid-row: 1;
   text-align: center;
+  margin:0px;
 }
 
 .welcomeMessage {
@@ -25,17 +26,23 @@
 }
 
 .toggleButtons {
+  position: absolute;
+  bottom:0%;
+  background-color: teal;
+  width: 100%;
   grid-column: 2;
   grid-row: 4;
   display: flex;
   flex-direction: row;
-  height: fit-content;
+  height: 10vh;
   justify-content: center;
-  padding: 1em;
+  align-items: center;
 }
 
 .toggleButton {
-  line-height: normal;
+  background-color: wheat;
+  color: teal;
+  height:50%;
 }
 
 .addFeedFormContainer {
@@ -49,20 +56,17 @@
   grid-column: 2;
   grid-row: 3;
   width: 100%;
-  border: 4px solid teal;
+  border-bottom: 4px solid teal;
   white-space: nowrap;
   border-spacing: 0;
   text-align: center;
 }
 
 td{
-  border:solid wheat;
   border-top-width: 0;
   border-left-width: 0;
   padding:0
 }
-
-
 
 th{
   background-color: teal;

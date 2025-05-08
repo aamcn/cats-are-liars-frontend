@@ -116,13 +116,12 @@ function Homepage() {
 
       <div className={styles.toggleButtons}>
         <button className={styles.toggleButton} onClick={handleToggleDisplay}>
-          Add Feeding +
+          Add Feeding
         </button>
         <button
           className={styles.toggleButton}
           onClick={handleToggleLastFeedTable}
-        >
-          Last Fed
+        >Last Feeds
         </button>
       </div>
     </div>
