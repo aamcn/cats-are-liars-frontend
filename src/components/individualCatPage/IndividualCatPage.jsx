@@ -80,6 +80,10 @@ function IndividualCatPage() {
     <div>
       {catData &&
         <div className={styles.catPageContainer}>
+
+<div className={styles.catPhotoContainer}>
+            <img src={null} alt="Cat Photo"/>
+          </div>
           <h1 className={styles.pageTitle}>{catData.name}</h1>
 
           <div className={styles.toggleButtonsContainer}>
@@ -87,9 +91,7 @@ function IndividualCatPage() {
             <button>Update {catData.name}'s Feeders</button>
           </div>
 
-          <div className={styles.catPhotoContainer}>
-            <img src={null} alt="Cat Photo"/>
-          </div>
+          
 
           <div className={styles.catDetailsContainer}>
             <h3>Meals:</h3>
