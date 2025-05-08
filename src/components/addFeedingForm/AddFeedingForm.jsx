@@ -59,11 +59,12 @@ function AddFeedingForm({ cats }) {
   };
 
   return (
-    <div>
-      <form onSubmit={handleFeedingFormSubmit}>
+    <div className={styles.formContainer}>
+      <button className={styles.closeFormButton}>X</button>
+      <form className={styles.addFeedingForm} onSubmit={handleFeedingFormSubmit}>
         <label>Feeding Form</label>
-        <fieldset>
-          <label htmlFor="cat_name">Cat </label>
+        <fieldset className={styles.formFieldSet}>
+          <label htmlFor="cat_name">Cat: </label>
           <select
             onChange={handleCatSelectChange}
             name="cat_name"
@@ -78,8 +79,8 @@ function AddFeedingForm({ cats }) {
               })}
           </select>
         </fieldset>
-        <fieldset>
-          <label htmlFor="feeder_username">Feeder Username </label>
+        <fieldset className={styles.formFieldSet}>
+          <label htmlFor="feeder_username">Feeder Username: </label>
           <input
             type="text"
             name="feeder_username"
@@ -90,32 +91,8 @@ function AddFeedingForm({ cats }) {
             required
           ></input>
         </fieldset>
-        {medsNeeded && (
-          <fieldset>
-            <p>Medication Given?</p>
-            <p>
-              {selectedCat.name} needs: {selectedCat.medication}
-            </p>
-            <input
-              type="radio"
-              name="medication_given"
-              id="medication_given"
-              aria-label="Medication Given 'Yes' button"
-              required
-            ></input>
-            <label>Yes</label>
-            <input
-              type="radio"
-              name="medication_given"
-              id="medication_given"
-              aria-label="Medication Given 'No' button"
-              required
-            ></input>
-            <label>No</label>
-          </fieldset>
-        )}
-        <fieldset>
-          <label htmlFor="time">Feed Time </label>
+        <fieldset className={styles.formFieldSet}>
+          <label htmlFor="time">Fed at: </label>
           <input
             type="time"
             name="time"
@@ -124,15 +101,50 @@ function AddFeedingForm({ cats }) {
             required
           ></input>
         </fieldset>
-        <fieldset>
-          <label htmlFor="notes">Notes </label>
+
+        {medsNeeded && (
+          <fieldset className={styles.radioFieldSet}>
+            <p>Medication Given? </p>
+            <p>
+              {selectedCat.name} needs: {selectedCat.medication}
+            </p>
+            <label>Yes: </label>
+            <input
+              type="radio"
+              name="medication_given"
+              id="medication_given"
+              aria-label="Medication Given 'Yes' button"
+              required
+            ></input>
+            <>    </>
+             <label>No: </label>
+            <input
+              type="radio"
+              name="medication_given"
+              id="medication_given"
+              aria-label="Medication Given 'No' button"
+              required
+            ></input>
+          
+          </fieldset>
+        )}
+        
+        <fieldset className={styles.textAreaFieldSet}>
+          <label htmlFor="notes">Notes: </label>
           <textarea
             name="notes"
             id="notes"
+            cols="30"
+            rows="10"
+            placeholder="Include things like 'Medication ran out' or 'Did not eat meal'"
             aria-label="Notes text input"
           ></textarea>
         </fieldset>
-        <button type="submit">Submit</button>
+        <fieldset className={styles.formButtonsContainer}>
+            <button className={styles.submitButton} type="submit">Submit</button>
+            <button className={styles.cancelButton} type="submit">Cancel</button>
+
+        </fieldset>
       </form>
     </div>
   );

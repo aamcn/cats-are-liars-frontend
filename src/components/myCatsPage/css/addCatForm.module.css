@@ -20,14 +20,14 @@
     left:90%;
 }
 
-fieldset{
+.fieldset{
     display:flex;
     flex-direction: column;
     margin:1em 0px 1em 0px;
     border-radius: 1em;
 }
 
-label{
+.label{
     margin: 0.5em 0px 0.5em 0px;
 }
 

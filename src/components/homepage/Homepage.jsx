@@ -96,9 +96,8 @@ function Homepage() {
       </div>
 
       {!formVisibility && (
-        <div className={styles.addFeedFormContainer}>
+      
           <AddFeedingForm cats={cats} />
-        </div>
       )}
       {lastFeedVisibility &&
 
