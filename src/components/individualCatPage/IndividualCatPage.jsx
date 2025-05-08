@@ -81,20 +81,23 @@ function IndividualCatPage() {
       {catData &&
         <div className={styles.catPageContainer}>
 
-<div className={styles.catPhotoContainer}>
-            <img src={null} alt="Cat Photo"/>
+          <div className={styles.catPhotoContainer}>
+            <img className={styles.catProfilePhoto} src={null} alt="Cat Photo"/>
+            <hr/>
           </div>
           <h1 className={styles.pageTitle}>{catData.name}</h1>
-
+          
+        
           <div className={styles.toggleButtonsContainer}>
-            <button onClick={toggleUpdateForm}>Update {catData.name}'s Details</button>
-            <button>Update {catData.name}'s Feeders</button>
+            <button className={styles.toggleButton} onClick={toggleUpdateForm}>Update {catData.name}'s Details</button>
+            <button className={styles.toggleButton} >Update {catData.name}'s Feeders</button>
           </div>
 
           
 
           <div className={styles.catDetailsContainer}>
             <h3>Meals:</h3>
+            <hr/>
             <ul>
               {catData.meals.map(item => {
                 return <li>{item}</li>
@@ -102,6 +105,7 @@ function IndividualCatPage() {
             </ul>
 
             <h3>Meds:</h3>
+            <hr/>
             <ul>
               {catData.medication.map(item => {
                 return <li>{item}</li>
@@ -109,6 +113,7 @@ function IndividualCatPage() {
             </ul>
             
             <h3>Feeders:</h3>
+            <hr/>
             <ul>
               {feeders.map(item => {
                 return <li>{item}</li>
