@@ -83,7 +83,7 @@ function Homepage() {
 
   return (
     <div className={styles.homepageContainer}>
-      <h1 className={styles.pageTitle}>home</h1>
+      <h1 className={styles.pageTitle}>Home</h1>
       {username && (
         <p className={styles.welcomeMessage}>Welcome back {username}</p>
       )}
@@ -93,14 +93,16 @@ function Homepage() {
           <AddFeedingForm cats={cats} />
         </div>
       )}
-      {lastFeedVisibility && (
+      {lastFeedVisibility &&
+
         <table className={styles.lastFeedTable}>
+
           <thead className={styles.tableHead}>
             <tr className={styles.tableRows}>
-              <th>Date</th>
-              <th>Time</th>
-              <th>Name</th>
-              <th>Fed By</th>
+              <th className={styles.columnTitle} scope="col">Date</th>
+              <th className={styles.columnTitle}  scope="col">Time</th>
+              <th className={styles.columnTitle}  scope="col">Name</th>
+              <th className={styles.columnTitle}  scope="col">Fed By</th>
             </tr>
           </thead>
           <tbody className={styles.tableBody}>
@@ -110,7 +112,7 @@ function Homepage() {
               })}
           </tbody>
         </table>
-      )}
+      }
 
       <div className={styles.toggleButtons}>
         <button className={styles.toggleButton} onClick={handleToggleDisplay}>

@@ -1,5 +1,6 @@
 .navBarContainer {
   height: 5vh;
+  background-color: teal;
 }
 
 .navLinksContainer {
@@ -11,5 +12,5 @@
 }
 
 .navLink {
-  color: whitesmoke;
+  color:wheat;
 }
