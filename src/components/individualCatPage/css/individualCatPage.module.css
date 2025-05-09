@@ -47,6 +47,9 @@
   .catProfilePhoto{
     min-width: 40vw;
     min-height: 40vw;
+    border-radius: 50%;
+
+    border:solid;
   }
 
   .toggleButton {
