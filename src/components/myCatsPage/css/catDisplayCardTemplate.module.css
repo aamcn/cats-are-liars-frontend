@@ -2,35 +2,41 @@
 .displayCardContainer{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 2fr2fr;
-    background-color: wheat;
+    grid-template-rows: 2fr;
+    background-color: rgb(227, 255, 255);
     border-radius: 1em;
     padding:1em;
     margin-bottom: 1em;
-    box-shadow:inset 0px -10px 10px 0px rgb(197, 172, 127);
+    box-shadow:inset 0px -10px 10px 0px wheat;
 }
 
 .cardHeader{
     display: flex;
-    justify-content:space-between;
+    flex-direction: row-reverse;
+    justify-content:space-around;
     align-items: center;
 }
 
 .catDetailsContainer{
     display:grid;
     grid-template-columns: 1fr 2fr;
-    border:solid;
+    gap:1em;
+    border:solid wheat;
+    border-radius: 1em;
+    color: teal;
 }
 
 .catCardPhoto{
-    width: 40vw;
-    height: 40vw;
-    border:solid;
+    width: 30vw;
+    height: 30vw;
+    border:solid 0.4em wheat;
+    outline:solid  0.2em teal;
     border-radius: 50%;
     margin-bottom: 1em;
 }
 
 .catName{
-    text-align: center;
+    color:teal;
+    font-size: 10vw;
 }
 

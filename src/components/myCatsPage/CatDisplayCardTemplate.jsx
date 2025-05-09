@@ -20,20 +20,16 @@ function CatDisplayCardTemplate({ cat }) {
             return <li>{item}</li>
           })}
         </ul>
-        
         <h3 className={styles.catDetailsTitle}>Meds:</h3>
         <ul className={styles.catDetailsList}>
           {cat.medication.map(item => {
             return <li>{item}</li>
           })}
         </ul> 
-        {/* <h3>Feeders:</h3>
-                  <hr/>
+        <h3>Feeders:</h3>
                   <ul>
-                    {feeders.map(item => {
-                      return <li>{item}</li>
-                    })}
-                  </ul> */}
+                   <li>Tony</li>
+                  </ul>
         </div>
     </div>
    

@@ -3,6 +3,7 @@
   grid-template-columns: 0fr 10fr 0fr;
   grid-template-rows: 1fr 9fr 1fr;
   height: 95vh;
+  background-color: rgb(167, 214, 214);
 }
 
 .pageTitle {
