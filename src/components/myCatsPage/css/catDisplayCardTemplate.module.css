@@ -1,0 +1,44 @@
+
+.displayCardContainer{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr2fr;
+    background-color: wheat;
+    border-radius: 1em;
+    padding:1em;
+    margin-bottom: 1em;
+    box-shadow:inset 0px -10px 10px 0px rgb(197, 172, 127);
+}
+
+.cardHeader{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.catDetailsContainer{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    border:solid;
+}
+
+.catCardPhoto{
+    width: 40vw;
+    height: 40vw;
+    border:solid;
+    border-radius: 50%;
+}
+
+.catName{
+    margin:0em;
+    text-align: center;
+}
+
+.catDetailsTitle{
+    margin:0em;
+}
+
+.catDetailsList{
+  margin:0em;
+
+}
