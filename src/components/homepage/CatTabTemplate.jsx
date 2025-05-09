@@ -6,7 +6,6 @@ function CatTabTemplate( { cat } ){
             <div className={styles.catTabCard}>
                 <img className={styles.catProfilePhoto} src={null} alt="Cat Photo"></img>
                 <Link to={`/cat-view/${cat.name}`}>{cat.name}</Link>
-                
             </div>
         )
 }

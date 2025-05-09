@@ -59,15 +59,12 @@
   grid-column: 2;
   border:solid teal;
   border-radius: 1em;
-
-}
-.catDp{
-  display: flex;
-  flex-direction: column;
-  height:100%;
+  margin-bottom: 1em;
+  box-shadow: 1px 5px 15px 0px rgb(100, 90, 77);
 }
 
-.catProfileImage{
+
+.catProf{
   border:solid;
   border-radius: 50%;
   min-height:25vw;
