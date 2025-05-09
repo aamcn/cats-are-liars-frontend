@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {}, [logInSuccess]);
 
-  return (
+  return ( 
     <>
       <appContext.Provider value={{ logInSuccess, changeLogInSuccess }}>
         <Header />

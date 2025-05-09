@@ -13,7 +13,7 @@ const routes = [
     children: [
       { index: true, element: <LandingPage /> },
       { path: "/home", element: <Homepage /> },
-      { path: "/cat-control-page", element: <MyCatsPage /> },
+      { path: "/my-cats", element: <MyCatsPage /> },
       { path: "feed-history", element: <FeedHistoryPage /> },
       { path: "/cat-view/:catName", element: <IndividualCatPage /> },
     ],

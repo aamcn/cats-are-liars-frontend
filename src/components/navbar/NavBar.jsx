@@ -16,7 +16,7 @@ function NavBar() {
           </Link>
         )}
         {logInSuccess && (
-          <Link className={styles.navLink} to="/cat-control-page">
+          <Link className={styles.navLink} to="/my-cats">
             My Cats
           </Link>
         )}

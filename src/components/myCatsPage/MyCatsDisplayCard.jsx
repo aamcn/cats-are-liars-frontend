@@ -1,6 +1,6 @@
-import UserCatsDisplayTemplate from "./CatDisplayTemplate";
-import styles from "./css/userCatsDisplay.module.css";
-function UsersCatsDisplay({ cats }) {
+import CatDisplayCardTemplate from "./CatDisplayCardTemplate";
+import styles from "./css/MyCatsDisplayCard.module.css";
+function MyCatsDisplayCard({ cats }) {
   return (
     <div className={styles.userCatsTable}>
       <table>
@@ -13,7 +13,7 @@ function UsersCatsDisplay({ cats }) {
         </thead>
         <tbody>
           {cats.map((cat) => {
-            return <UserCatsDisplayTemplate cat={cat} />;
+            return <CatDisplayCardTemplate cat={cat} />;
           })}
         </tbody>
       </table>
@@ -21,4 +21,4 @@ function UsersCatsDisplay({ cats }) {
   );
 }
 
-export default UsersCatsDisplay;
+export default MyCatsDisplayCard;

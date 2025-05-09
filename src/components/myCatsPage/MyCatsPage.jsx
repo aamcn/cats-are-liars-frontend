@@ -1,5 +1,5 @@
 import { use, useEffect, useState } from "react";
-import UsersCatsDisplay from "../usersCatsDisplay/UsersCatsDisplay";
+import MyCatsDisplayCard from "./MyCatsDisplayCard";
 import axios from "axios";
 import AddCatForm from "./AddCatForm";
 import styles from "./css/myCatsPage.module.css";
@@ -31,7 +31,7 @@ function MyCatsPage() {
     getCats();
   }, []);
 
-  const toggleAddCatForm= () => {
+  const toggleAddCatForm = () => {
     if (isHidden) {
       setIsHidden(false);
     } else {
@@ -42,11 +42,14 @@ function MyCatsPage() {
   return (
     <div className={styles.myCatsPageContainer}>
       <h1 className={styles.pageTitle}>My Cats</h1>
-      <button className={styles.addCatButton} onClick={toggleAddCatForm}>
-        {isHidden ? "Add A Cat" : "Cancel"}
-      </button>
+
       {!isHidden && <AddCatForm toggleAddCatForm={toggleAddCatForm} />}
-      <UsersCatsDisplay cats={cats} />
+      <MyCatsDisplayCard cats={cats} />
+
+      <div className={styles.toggleButtons}>
+        <button className={styles.toggleButton} onClick={toggleAddCatForm}>{isHidden ? "Add A Cat" : "Cancel"}
+        </button>
+      </div>
     </div>
   );
 }

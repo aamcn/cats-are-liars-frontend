@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-function UserCatsDisplayTemplate({ cat }) {
+function CatDisplayCardTemplate({ cat }) {
   const catName = cat.name;
   return (
     <tr>
@@ -19,4 +19,4 @@ function UserCatsDisplayTemplate({ cat }) {
   );
 }
 
-export default UserCatsDisplayTemplate;
+export default CatDisplayCardTemplate;

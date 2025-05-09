@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import UsersCatsDisplay from "../usersCatsDisplay/UsersCatsDisplay";
+
 import LastFeedTemplate from "./LastFeedTemplate";
 import AddFeedingForm from "../addFeedingForm/AddFeedingForm";
 import styles from "./css/homepage.module.css";
