@@ -14,7 +14,15 @@
     padding:1.1em;
     border-radius: 1em;
     border: 2vw solid rgb(205, 255, 255);
+}
 
+.addCatForm{
+    width:auto;
+    height: 90%;
+    background-color:  rgb(206, 255, 244);
+    border: 0.5em solid teal;
+    border-radius: 1em;
+    padding: 1em 0em 1em 0em;
 }
 
 .closeFormButton{
@@ -34,9 +42,6 @@
     margin: 0.5em 0px 0.5em 0px;
 }
 
-h3{
-    text-align:center;
-}
 
 .formButtons{
     display: flex;

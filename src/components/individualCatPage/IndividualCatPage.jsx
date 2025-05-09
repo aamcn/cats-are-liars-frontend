@@ -78,12 +78,12 @@ function IndividualCatPage() {
   return (
 
     <div>
+      {catData &&  <h1 className={styles.pageTitle}>{catData.name}</h1>}
       {catData &&
         <div className={styles.catPageContainer}>
 
           <div className={styles.catHeaderContainer}>
             <img className={styles.catProfilePhoto} src={null} alt="Cat Photo"/>
-            <h1 className={styles.pageTitle}>{catData.name}</h1>
             <hr/>
           </div>
         

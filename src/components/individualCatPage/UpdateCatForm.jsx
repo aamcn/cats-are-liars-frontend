@@ -32,9 +32,12 @@ function UpdateCatForm({ catData }) {
 
   return (
     <div className={styles.formContainer}>
-      <form onSubmit={handleFormSubmit}>
-        <fieldset>
-          <label htmlFor="newName">Cat Name:</label>
+            <button className={styles.closeFormButton}>X</button>
+      <form
+      className={styles.updateCatForm}
+       onSubmit={handleFormSubmit}>
+        <fieldset className={styles.formFieldSet}>
+          <label className={styles.formLabel} htmlFor="newName">Cat Name:</label>
           <input
             defaultValue={catData.name}
             type="text"
@@ -44,8 +47,8 @@ function UpdateCatForm({ catData }) {
             required
           ></input>
         </fieldset>
-        <fieldset>
-          <label htmlFor="newMeals">Meals:</label>
+        <fieldset className={styles.textAreaFieldSet}>
+          <label className={styles.formLabel} htmlFor="newMeals">Meals:</label>
           <textarea
             defaultValue={catData.meals}
             name="newMeals"
@@ -54,8 +57,8 @@ function UpdateCatForm({ catData }) {
             required
           ></textarea>
         </fieldset>
-        <fieldset>
-          <label htmlFor="newMedication">Medication</label>
+        <fieldset className={styles.textAreaFieldSet}>
+          <label className={styles.formLabel} htmlFor="newMedication">Medication</label>
           <textarea
             defaultValue={catData.medication}
             name="newMedication"
@@ -63,7 +66,10 @@ function UpdateCatForm({ catData }) {
             aria-label="New cat medication input."
           ></textarea>
         </fieldset>
-        <button type="Submit">Submit</button>
+        <div className={styles.formButtonsContainer}>
+          <button type="Submit">Submit</button>
+          <button type="Submit">Cancel</button>
+        </div>
       </form>
     </div>
   );

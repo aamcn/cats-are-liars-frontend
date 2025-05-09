@@ -36,7 +36,7 @@ function AddCatForm( { toggleAddCatForm}) {
     <div className={styles.formContainer}>
      <h3>Add a New Cat</h3>
       <button className={styles.closeFormButton} onClick={toggleAddCatForm}>x</button>
-      <form onSubmit={handleNewCatFormSubmit}>
+      <form className={styles.addCatForm} onSubmit={handleNewCatFormSubmit}>
         <fieldset>
           <label htmlFor="newCatName">Name: </label>
           <input
