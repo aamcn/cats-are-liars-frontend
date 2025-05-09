@@ -3,12 +3,14 @@ import axios from "axios";
 import { useParams } from "react-router";
 import UpdateCatForm from "./UpdateCatForm";
 import styles from "./css/individualCatPage.module.css"
-import UpdateCatFeederForm from "./UpdateCatFeederForm";
+import AddCatFeederForm from "./AddCatFeederForm";
 function IndividualCatPage() {
   const [catData, setCatData] = useState();
   const [feeders, setFeeders] = useState([]);
   const param = useParams();
   const [updateFormHidden, setUpdateFormHidden] = useState(true)
+  const [addFeederFormHidden, setAddFeederFormHidden] = useState(true)
+
 
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
@@ -74,6 +76,16 @@ function IndividualCatPage() {
     }
   }
 
+  const toggleAddFeederForm = () => {
+    if (addFeederFormHidden == true) {
+
+      setAddFeederFormHidden(false)
+    } else {
+      setAddFeederFormHidden(true)
+    }
+  }
+  
+
 
   return (
 
@@ -91,7 +103,7 @@ function IndividualCatPage() {
         
           <div className={styles.toggleButtonsContainer}>
             <button className={styles.toggleButton} onClick={toggleUpdateForm}>Update {catData.name}'s Details</button>
-            <button className={styles.toggleButton} >Update {catData.name}'s Feeders</button>
+            <button className={styles.toggleButton} onClick={toggleAddFeederForm}>Update {catData.name}'s Feeders</button>
           </div>
 
           
@@ -122,7 +134,7 @@ function IndividualCatPage() {
             </ul>
           </div>
           {!updateFormHidden && <UpdateCatForm catData={catData} />}
-          {/* { catData && <UpdateCatFeederForm catData={catData}/>} */}
+          {!addFeederFormHidden && <AddCatFeederForm catData={catData}/>} 
         </div>}
         
     </div>
