@@ -1,17 +1,20 @@
 
 .formContainer{
+    position: absolute;
+    top:14%;
+    left:0%;
+    right:0%;
+    height: 70%;
+    width:auto;
+    z-index: 5;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content: center;
-    background-color: black;
-    height: fit-content;
-    position: absolute;
-    place-self: center;
-    z-index: 5;
-    padding:1em;
-    align-content: center;
+    background-color: wheat;
+    padding:1.1em;
     border-radius: 1em;
+    border: 2vw solid rgb(205, 255, 255);
+
 }
 
 .closeFormButton{
