@@ -1,0 +1,14 @@
+
+.catProfilePhoto{
+    border:solid;
+    min-width:25vw;
+    min-height:25vw;
+    border-radius: 50%;
+}
+
+.catTabCard{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+}

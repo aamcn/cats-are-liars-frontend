@@ -1,15 +1,13 @@
-
+import styles from "./css/catTabTemplate.module.css"
+import { Link } from "react-router";
 function CatTabTemplate( { cat } ){
 
     return(
-
-
-        <div>
-            <div>
-                <img src={null} alt="Cat Photo"></img>
-                <p>{cat.name}</p>
+            <div className={styles.catTabCard}>
+                <img className={styles.catProfilePhoto} src={null} alt="Cat Photo"></img>
+                <Link to={`/cat-view/${cat.name}`}>{cat.name}</Link>
+                
             </div>
-        </div>    
         )
 }
 
