@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "./css/updateCatForm.module.css"
-
+import styles from "./css/updateCatForm.module.css";
 
 function UpdateCatForm({ catData }) {
   const handleFormSubmit = (event) => {
@@ -32,12 +31,12 @@ function UpdateCatForm({ catData }) {
 
   return (
     <div className={styles.formContainer}>
-            <button className={styles.closeFormButton}>X</button>
-      <form
-      className={styles.updateCatForm}
-       onSubmit={handleFormSubmit}>
+      <button className={styles.closeFormButton}>X</button>
+      <form className={styles.updateCatForm} onSubmit={handleFormSubmit}>
         <fieldset className={styles.formFieldSet}>
-          <label className={styles.formLabel} htmlFor="newName">Cat Name:</label>
+          <label className={styles.formLabel} htmlFor="newName">
+            Cat Name:
+          </label>
           <input
             defaultValue={catData.name}
             type="text"
@@ -48,7 +47,9 @@ function UpdateCatForm({ catData }) {
           ></input>
         </fieldset>
         <fieldset className={styles.textAreaFieldSet}>
-          <label className={styles.formLabel} htmlFor="newMeals">Meals:</label>
+          <label className={styles.formLabel} htmlFor="newMeals">
+            Meals:
+          </label>
           <textarea
             defaultValue={catData.meals}
             name="newMeals"
@@ -58,7 +59,9 @@ function UpdateCatForm({ catData }) {
           ></textarea>
         </fieldset>
         <fieldset className={styles.textAreaFieldSet}>
-          <label className={styles.formLabel} htmlFor="newMedication">Medication</label>
+          <label className={styles.formLabel} htmlFor="newMedication">
+            Medication
+          </label>
           <textarea
             defaultValue={catData.medication}
             name="newMedication"

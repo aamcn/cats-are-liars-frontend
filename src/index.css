@@ -1,17 +1,21 @@
-
-h1,h2,h3,h4,h5,h6, p{
-  margin:0em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0em;
 }
 
-ul{
+ul {
   list-style: none;
-  margin:0em;
+  margin: 0em;
 }
 
 a {
   text-decoration: inherit;
 }
-
 
 body {
   margin: 0;
@@ -39,4 +43,3 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-

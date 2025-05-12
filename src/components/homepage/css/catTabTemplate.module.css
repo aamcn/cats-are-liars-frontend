@@ -1,18 +1,16 @@
-
-.catTabCard{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
- }
- 
-.catProfilePhoto{
-    border:solid wheat;
-    outline:solid teal;
-    min-width:25vw;
-    min-height:25vw;
-    border-radius: 50%;
-    margin-bottom: 1em;
-    box-shadow: 0em 0.3em 0.3em 0em rgb(0, 0, 0);
+.catTabCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
+.catProfilePhoto {
+  border: solid wheat;
+  outline: solid teal;
+  min-width: 25vw;
+  min-height: 25vw;
+  border-radius: 50%;
+  margin-bottom: 1em;
+  box-shadow: 0em 0.3em 0.3em 0em rgb(0, 0, 0);
+}

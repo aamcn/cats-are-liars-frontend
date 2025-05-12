@@ -61,7 +61,10 @@ function AddFeedingForm({ cats }) {
   return (
     <div className={styles.formContainer}>
       <button className={styles.closeFormButton}>X</button>
-      <form className={styles.addFeedingForm} onSubmit={handleFeedingFormSubmit}>
+      <form
+        className={styles.addFeedingForm}
+        onSubmit={handleFeedingFormSubmit}
+      >
         <label>Feeding Form</label>
         <fieldset className={styles.formFieldSet}>
           <label htmlFor="cat_name">Cat: </label>
@@ -116,8 +119,8 @@ function AddFeedingForm({ cats }) {
               aria-label="Medication Given 'Yes' button"
               required
             ></input>
-            <>    </>
-             <label>No: </label>
+            <> </>
+            <label>No: </label>
             <input
               type="radio"
               name="medication_given"
@@ -125,10 +128,9 @@ function AddFeedingForm({ cats }) {
               aria-label="Medication Given 'No' button"
               required
             ></input>
-          
           </fieldset>
         )}
-        
+
         <fieldset className={styles.textAreaFieldSet}>
           <label htmlFor="notes">Notes: </label>
           <textarea
@@ -141,9 +143,12 @@ function AddFeedingForm({ cats }) {
           ></textarea>
         </fieldset>
         <fieldset className={styles.formButtonsContainer}>
-            <button className={styles.submitButton} type="submit">Submit</button>
-            <button className={styles.cancelButton} type="submit">Cancel</button>
-
+          <button className={styles.submitButton} type="submit">
+            Submit
+          </button>
+          <button className={styles.cancelButton} type="submit">
+            Cancel
+          </button>
         </fieldset>
       </form>
     </div>

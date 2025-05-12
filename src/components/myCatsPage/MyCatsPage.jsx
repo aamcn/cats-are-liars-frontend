@@ -47,7 +47,8 @@ function MyCatsPage() {
       <MyCatsDisplayCard cats={cats} />
 
       <div className={styles.toggleButtons}>
-        <button className={styles.toggleButton} onClick={toggleAddCatForm}>{isHidden ? "Add A Cat" : "Cancel"}
+        <button className={styles.toggleButton} onClick={toggleAddCatForm}>
+          {isHidden ? "Add A Cat" : "Cancel"}
         </button>
       </div>
     </div>

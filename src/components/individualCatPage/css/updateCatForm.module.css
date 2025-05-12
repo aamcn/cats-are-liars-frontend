@@ -1,59 +1,58 @@
-
-.formContainer{
-    position: absolute;
-    top:13%;
-    left:0%;
-    right:0%;
-    height: 70%;
-    width:auto;
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: wheat;
-    padding:1.1em;
-    border-radius: 1em;
-    border: 2vw solid rgb(205, 255, 255);
+.formContainer {
+  position: absolute;
+  top: 13%;
+  left: 0%;
+  right: 0%;
+  height: 70%;
+  width: auto;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: wheat;
+  padding: 1.1em;
+  border-radius: 1em;
+  border: 2vw solid rgb(205, 255, 255);
 }
 
-.updateCatForm{
-    width:auto;
-    height: 90%;
-    background-color:  rgb(206, 255, 244);
-    border: 0.5em solid teal;
-    border-radius: 1em;
-    padding: 1em 0em 1em 0em;
+.updateCatForm {
+  width: auto;
+  height: 90%;
+  background-color: rgb(206, 255, 244);
+  border: 0.5em solid teal;
+  border-radius: 1em;
+  padding: 1em 0em 1em 0em;
 }
 
-.formFieldSet{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    flex-direction: row;
-    justify-content: space-evenly;
-    border:none;
+.formFieldSet {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: none;
 }
 
-.closeFormButton{
-    position:absolute;
-    top:1%;
-    right:1%;
-    background-color: rgba(255, 255, 255, 0);
+.closeFormButton {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  background-color: rgba(255, 255, 255, 0);
 }
 
-.textAreaFieldSet{
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-    border:none;
+.textAreaFieldSet {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  border: none;
 }
 
-.formLabel{
-    margin: 0.5em 0px 0.5em 0px;
-    text-align:center;
+.formLabel {
+  margin: 0.5em 0px 0.5em 0px;
+  text-align: center;
 }
 
-.formButtonsContainer{
-    display: flex;
-    justify-content: space-evenly;
-    border:none;
+.formButtonsContainer {
+  display: flex;
+  justify-content: space-evenly;
+  border: none;
 }

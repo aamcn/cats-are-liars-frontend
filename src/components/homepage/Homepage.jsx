@@ -90,25 +90,28 @@ function Homepage() {
       )}
 
       <div className={styles.userCatsTab}>
-       {cats.map(cat => {
-        return <CatTabTemplate cat={cat} />
-       })}
+        {cats.map((cat) => {
+          return <CatTabTemplate cat={cat} />;
+        })}
       </div>
 
-      {!formVisibility && (
-      
-          <AddFeedingForm cats={cats} />
-      )}
-      {lastFeedVisibility &&
-
+      {!formVisibility && <AddFeedingForm cats={cats} />}
+      {lastFeedVisibility && (
         <table className={styles.lastFeedTable}>
-
           <thead className={styles.tableHead}>
             <tr className={styles.tableRows}>
-              <th className={styles.columnTitle} scope="col">Date</th>
-              <th className={styles.columnTitle}  scope="col">Time</th>
-              <th className={styles.columnTitle}  scope="col">Name</th>
-              <th className={styles.columnTitle}  scope="col">Fed By</th>
+              <th className={styles.columnTitle} scope="col">
+                Date
+              </th>
+              <th className={styles.columnTitle} scope="col">
+                Time
+              </th>
+              <th className={styles.columnTitle} scope="col">
+                Name
+              </th>
+              <th className={styles.columnTitle} scope="col">
+                Fed By
+              </th>
             </tr>
           </thead>
           <tbody className={styles.tableBody}>
@@ -118,7 +121,7 @@ function Homepage() {
               })}
           </tbody>
         </table>
-      }
+      )}
 
       <div className={styles.toggleButtons}>
         <button className={styles.toggleButton} onClick={handleToggleDisplay}>
@@ -127,7 +130,8 @@ function Homepage() {
         <button
           className={styles.toggleButton}
           onClick={handleToggleLastFeedTable}
-        >Last Feeds
+        >
+          Last Feeds
         </button>
       </div>
     </div>
