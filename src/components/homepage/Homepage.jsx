@@ -3,13 +3,12 @@ import axios from "axios";
 import styles from "./css/homepage.module.css";
 import MyCatsTab from "./myCatsTab/MyCatsTab";
 import LastFeedTable from "./lastFeedTable/LastFeedTable";
-
+import AddFeedingForm from "../addFeedingForm/AddFeedingForm";
 function Homepage() {
   const [userCats, setUserCats] = useState([]);
 
   const [formVisibility, setFormVisibility] = useState(true);
   const [lastFeedVisibility, setLastFeedVisibility] = useState(true);
-
 
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
@@ -30,7 +29,7 @@ function Homepage() {
       });
   };
 
-  
+
 
   useEffect(() => {
     getCats();
@@ -42,14 +41,12 @@ function Homepage() {
     if (lastFeedVisibility == true) {
       setLastFeedVisibility(false);
     } else {
-      setFormVisibility(true);
       setLastFeedVisibility(true);
     }
   };
 
   const handleToggleDisplay = () => {
     if (formVisibility == true) {
-      setLastFeedVisibility(false);
       setFormVisibility(false);
     } else {
       setFormVisibility(true);
@@ -57,7 +54,7 @@ function Homepage() {
   };
 
 
- 
+
 
   return (
     <div className={styles.homepageContainer}>
@@ -67,13 +64,12 @@ function Homepage() {
       {username && (
         <p className={styles.welcomeMessage}>Welcome back {username}</p>
       )}
-
+      
+      {!formVisibility && <AddFeedingForm userCats={userCats} />}
+      
       <div className={styles.mainContent}>
-        
-     
-      <MyCatsTab userCats={userCats}/>
-      <LastFeedTable userCats={userCats} userId={userId}/>
-   
+        <MyCatsTab userCats={userCats} />
+        <LastFeedTable userCats={userCats} handleToggleLastFeedTable={handleToggleLastFeedTable} lastFeedVisibility={lastFeedVisibility} userId={userId} />
       </div>
 
       <div className={styles.toggleButtons}>

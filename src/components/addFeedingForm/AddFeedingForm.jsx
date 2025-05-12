@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./addFeedingForm.module.css";
 
-function AddFeedingForm({ cats }) {
-  const [selectedCat, setSelectedCat] = useState(cats[0]);
+function AddFeedingForm({ userCats }) {
+  const [selectedCat, setSelectedCat] = useState(userCats[0]);
   const [medsNeeded, setMedsNeeded] = useState(false);
 
   const username = localStorage.getItem("username").replaceAll('"', "");
@@ -13,7 +13,7 @@ function AddFeedingForm({ cats }) {
 
   const handleCatSelectChange = (event) => {
     event.preventDefault();
-    const findCat = cats.filter((cat) => {
+    const findCat = userCats .filter((cat) => {
       return cat.name === event.target.value;
     });
     setSelectedCat(findCat[0]);
@@ -76,8 +76,8 @@ function AddFeedingForm({ cats }) {
             required
           >
             <option value={""}>Choose Your Cat</option>
-            {cats &&
-              cats.map((cat) => {
+            {userCats &&
+              userCats.map((cat) => {
                 return <option>{cat.name}</option>;
               })}
           </select>

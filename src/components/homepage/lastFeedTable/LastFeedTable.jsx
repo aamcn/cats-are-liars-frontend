@@ -1,72 +1,78 @@
 import axios from "axios";
 import styles from "../css/lastFeedTable.module.css";
-import LastFeedTemplate from "./LastFeedTemplate";
+import LastFeedTemplate from "./LastFeedRowTemplate";
 import { useState, useEffect } from "react";
 
 
-function LastFeedTable({ userCats, userId }) {
- 
-  const [lastFeedEntry, setLastFeedEntry] = useState([]);
+function LastFeedTable({ userCats, userId, lastFeedVisibility, handleToggleLastFeedTable}) {
 
-const getLastFeedEntry = (catName) => {
-    setLastFeedEntry([]);
-    axios
-      .get(
-        `http://localhost:3000/feed-history/cat-name/${catName}/get/`,
-        { userId },
-        { method: "cors" },
-        { withCredentials: true },
-      )
-      .then((res) => {
-        const feedData = res.data;
-        if (feedData.length > 0) {
-          setLastFeedEntry((lastFeedEntry) => [
-            ...lastFeedEntry,
-            feedData[feedData.length - 1],
-          ]);
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
+    const [lastFeedEntry, setLastFeedEntry] = useState([]);
+
+    const getLastFeedEntry = (catName) => {
+        setLastFeedEntry([]);
+        axios
+            .get(
+                `http://localhost:3000/feed-history/cat-name/${catName}/get/`,
+                { userId },
+                { method: "cors" },
+                { withCredentials: true },
+            )
+            .then((res) => {
+                const feedData = res.data;
+                if (feedData.length > 0) {
+                    setLastFeedEntry((lastFeedEntry) => [
+                        ...lastFeedEntry,
+                        feedData[feedData.length - 1],
+                    ]);
+                }
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    };
 
     useEffect(() => {
         userCats.forEach((cat) => {
-          getLastFeedEntry(cat.name);
+            getLastFeedEntry(cat.name);
         });
-      }, [userCats]);
+    }, [userCats]);
 
 
 
-    return(
-        <div>
-          <table className={styles.lastFeedTable}>
-          <thead className={styles.tableHead}>
-            <tr className={styles.tableRows}>
-              <th className={styles.columnTitle} scope="col">
-                Date
-              </th>
-              <th className={styles.columnTitle} scope="col">
-                Time
-              </th>
-              <th className={styles.columnTitle} scope="col">
-                Name
-              </th>
-              <th className={styles.columnTitle} scope="col">
-                Fed By
-              </th>
-            </tr>
-          </thead>
-          <tbody className={styles.tableBody}>
-            {lastFeedEntry &&
-              lastFeedEntry.map((entry) => {
-                return <LastFeedTemplate entry={entry} />;
-              })}
-          </tbody>
-        </table>
-   
-      </div>
+    return (
+        <div className={styles.tableContainer}>
+            <div className={styles.lastFeedTab}>
+                <div className={styles.tabMenuContainer}>
+                                    <button onClick={handleToggleLastFeedTable} className={styles.tabButton}>V</button>
+                                </div>
+              {lastFeedVisibility && <table className={styles.lastFeedTable}>
+                    <thead className={styles.tableHead}>
+                        <tr className={styles.tableRows}>
+                            <th className={styles.columnTitle} scope="col">
+                                Date
+                            </th>
+                            <th className={styles.columnTitle} scope="col">
+                                Time
+                            </th>
+                            <th className={styles.columnTitle} scope="col">
+                                Name
+                            </th>
+                            <th className={styles.columnTitle} scope="col">
+                                Fed By
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody className={styles.tableBody}>
+                        {lastFeedEntry &&
+                            lastFeedEntry.map((entry) => {
+                                return <LastFeedTemplate entry={entry} />;
+                            })}
+                    </tbody>
+                </table>}  
+
+            </div>
+
+        </div>
     )
 }
 

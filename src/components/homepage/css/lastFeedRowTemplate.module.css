@@ -5,7 +5,7 @@
   padding: 0;
 }
 
-.tableRows:last-child td {
+.tableRow:last-child td {
   border-bottom-width: 0;
 }
 
