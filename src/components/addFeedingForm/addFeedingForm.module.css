@@ -22,6 +22,8 @@
   border: 0.5em solid teal;
   border-radius: 1em;
   padding: 1em 0em 1em 0em;
+  font-family: "Playwrite US Modern", cursive;
+  line-height:  1.5em;
 }
 
 .formFieldSet {
@@ -30,6 +32,8 @@
   flex-direction: row;
   justify-content: space-evenly;
   border: none;
+  border-bottom: solid 1px;
+  
 }
 
 .textAreaFieldSet {
@@ -37,6 +41,7 @@
   align-items: start;
   justify-content: space-between;
   border: none;
+  border-bottom: solid 1px;
 }
 
 .radioFieldSet {
@@ -44,7 +49,14 @@
   flex-direction: column;
   align-items: center;
   border: none;
+  border-bottom: solid 1px;
 }
+
+.radioButtons{
+  justify-content: flex;
+  flex-direction: row;
+  margin-top:1em;
+  ;}
 
 .medicationSection {
   display: flex;
@@ -56,6 +68,13 @@
   display: flex;
   justify-content: space-evenly;
   border: none;
+}
+
+.formTitle{
+  font-family: "Playwrite US Modern", cursive;
+  place-self: center;
+  color:teal;
+  padding-bottom: 0.5em;
 }
 
 .closeFormButton {

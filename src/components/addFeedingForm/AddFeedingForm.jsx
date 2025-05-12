@@ -13,7 +13,7 @@ function AddFeedingForm({ userCats }) {
 
   const handleCatSelectChange = (event) => {
     event.preventDefault();
-    const findCat = userCats .filter((cat) => {
+    const findCat = userCats.filter((cat) => {
       return cat.name === event.target.value;
     });
     setSelectedCat(findCat[0]);
@@ -60,12 +60,13 @@ function AddFeedingForm({ userCats }) {
 
   return (
     <div className={styles.formContainer}>
+      <h3 className={styles.formTitle}>Feeding Form</h3>
       <button className={styles.closeFormButton}>X</button>
       <form
         className={styles.addFeedingForm}
         onSubmit={handleFeedingFormSubmit}
       >
-        <label>Feeding Form</label>
+
         <fieldset className={styles.formFieldSet}>
           <label htmlFor="cat_name">Cat: </label>
           <select
@@ -111,23 +112,25 @@ function AddFeedingForm({ userCats }) {
             <p>
               {selectedCat.name} needs: {selectedCat.medication}
             </p>
-            <label>Yes: </label>
-            <input
-              type="radio"
-              name="medication_given"
-              id="medication_given"
-              aria-label="Medication Given 'Yes' button"
-              required
-            ></input>
-            <> </>
-            <label>No: </label>
-            <input
-              type="radio"
-              name="medication_given"
-              id="medication_given"
-              aria-label="Medication Given 'No' button"
-              required
-            ></input>
+            <div className={styles.radioButtons}>
+              <label>Yes: </label>
+              <input
+                type="radio"
+                name="medication_given"
+                id="medication_given"
+                aria-label="Medication Given 'Yes' button"
+                required
+              ></input>
+              <> </>
+              <label>No: </label>
+              <input
+                type="radio"
+                name="medication_given"
+                id="medication_given"
+                aria-label="Medication Given 'No' button"
+                required
+              ></input>
+            </div>
           </fieldset>
         )}
 
@@ -136,8 +139,8 @@ function AddFeedingForm({ userCats }) {
           <textarea
             name="notes"
             id="notes"
-            cols="30"
-            rows="10"
+            cols="26"
+            rows="8"
             placeholder="Include things like 'Medication ran out' or 'Did not eat meal'"
             aria-label="Notes text input"
           ></textarea>

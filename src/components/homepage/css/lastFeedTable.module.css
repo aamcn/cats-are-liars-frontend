@@ -4,6 +4,7 @@
     height: fit-content;
     box-shadow: 1px 5px 5px 0px rgb(100, 90, 77);
     border-radius: 0em 0em 1em 1em;
+    margin: 2em 0em 2em 0em;
   }
 
   .lastFeedTable{
@@ -30,9 +31,11 @@
 
   .tabMenuContainer{
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+    align-items: center;
     background-color: teal;
-    
+    padding: 0em 0em 0em 1em;
+    color:wheat;
   }
   
   .tabButton{

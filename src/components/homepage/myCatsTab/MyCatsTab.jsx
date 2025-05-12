@@ -19,6 +19,7 @@ function MyCatsTab( {userCats} ) {
         <div>
             <div className={styles.userCatsTab}>
                 <div className={styles.tabMenuContainer}>
+                    <p>My Cats</p>
                     <button onClick={handleToggleTab} className={styles.tabButton}>V</button>
                 </div>
                 {catsTabVisible && <div className={styles.catCardsContainer}>
