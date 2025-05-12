@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import FeedHistoryTableRow from "./FeedHistoryTableRow";
 import styles from "./css/feedHistoryPage.module.css";
+import FeedHistoryTable from "./feedHistoryTable/FeedHistoryTable";
 
 function FeedHistoryPage() {
   const [feedHistoryData, setFeedHistoryData] = useState([]);
@@ -40,27 +40,8 @@ function FeedHistoryPage() {
         <button>option</button>
         <button>option</button>
       </div>
-      <div className={styles.feedHistoryTable}>
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Cat Name</th>
-              <th>Fed By</th>
-              <th>Time</th>
-              <th>Meds Needed</th>
-              <th>Meds Given</th>
-              <th>Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            {feedHistoryData &&
-              feedHistoryData.map((entry) => {
-                return <FeedHistoryTableRow entry={entry} />;
-              })}
-          </tbody>
-        </table>
-      </div>
+     
+     <FeedHistoryTable feedHistoryData={feedHistoryData} />
     </div>
   );
 }

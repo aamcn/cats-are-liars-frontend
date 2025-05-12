@@ -12,13 +12,13 @@ function UpdateCatFeederForm({ catData }) {
           <label className={styles.formLabel} htmlFor="catId">
             Cat
           </label>
-          <input type="text" value={catData.name} readOnly required></input>
+          <input type="text" id="catId" value={catData.name} readOnly required></input>
         </fieldset>
         <fieldset className={styles.optionsFieldSet}>
           <label className={styles.formLabel} htmlFor="feederUsername">
             Choose the new feeder.
           </label>
-          <select name="feederUsername">
+          <select name="feederUsername" id="feederUsername">
             <option>option 1</option>
           </select>
         </fieldset>

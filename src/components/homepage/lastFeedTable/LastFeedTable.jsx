@@ -41,7 +41,7 @@ function LastFeedTable({ userCats, userId, lastFeedVisibility, handleToggleLastF
 
     return (
         <div className={styles.tableContainer}>
-            <div className={styles.lastFeedTab}>
+            <div className={styles.lastFeedTable}>
                 <div className={styles.tabMenuContainer}>
                                     <p>Last Feed</p>
                                     <button onClick={handleToggleLastFeedTable} className={styles.tabButton}>V</button>
