@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import styles from "./css/lastFeedTemplate.module.css";
+import styles from "../css/lastFeedTemplate.module.css";
 function LastFeedTemplate({ entry }) {
   const splitDate = entry.date.split("T");
   const formattedDate = splitDate[0].split("-").reverse().join("-");
