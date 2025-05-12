@@ -4,14 +4,15 @@ import axios from "axios";
 import LastFeedTemplate from "./LastFeedTemplate";
 import AddFeedingForm from "../addFeedingForm/AddFeedingForm";
 import styles from "./css/homepage.module.css";
-import CatTabTemplate from "./CatTabTemplate";
+import CatTabTemplate from "./myCatsTab/CatTabTemplate";
+import MyCatsTab from "./myCatsTab/MyCatsTab";
 
 function Homepage() {
-  const [cats, setCats] = useState([]);
+  const [userCats, setUserCats] = useState([]);
   const [lastFeedEntry, setLastFeedEntry] = useState([]);
   const [formVisibility, setFormVisibility] = useState(true);
   const [lastFeedVisibility, setLastFeedVisibility] = useState(true);
-  const [catsTabVisible, setCatsTabVisible] = useState(true)
+
 
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
@@ -26,7 +27,7 @@ function Homepage() {
         { method: "cors" },
         { withCredentials: true },
       )
-      .then((res) => setCats(res.data))
+      .then((res) => setUserCats(res.data))
       .catch((error) => {
         console.error(error);
       });
@@ -60,10 +61,10 @@ function Homepage() {
   }, []);
 
   useEffect(() => {
-    cats.forEach((cat) => {
+    userCats.forEach((cat) => {
       getLastFeedEntry(cat.name);
     });
-  }, [cats]);
+  }, [userCats]);
 
   const handleToggleLastFeedTable = () => {
     if (lastFeedVisibility == true) {
@@ -83,14 +84,6 @@ function Homepage() {
     }
   };
 
-  const handleToggleTab = () => {
-    if (catsTabVisible == true) {
-      setCatsTabVisible(false);
-      setCatsTabVisible(false);
-    } else {
-      setCatsTabVisible(true);
-    }
-  };
 
  
 
@@ -105,18 +98,10 @@ function Homepage() {
 
       <div className={styles.mainContent}>
         
-      <div className={styles.userCatsTab}>
-        <div  className={styles.tabMenuContainer}>
-          <button onClick={handleToggleTab} className={styles.tabButton}>V</button>
-        </div>
-      {catsTabVisible && <div className={styles.catCardsContainer}>
-        {cats.map((cat) => {
-          return <CatTabTemplate cat={cat} />;
-        })}
-        </div>}  
-      </div>
+     
+      <MyCatsTab userCats={userCats}/>
 
-      {!formVisibility && <AddFeedingForm cats={cats} />}
+      {!formVisibility && <AddFeedingForm userCats={userCats} />}
       {lastFeedVisibility && (
         <table className={styles.lastFeedTable}>
           <thead className={styles.tableHead}>

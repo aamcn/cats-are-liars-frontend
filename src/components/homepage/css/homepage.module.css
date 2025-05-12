@@ -35,30 +35,6 @@
   grid-column: 2;
 }
 
-.userCatsTab {
-  align-items: center;
-  height: fit-content;
-  border-radius: 1em;
-  margin: 1em 0em 1em 0em;
-  box-shadow: 1px 5px 15px 0px rgb(100, 90, 77);
-}
-
-.catCardsContainer{
-  display: flex;
-  justify-content: space-around;
-  padding:1em;
-}
-
-.tabMenuContainer{
-  display: flex;
-  justify-content: end;
-  background-color: teal;
- 
-}
-.tabButton{
-  background-color: teal;
-  color:wheat;
-}
 
 .toggleButtons {
   position: absolute;

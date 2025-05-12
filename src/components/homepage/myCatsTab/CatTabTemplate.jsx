@@ -1,4 +1,4 @@
-import styles from "./css/catTabTemplate.module.css";
+import styles from "../css/catTabTemplate.module.css";
 import { Link } from "react-router";
 function CatTabTemplate({ cat }) {
   return (
