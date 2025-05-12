@@ -11,6 +11,7 @@ function Homepage() {
   const [lastFeedEntry, setLastFeedEntry] = useState([]);
   const [formVisibility, setFormVisibility] = useState(true);
   const [lastFeedVisibility, setLastFeedVisibility] = useState(true);
+  const [catsTabVisible, setCatsTabVisible] = useState(true)
 
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
@@ -82,17 +83,37 @@ function Homepage() {
     }
   };
 
+  const handleToggleTab = () => {
+    if (catsTabVisible == true) {
+      setCatsTabVisible(false);
+      setCatsTabVisible(false);
+    } else {
+      setCatsTabVisible(true);
+    }
+  };
+
+ 
+
   return (
     <div className={styles.homepageContainer}>
-      <h1 className={styles.pageTitle}>Home</h1>
+      <div className={styles.pageTitle}>
+        <h1>Home</h1>
+      </div>
       {username && (
         <p className={styles.welcomeMessage}>Welcome back {username}</p>
       )}
 
+      <div className={styles.mainContent}>
+        
       <div className={styles.userCatsTab}>
+        <div  className={styles.tabMenuContainer}>
+          <button onClick={handleToggleTab} className={styles.tabButton}>V</button>
+        </div>
+      {catsTabVisible && <div className={styles.catCardsContainer}>
         {cats.map((cat) => {
           return <CatTabTemplate cat={cat} />;
         })}
+        </div>}  
       </div>
 
       {!formVisibility && <AddFeedingForm cats={cats} />}
@@ -122,6 +143,7 @@ function Homepage() {
           </tbody>
         </table>
       )}
+      </div>
 
       <div className={styles.toggleButtons}>
         <button className={styles.toggleButton} onClick={handleToggleDisplay}>
