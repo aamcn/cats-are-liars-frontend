@@ -19,6 +19,7 @@
   font-size: 3vw;
   margin: 0px;
   border-bottom:0.5em solid rgb(1, 68, 68);
+  animation: slideInLeft 0.5s;
 }
 
 .formContainer{
@@ -38,3 +39,10 @@
   
 }
 
+@keyframes slideInLeft {
+  0%{
+    transform: translateX(500px);
+    opacity: 0;
+  }
+
+} 
