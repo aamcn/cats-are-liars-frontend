@@ -1,8 +1,27 @@
 import styles from "./css/householdTab.module.css"
-import { useState } from "react"
-function HouseholdTab({ }) {
+import { useEffect, useState } from "react"
+import axios from "axios";
+
+function HouseholdTab({ userId, householdId}) {
 
     const [isTabHidden, setIsTabHidden] = useState(true)
+
+
+    const getHouseholdMembers = () => {
+        axios
+            .get(
+                `http://localhost:3000/users/household/all-users`,
+                { method: "cors" },
+                { withCredentials: true },
+            )
+            .then((res) => {
+                const feedData = res.data;
+                console.log(feedData)
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    };
 
     const handleToggleTab = () => {
 
@@ -14,6 +33,12 @@ function HouseholdTab({ }) {
         }
     };
 
+    useEffect(() => {
+
+      console.log(userId, householdId)
+        getHouseholdMembers()
+    }, [])
+
     return (
         <div>
             <div className={styles.tabMenuContainer}>
@@ -24,7 +49,7 @@ function HouseholdTab({ }) {
             {!isTabHidden && <div>
                 <p>Hi</p>
             </div>}
-            
+
         </div>
     )
 }

@@ -42,6 +42,8 @@ function LogInForm() {
         localStorage.setItem("storedToken", JSON.stringify(res.data.token));
         localStorage.setItem("userId", JSON.stringify(res.data.userId));
         localStorage.setItem("username", JSON.stringify(res.data.username));
+        localStorage.setItem("userRole", JSON.stringify(res.data.role));
+        localStorage.setItem("householdId", JSON.stringify(res.data.householdId));
         changeLogInSuccess(true);
         redirectHome();
       })

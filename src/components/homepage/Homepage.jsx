@@ -14,6 +14,7 @@ function Homepage() {
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
   const b = localStorage.getItem("storedToken").replaceAll('"', "");
+  const householdId = localStorage.getItem("householdId").replaceAll('"', "");
   axios.defaults.headers.common["Authorization"] = `bearer ${b}`;
 
   const getCats = () => {
@@ -69,7 +70,7 @@ function Homepage() {
       <div className={styles.mainContent}>
         <MyCatsTab userCats={userCats} />
         <LastFeedTable userCats={userCats} handleToggleLastFeedTable={handleToggleLastFeedTable} lastFeedVisibility={lastFeedVisibility} userId={userId} />
-        <HouseholdTab />
+        <HouseholdTab householdId={householdId} userId={userId}/>
       </div>
 
       <div className={styles.toggleButtons}>
