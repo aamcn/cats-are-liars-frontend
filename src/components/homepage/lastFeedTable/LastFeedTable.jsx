@@ -40,11 +40,10 @@ function LastFeedTable({ userCats, userId, lastFeedVisibility, handleToggleLastF
 
 
     return (
-        <div className={styles.tableContainer}>
-            <div className={styles.lastFeedTable}>
+        <div className={styles.tabContainer}>
                 <div className={styles.tabMenuContainer}>
                                     <p>Last Feed</p>
-                                    <button onClick={handleToggleLastFeedTable} className={styles.tabButton}>V</button>
+                                    <button onClick={handleToggleLastFeedTable} className={styles.tabButton}>{lastFeedVisibility ? '↥'  : '↧'}</button>
                                 </div>
               {lastFeedVisibility && <table className={styles.lastFeedTable}>
                     <thead className={styles.tableHead}>
@@ -73,7 +72,6 @@ function LastFeedTable({ userCats, userId, lastFeedVisibility, handleToggleLastF
 
             </div>
 
-        </div>
     )
 }
 

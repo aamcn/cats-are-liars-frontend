@@ -5,10 +5,6 @@
   padding: 0;
 }
 
-.tableRow:last-child td {
-  border-bottom-width: 0;
-}
-
 .tableData:last-child {
   border-right-width: 0;
 }

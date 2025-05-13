@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { appContext } from "../../App";
 import axios from "axios";
 import { useParams } from "react-router";
 import UpdateCatForm from "./UpdateCatForm";
@@ -10,6 +11,8 @@ function IndividualCatPage() {
   const param = useParams();
   const [updateFormHidden, setUpdateFormHidden] = useState(true);
   const [addFeederFormHidden, setAddFeederFormHidden] = useState(true);
+  const { householdMembers, storeHouseholdMembers } = useContext(appContext);
+
 
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
@@ -83,7 +86,6 @@ function IndividualCatPage() {
 
   return (
     <div>
-      
       {catData && (
         <div className={styles.catPageContainer}>
           {catData && <h1 className={styles.pageTitle}>{catData.name}</h1>}
@@ -109,6 +111,12 @@ function IndividualCatPage() {
           </div>
 
           <div className={styles.catDetailsContainer}>
+
+            <div>
+              <h3>Household:</h3>
+              <p>{householdMembers[0] ? householdMembers[0].household_name : 'Loading'}</p>
+            </div>
+
             <h3>Meals:</h3>
             <hr />
             <ul>
@@ -134,7 +142,7 @@ function IndividualCatPage() {
             </ul>
           </div>
           {!updateFormHidden && <UpdateCatForm catData={catData} />}
-          {!addFeederFormHidden && <AddCatFeederForm catData={catData} />}
+          {!addFeederFormHidden && <AddCatFeederForm catData={catData} householdMembers={householdMembers}/>}
         </div>
       )}
     </div>

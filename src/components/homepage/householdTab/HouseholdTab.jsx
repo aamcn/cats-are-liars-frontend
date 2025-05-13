@@ -5,7 +5,7 @@ import axios from "axios";
 
 function HouseholdTab({ userId, householdId }) {
 
-    const [isTabHidden, setIsTabHidden] = useState(true)
+    const [isTabHidden, setIsTabHidden] = useState(false)
     const { householdMembers, storeHouseholdMembers } = useContext(appContext);
 
     const getHouseholdMembers = () => {
@@ -17,7 +17,6 @@ function HouseholdTab({ userId, householdId }) {
             )
             .then((res) => {
                 const userData = res.data;
-                console.log(userData)
                 storeHouseholdMembers(userData)
             })
             .catch((error) => {
@@ -26,7 +25,6 @@ function HouseholdTab({ userId, householdId }) {
     };
 
     const handleToggleTab = () => {
-
         if (isTabHidden == true) {
             setIsTabHidden(false);
             setIsTabHidden(false);
@@ -36,19 +34,17 @@ function HouseholdTab({ userId, householdId }) {
     };
 
     useEffect(() => {
-
-        console.log(userId, householdId)
         getHouseholdMembers()
     }, [])
 
     return (
-        <div>
+        <div className={styles.tabContainer}>
             <div className={styles.tabMenuContainer}>
                 <p>{householdMembers[0] ? householdMembers[0].household_name : 'Loading'} Household Users</p>
-                <button onClick={handleToggleTab} className={styles.tabButton}>V</button>
+                <button onClick={handleToggleTab} className={styles.tabButton}>{!isTabHidden ? '↥'  : '↧'}</button>
             </div>
 
-            {!isTabHidden && <div>
+            {!isTabHidden && <div className={styles.usersContainer}>
                 {householdMembers.map(user => {
                     return <div>
                         <p>{user.username}</p>

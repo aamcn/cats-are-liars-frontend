@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import styles from "./css/addCatFeederForm.module.css";
-function UpdateCatFeederForm({ catData }) {
+function UpdateCatFeederForm({ catData, householdMembers }) {
   useEffect(() => {
     console.log(catData);
   }, []);
@@ -19,7 +19,9 @@ function UpdateCatFeederForm({ catData }) {
             Choose the new feeder.
           </label>
           <select name="feederUsername" id="feederUsername">
-            <option>option 1</option>
+            {householdMembers.map(feeder => {
+              return <option>{feeder.username}</option>
+            })}
           </select>
         </fieldset>
         <div className={styles.formButtonsContainer}>

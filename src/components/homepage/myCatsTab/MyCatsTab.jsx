@@ -16,11 +16,11 @@ function MyCatsTab( {userCats} ) {
 
 
     return (
-        <div>
-            <div className={styles.userCatsTab}>
+
+            <div className={styles.tabContainer}>
                 <div className={styles.tabMenuContainer}>
                     <p>My Cats</p>
-                    <button onClick={handleToggleTab} className={styles.tabButton}>V</button>
+                    <button onClick={handleToggleTab} className={styles.tabButton}>{catsTabVisible? '↥'  : '↧'}</button>
                 </div>
                 {catsTabVisible && <div className={styles.catCardsContainer}>
                     {userCats.map((cat) => {
@@ -28,7 +28,7 @@ function MyCatsTab( {userCats} ) {
                     })}
                 </div>}
             </div>
-        </div>
+ 
     )
 }
 export default MyCatsTab
