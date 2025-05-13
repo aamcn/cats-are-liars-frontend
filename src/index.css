@@ -25,7 +25,7 @@ body {
   min-width: 320px;
   min-height: 100svh;
   font-weight: 400;
-  background-color: #f5f5f5;
+  background-color: hsl(183, 100%, 91%);
 }
 
 h1 {

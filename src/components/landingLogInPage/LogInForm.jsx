@@ -90,7 +90,10 @@ function LogInForm() {
             required
           ></input>
         </fieldset>
-        <button className={styles.submitButton}>Log In</button>
+        <div className={styles.formButtonsContainer}>
+          <button className={styles.formButton}>Log In</button>
+          <button className={styles.formButton}>Clear</button>
+        </div>
       </form>
     </div>
   );
