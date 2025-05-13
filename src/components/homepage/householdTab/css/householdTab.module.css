@@ -1,0 +1,14 @@
+
+.tabMenuContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: teal;
+    padding: 1em 0em 1em 1em;
+    color:wheat;
+  }
+
+  .tabButton{
+    background-color: teal;
+    color:wheat;
+  }

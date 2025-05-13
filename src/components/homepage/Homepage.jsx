@@ -4,6 +4,7 @@ import styles from "./css/homepage.module.css";
 import MyCatsTab from "./myCatsTab/MyCatsTab";
 import LastFeedTable from "./lastFeedTable/LastFeedTable";
 import AddFeedingForm from "../addFeedingForm/AddFeedingForm";
+import HouseholdTab from "./householdTab/HouseholdTab";
 function Homepage() {
   const [userCats, setUserCats] = useState([]);
 
@@ -54,8 +55,6 @@ function Homepage() {
   };
 
 
-
-
   return (
     <div className={styles.homepageContainer}>
       <div className={styles.pageTitle}>
@@ -70,6 +69,7 @@ function Homepage() {
       <div className={styles.mainContent}>
         <MyCatsTab userCats={userCats} />
         <LastFeedTable userCats={userCats} handleToggleLastFeedTable={handleToggleLastFeedTable} lastFeedVisibility={lastFeedVisibility} userId={userId} />
+        <HouseholdTab />
       </div>
 
       <div className={styles.toggleButtons}>

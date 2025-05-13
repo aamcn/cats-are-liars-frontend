@@ -52,10 +52,6 @@ function LogInForm() {
     event.target.reset();
   };
 
-  useEffect(() => {
-    console.log(username);
-    console.log(password);
-  }, [username, password]);
 
   return (
     <div className={styles.formContainer}>
