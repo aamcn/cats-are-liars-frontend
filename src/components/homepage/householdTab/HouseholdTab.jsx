@@ -1,11 +1,12 @@
 import styles from "./css/householdTab.module.css"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
+import { appContext } from "../../../App";
 import axios from "axios";
 
-function HouseholdTab({ userId, householdId}) {
+function HouseholdTab({ userId, householdId }) {
 
     const [isTabHidden, setIsTabHidden] = useState(true)
-
+    const { householdMembers, storeHouseholdMembers } = useContext(appContext);
 
     const getHouseholdMembers = () => {
         axios
@@ -15,8 +16,9 @@ function HouseholdTab({ userId, householdId}) {
                 { withCredentials: true },
             )
             .then((res) => {
-                const feedData = res.data;
-                console.log(feedData)
+                const userData = res.data;
+                console.log(userData)
+                storeHouseholdMembers(userData)
             })
             .catch((error) => {
                 console.error(error);
@@ -35,19 +37,24 @@ function HouseholdTab({ userId, householdId}) {
 
     useEffect(() => {
 
-      console.log(userId, householdId)
+        console.log(userId, householdId)
         getHouseholdMembers()
     }, [])
 
     return (
         <div>
             <div className={styles.tabMenuContainer}>
-                <p>HouseholdTab</p>
+                <p>{householdMembers[0] ? householdMembers[0].household_name : 'Loading'} Household Users</p>
                 <button onClick={handleToggleTab} className={styles.tabButton}>V</button>
             </div>
 
             {!isTabHidden && <div>
-                <p>Hi</p>
+                {householdMembers.map(user => {
+                    return <div>
+                        <p>{user.username}</p>
+                        <img alt="User Photo"></img>
+                    </div>
+                })}
             </div>}
 
         </div>
