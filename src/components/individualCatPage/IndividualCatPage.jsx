@@ -86,6 +86,10 @@ function IndividualCatPage() {
 
   return (
     <div>
+
+      {!updateFormHidden && <UpdateCatForm catData={catData} />}
+      {!addFeederFormHidden && <AddCatFeederForm catData={catData} householdMembers={householdMembers} />}
+
       {catData && (
         <div className={styles.catPageContainer}>
           {catData && <h1 className={styles.pageTitle}>{catData.name}</h1>}
@@ -96,6 +100,46 @@ function IndividualCatPage() {
               alt="Cat Photo"
             />
             <hr />
+          </div>
+
+
+
+          <div className={styles.catDetailsContainer}>
+            <div className={styles.catDetailsSubSection}>
+              <h3 className={styles.catDetailsTitle}>Household:</h3>
+              <p>{householdMembers[0] ? householdMembers[0].household_name : 'Loading'}</p>
+            </div>
+
+            <div className={styles.catDetailsSubSection}>
+              <h3 className={styles.catDetailsTitle}>Meals:</h3>
+              <hr />
+              <ul className={styles.catDetailsList}>
+                {catData.meals.map((item) => {
+                  return <li className={styles.listEntry}  >{item}</li>;
+                })}
+              </ul>
+            </div>
+
+            <div className={styles.catDetailsSubSection}>
+              <h3 className={styles.catDetailsTitle}>Meds:</h3>
+              <hr />
+              <ul className={styles.catDetailsList}>
+                {catData.medication.map((item) => {
+                  return <li className={styles.listEntry}>{item}</li>;
+                })}
+              </ul>
+            </div>
+
+
+            <div className={styles.catDetailsSubSection}>
+              <h3 className={styles.catDetailsTitle}>Feeders:</h3>
+              <hr />
+              <ul className={styles.catDetailsList}>
+                {feeders.map((item) => {
+                  return <li className={styles.listEntry}>{item}</li>;
+                })}
+              </ul>
+            </div>
           </div>
 
           <div className={styles.toggleButtonsContainer}>
@@ -109,40 +153,6 @@ function IndividualCatPage() {
               Update {catData.name}'s Feeders
             </button>
           </div>
-
-          <div className={styles.catDetailsContainer}>
-
-            <div>
-              <h3>Household:</h3>
-              <p>{householdMembers[0] ? householdMembers[0].household_name : 'Loading'}</p>
-            </div>
-
-            <h3>Meals:</h3>
-            <hr />
-            <ul>
-              {catData.meals.map((item) => {
-                return <li>{item}</li>;
-              })}
-            </ul>
-
-            <h3>Meds:</h3>
-            <hr />
-            <ul>
-              {catData.medication.map((item) => {
-                return <li>{item}</li>;
-              })}
-            </ul>
-
-            <h3>Feeders:</h3>
-            <hr />
-            <ul>
-              {feeders.map((item) => {
-                return <li>{item}</li>;
-              })}
-            </ul>
-          </div>
-          {!updateFormHidden && <UpdateCatForm catData={catData} />}
-          {!addFeederFormHidden && <AddCatFeederForm catData={catData} householdMembers={householdMembers}/>}
         </div>
       )}
     </div>

@@ -19,9 +19,8 @@
   margin: 0px;
 }
 
-.toggleButtonsContainer {
-  grid-row: 4;
-  grid-column: 2;
+hr {
+  width: 100%;
 }
 
 .catHeaderContainer {
@@ -29,25 +28,6 @@
   grid-row: 2;
   grid-column: 2;
   text-align: center;
-}
-
-.catDetailsContainer {
-  grid-row: 3;
-  grid-column: 2;
-}
-
-.toggleButtonsContainer {
-  position: absolute;
-  bottom: 0%;
-  background-color: teal;
-  width: 100%;
-  grid-column: 2;
-  grid-row: 4;
-  display: flex;
-  flex-direction: row;
-  height: 10vh;
-  justify-content: center;
-  align-items: center;
 }
 
 .catProfilePhoto {
@@ -60,13 +40,50 @@
   margin: 1em;
 }
 
+
+.catDetailsContainer {
+  grid-row: 3;
+  grid-column: 2;
+  overflow: auto;
+  background-color: red;
+  width:100%;
+  height: 100%;
+}
+
+.catDetailsSubSection{
+  background-color: wheat;
+}
+
+.catDetailsTitle{
+  color:teal;
+}
+
+.catDetailsList{
+  list-style: none;
+}
+
+.listEntry{
+  color:teal;
+}
+
+
+.toggleButtonsContainer {
+  position: absolute;
+  bottom: 0%;
+  background-color: teal;
+  width: 100%;
+  grid-row: 4;
+  grid-column: 2;
+  display: flex;
+  flex-direction: row;
+  height: 10vh;
+  justify-content: center;
+  align-items: center;
+}
+
 .toggleButton {
   background-color: wheat;
   color: teal;
   height: 50%;
 }
 
-hr {
-  color: red;
-  width: 100%;
-}
