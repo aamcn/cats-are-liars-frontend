@@ -17,9 +17,6 @@ function FeedHistoryTableRow({ entry }) {
         <p>{entry.time}</p>
       </td>
       <td>
-        <p>{entry.medication_needed ? "Yes" : "No"}</p>
-      </td>
-      <td>
         <p>{entry.medication_given ? "Yes" : "No"}</p>
       </td>
       <td>

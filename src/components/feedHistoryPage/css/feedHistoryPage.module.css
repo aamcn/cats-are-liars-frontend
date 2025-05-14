@@ -7,20 +7,30 @@
 }
 
 .pageTitle {
-  grid-column: 2;
-  grid-row: 1;
   display: flex;
-  font-style: normal;
-  justify-content: center;
-  align-content: center;
+  grid-column: 1/4;
+  grid-row: 1;
   background-color: teal;
-  color: wheat;
-  font-family: "Playwrite US Modern", cursive;
+  color: beige;
+  justify-content: center;
+  align-self: center;
+  height: 100%;
+  width: 100%;
   font-size: 3vw;
   margin: 0px;
+  font-family: "Playwrite US Modern", cursive;
 }
 
 .tableOptions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   grid-row: 2;
   grid-column: 2;
+}
+
+.pageFooter{
+  grid-column: 2;
+  grid-row: 4;
+  background-color: teal;
 }

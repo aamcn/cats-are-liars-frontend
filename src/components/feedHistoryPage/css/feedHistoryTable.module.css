@@ -1,12 +1,11 @@
 .tableContainer {
-  height: fit-content;
   border-radius: 0em 0em 1em 1em;
   margin: 2em 0em 2em 0em;
   grid-row: 3;
   grid-column: 2;
   overflow: auto;
   border: 4px solid teal;
-  height: 100%;
+  height: 90%;
 }
 
 .feedHistoryTable {
@@ -28,8 +27,10 @@
   position: sticky;
   top: 0;
   vertical-align: bottom;
-  padding: 1em 0em 1em 0em;
+  padding: 0.5em;
   color: teal;
   text-wrap: wrap;
   font-size: 3vw;
+  font-family: "Playwrite US Modern", cursive;
+
 }

@@ -8,10 +8,9 @@ function FeedHistoryTable( {feedHistoryData}) {
           <thead>
             <tr>
               <th className={styles.columnTitle}>Date</th>
-              <th className={styles.columnTitle}>Cat Name</th>
+              <th className={styles.columnTitle}>Cat</th>
               <th className={styles.columnTitle}>Fed By</th>
               <th className={styles.columnTitle}>Time</th>
-              <th className={styles.columnTitle}>Meds Needed</th>
               <th className={styles.columnTitle}>Meds Given</th>
               <th className={styles.columnTitle}>Notes</th>
             </tr>

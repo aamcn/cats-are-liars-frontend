@@ -5,7 +5,7 @@ import FeedHistoryTable from "./feedHistoryTable/FeedHistoryTable";
 
 function FeedHistoryPage() {
   const [feedHistoryData, setFeedHistoryData] = useState([]);
-
+  const [todaysDate, setTodaysData] = useState(null)
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
   const b = localStorage.getItem("storedToken").replaceAll('"', "");
@@ -29,19 +29,49 @@ function FeedHistoryPage() {
     getFeedHistory();
   }, []);
 
-  useEffect(() => {}, [feedHistoryData]);
+  const myformat = new Intl.NumberFormat('en-US', { 
+    minimumIntegerDigits: 2, 
+});
+
+useEffect(() => { 
+  const today = new Date()
+  const month = today.getMonth()+1;
+  const year = today.getFullYear();
+  const day= today. getDate();
+  setTodaysData( year + "-" + myformat.format(month) + "-" + myformat.format(day))
+}, []);
+
 
   return (
     <div className={styles.pageContainer}>
-      <h1 className={styles.pageTitle}>Feed History</h1>
-      <div className={styles.tableOptions}>
-        <button>option</button>
-        <button>option</button>
-        <button>option</button>
-        <button>option</button>
+      <div className={styles.pageTitle}>
+        <h1>Feed History</h1>
       </div>
-     
-     <FeedHistoryTable feedHistoryData={feedHistoryData} />
+      <div className={styles.tableOptions}>
+        <label for="start">From:</label>
+
+        <input
+          type="date"
+          id="start"
+          name="trip-start"
+          min="2025-01-01"
+          max={todaysDate} 
+          defaultValue={todaysDate}/>
+        <label for="start">To:</label>
+
+        <input
+          type="date"
+          id="start"
+          name="trip-start"
+          min="2025-01-01"
+          max={todaysDate} 
+          defaultValue={todaysDate}/>
+      </div>
+
+      <FeedHistoryTable feedHistoryData={feedHistoryData} />
+      <div className={styles.pageFooter}>
+
+      </div>
     </div>
   );
 }
