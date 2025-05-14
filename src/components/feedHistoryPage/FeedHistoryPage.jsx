@@ -5,7 +5,9 @@ import FeedHistoryTable from "./feedHistoryTable/FeedHistoryTable";
 
 function FeedHistoryPage() {
   const [feedHistoryData, setFeedHistoryData] = useState([]);
-  const [todaysDate, setTodaysData] = useState(null)
+  const [todaysDate, setTodaysDate] = useState(null)
+  const [defaultStartDate, setDefaultStartDate] = useState(null)
+
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
   const b = localStorage.getItem("storedToken").replaceAll('"', "");
@@ -29,17 +31,18 @@ function FeedHistoryPage() {
     getFeedHistory();
   }, []);
 
-  const myformat = new Intl.NumberFormat('en-US', { 
-    minimumIntegerDigits: 2, 
-});
+  const myformat = new Intl.NumberFormat('en-US', {
+    minimumIntegerDigits: 2,
+  });
 
-useEffect(() => { 
-  const today = new Date()
-  const month = today.getMonth()+1;
-  const year = today.getFullYear();
-  const day= today. getDate();
-  setTodaysData( year + "-" + myformat.format(month) + "-" + myformat.format(day))
-}, []);
+  useEffect(() => {
+    const today = new Date()
+    const month = today.getMonth() + 1;
+    const year = today.getFullYear();
+    const day = today.getDate();
+    setTodaysDate(year + "-" + myformat.format(month) + "-" + myformat.format(day))
+    setDefaultStartDate(year + "-" + myformat.format(month) + "-" + '01')
+  }, []);
 
 
   return (
@@ -48,24 +51,32 @@ useEffect(() => {
         <h1>Feed History</h1>
       </div>
       <div className={styles.tableOptions}>
-        <label for="start">From:</label>
+        
+        <form>
+          <fieldset>
+            <label htmlFor="fromDate">From:</label>
 
-        <input
-          type="date"
-          id="start"
-          name="trip-start"
-          min="2025-01-01"
-          max={todaysDate} 
-          defaultValue={todaysDate}/>
-        <label for="start">To:</label>
+            <input
+              type="date"
+              id="fromDate"
+              name="trip-start"
+              min="2025-01-01"
+              max={todaysDate}
+              defaultValue={defaultStartDate} />
 
-        <input
-          type="date"
-          id="start"
-          name="trip-start"
-          min="2025-01-01"
-          max={todaysDate} 
-          defaultValue={todaysDate}/>
+            <label htmlFor="start">To:</label>
+            <input
+              type="date"
+              id="toDate"
+              name="trip-start"
+              min="2025-01-01"
+              max={todaysDate}
+              defaultValue={todaysDate} />
+          </fieldset>
+          <div className={styles.formButtons}>
+            <button className={styles.submitButtons}>Search</button>
+          </div>
+        </form>
       </div>
 
       <FeedHistoryTable feedHistoryData={feedHistoryData} />
