@@ -1,9 +1,11 @@
 import styles from "./css/householdTab.module.css"
 import { useEffect, useState, useContext } from "react"
 import { appContext } from "../../../App";
+import DownChevron from "../../../assets/svg/doubleDownChevron.svg?react"
+import MinimiseIcon from "../../../assets/svg/minimiseIcon.svg?react"
 import axios from "axios";
 
-function HouseholdTab({ userId, householdId }) {
+function HouseholdTab( ) {
 
     const [isTabHidden, setIsTabHidden] = useState(false)
     const { householdMembers, storeHouseholdMembers } = useContext(appContext);
@@ -41,7 +43,7 @@ function HouseholdTab({ userId, householdId }) {
         <div className={styles.tabContainer}>
             <div className={styles.tabMenuContainer}>
                 <p>{householdMembers[0] ? householdMembers[0].household_name : 'Loading'} Household Users</p>
-                <button onClick={handleToggleTab} className={styles.tabButton}>{!isTabHidden ? '↥'  : '↧'}</button>
+                <button onClick={handleToggleTab} className={styles.tabButton}>{!isTabHidden ? <MinimiseIcon  className={styles.minimiseIcon } /> : <DownChevron  className={styles.downChevron} />}</button>
             </div>
 
             {!isTabHidden && <div className={styles.usersContainer}>

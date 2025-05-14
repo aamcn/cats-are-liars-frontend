@@ -45,4 +45,8 @@
     color:wheat;
   }
  
-  
+  .downChevron, .minimiseIcon{
+    width:1em;
+    height:1em;
+    color:wheat ;
+  }

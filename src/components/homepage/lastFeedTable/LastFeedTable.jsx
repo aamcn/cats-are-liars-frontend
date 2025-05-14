@@ -1,6 +1,8 @@
 import axios from "axios";
 import styles from "../css/lastFeedTable.module.css";
 import LastFeedTemplate from "./LastFeedRowTemplate";
+import DownChevron from "../../../assets/svg/doubleDownChevron.svg?react"
+import MinimiseIcon from "../../../assets/svg/minimiseIcon.svg?react"
 import { useState, useEffect } from "react";
 
 
@@ -43,7 +45,7 @@ function LastFeedTable({ userCats, userId, lastFeedVisibility, handleToggleLastF
         <div className={styles.tabContainer}>
                 <div className={styles.tabMenuContainer}>
                                     <p>Last Feed</p>
-                                    <button onClick={handleToggleLastFeedTable} className={styles.tabButton}>{lastFeedVisibility ? '↥'  : '↧'}</button>
+                                    <button onClick={handleToggleLastFeedTable} className={styles.tabButton}>{lastFeedVisibility ? <MinimiseIcon  className={styles.minimiseIcon } /> : <DownChevron  className={styles.downChevron} />}</button>
                                 </div>
               {lastFeedVisibility && <table className={styles.lastFeedTable}>
                     <thead className={styles.tableHead}>
