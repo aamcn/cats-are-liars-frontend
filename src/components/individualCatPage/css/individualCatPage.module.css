@@ -4,19 +4,22 @@
   grid-template-rows: 1fr 1fr 4fr 1fr;
   height: 95vh;
   place-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .pageTitle {
-  height: 100%;
-  place-self: center;
-  align-content: center;
-  width: 100%;
-  background-color: teal;
-  color: wheat;
+  display: flex;
   grid-column: 1/4;
   grid-row: 1;
-  text-align: center;
+  background-color: teal;
+  color: beige;
+  justify-content: center;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+  font-size: 3vw;
   margin: 0px;
+  font-family: "Playwrite US Modern", cursive;
 }
 
 hr {
@@ -28,6 +31,7 @@ hr {
   grid-row: 2;
   grid-column: 2;
   text-align: center;
+  margin: 2em 0em 1em 0em;
 }
 
 .catProfilePhoto {
@@ -40,36 +44,67 @@ hr {
   margin: 1em;
 }
 
-
-.catDetailsContainer {
+.catInfoContainer {
   grid-row: 3;
   grid-column: 2;
   overflow: auto;
-  background-color: red;
+  background-color: white;
   width:100%;
-  height: 100%;
+  height: 95%;
+  margin: 1em 0em 1em 0em;
+  border:solid rgb(4, 73, 73) 4px;
+  border-radius: 1em;
 }
 
-.catDetailsSubSection{
-  background-color: wheat;
+.catInfoSection{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: flex-start;
+  padding: 1em 0em 1em 0em;
 }
 
-.catDetailsTitle{
+.catInfoTitle{
+  position: sticky;
+  top:0%;
+  width: 101%;
+  font-family: "Playwrite US Modern", cursive;
+  color: wheat ;
+  background-color: teal;
+  padding: 0.5em 0em 0.5em 0em;
+  text-align: center;
+  text-decoration: underline;
+  box-shadow: 0px 1px 5px 1px black;
+}
+
+.sectionTitle{
   color:teal;
+  font-family: "Playwrite US Modern", cursive;
+  text-decoration: underline;
+  margin-bottom: 1em;
+}
+
+.householdName{
+  margin: 0em;
+  color:rgb(10, 53, 53);
+  font-family: "Playwrite US Modern", cursive;
+  font-weight: 800;
+  font-size: 4vw;
 }
 
 .catDetailsList{
-  list-style: none;
+  text-align: center;
+  padding: 0%;
 }
 
 .listEntry{
   color:teal;
 }
 
-
 .toggleButtonsContainer {
   position: absolute;
   bottom: 0%;
+  justify-content: space-evenly;
   background-color: teal;
   width: 100%;
   grid-row: 4;
@@ -77,13 +112,40 @@ hr {
   display: flex;
   flex-direction: row;
   height: 10vh;
-  justify-content: center;
   align-items: center;
 }
 
 .toggleButton {
-  background-color: wheat;
   color: teal;
   height: 50%;
+  background-color: rgb(205, 255, 255);
+  outline: solid;
+  border-bottom: solid rgb(105, 177, 177);
+  box-shadow: 0em 0.3em 0.1em 0em; 
+  font-family: "Playwrite US Modern", cursive;
+  font-size: 4vw;
+  font-weight: 600;
+  animation: appearGrow 1s;
 }
 
+
+ 
+.toggleButton:active{
+  transform: translateY(0.1em);
+  box-shadow: inset 0em 0.3em 0.1em 0em; 
+}
+
+
+@keyframes appearGrow {
+  0%{
+    scale:0;
+  }
+ 
+  60%{
+    scale:1.2
+  }
+
+  100%{
+    scale:1;
+  }
+}

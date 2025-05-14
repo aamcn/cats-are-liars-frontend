@@ -7,16 +7,18 @@
 }
 
 .pageTitle {
-  height: 100%;
-  place-self: center;
-  align-content: center;
-  width: 100%;
-  background-color: teal;
-  color: wheat;
-  grid-column: 2;
+  display: flex;
+  grid-column: 1/4;
   grid-row: 1;
-  text-align: center;
+  background-color: teal;
+  color: beige;
+  justify-content: center;
+  align-self: center;
+  height: 100%;
+  width: 100%;
+  font-size: 3vw;
   margin: 0px;
+  font-family: "Playwrite US Modern", cursive;
 }
 
 .addCatButton {

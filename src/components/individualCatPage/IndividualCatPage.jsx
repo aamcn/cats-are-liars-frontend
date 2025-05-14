@@ -92,7 +92,10 @@ function IndividualCatPage() {
 
       {catData && (
         <div className={styles.catPageContainer}>
-          {catData && <h1 className={styles.pageTitle}>{catData.name}</h1>}
+          {catData && <div className={styles.pageTitle}>
+            <h1>{catData.name}</h1>
+          </div>}
+
           <div className={styles.catHeaderContainer}>
             <img
               className={styles.catProfilePhoto}
@@ -102,27 +105,27 @@ function IndividualCatPage() {
             <hr />
           </div>
 
-
-
-          <div className={styles.catDetailsContainer}>
-            <div className={styles.catDetailsSubSection}>
-              <h3 className={styles.catDetailsTitle}>Household:</h3>
-              <p>{householdMembers[0] ? householdMembers[0].household_name : 'Loading'}</p>
+          <div className={styles.catInfoContainer}>
+          {catData && <div className={styles.catInfoTitle}>
+            <h2 >{catData.name}'s Info</h2>
+            </div>}
+            <hr/>
+            <div className={styles.catInfoSection}>
+              <h3 className={styles.sectionTitle}>Household:</h3>
+              <p className={styles.householdName}>{householdMembers[0] ? householdMembers[0].household_name : 'Loading'}</p>
             </div>
-
-            <div className={styles.catDetailsSubSection}>
-              <h3 className={styles.catDetailsTitle}>Meals:</h3>
-              <hr />
+            <hr />
+            <div className={styles.catInfoSection}>
+              <h3 className={styles.sectionTitle}>Meals:</h3>
               <ul className={styles.catDetailsList}>
                 {catData.meals.map((item) => {
                   return <li className={styles.listEntry}  >{item}</li>;
                 })}
               </ul>
             </div>
-
-            <div className={styles.catDetailsSubSection}>
-              <h3 className={styles.catDetailsTitle}>Meds:</h3>
-              <hr />
+            <hr />
+            <div className={styles.catInfoSection}>
+              <h3 className={styles.sectionTitle}>Meds:</h3>
               <ul className={styles.catDetailsList}>
                 {catData.medication.map((item) => {
                   return <li className={styles.listEntry}>{item}</li>;
@@ -130,10 +133,9 @@ function IndividualCatPage() {
               </ul>
             </div>
 
-
-            <div className={styles.catDetailsSubSection}>
-              <h3 className={styles.catDetailsTitle}>Feeders:</h3>
-              <hr />
+            <hr />    
+            <div className={styles.catInfoSection}>
+              <h3 className={styles.sectionTitle}>Feeders:</h3>
               <ul className={styles.catDetailsList}>
                 {feeders.map((item) => {
                   return <li className={styles.listEntry}>{item}</li>;
@@ -141,16 +143,15 @@ function IndividualCatPage() {
               </ul>
             </div>
           </div>
-
           <div className={styles.toggleButtonsContainer}>
             <button className={styles.toggleButton} onClick={toggleUpdateForm}>
-              Update {catData.name}'s Details
+              Update Details
             </button>
             <button
               className={styles.toggleButton}
               onClick={toggleAddFeederForm}
             >
-              Update {catData.name}'s Feeders
+              Update Feeders
             </button>
           </div>
         </div>

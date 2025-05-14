@@ -41,8 +41,9 @@ function MyCatsPage() {
 
   return (
     <div className={styles.myCatsPageContainer}>
-      <h1 className={styles.pageTitle}>My Cats</h1>
-
+      <div className={styles.pageTitle}>
+        <h1 >My Cats</h1>
+      </div>
       {!isHidden && <AddCatForm toggleAddCatForm={toggleAddCatForm} />}
       <MyCatsDisplayCard cats={cats} />
 
