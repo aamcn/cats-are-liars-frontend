@@ -4,32 +4,43 @@ import styles from "./css/feedHistoryPage.module.css";
 import FeedHistoryTable from "./feedHistoryTable/FeedHistoryTable";
 
 function FeedHistoryPage() {
-  const [feedHistoryData, setFeedHistoryData] = useState([]);
+  const [feedHistoryData, setFeedHistoryData] = useState(null);
   const [todaysDate, setTodaysDate] = useState(null)
-  const [defaultStartDate, setDefaultStartDate] = useState(null)
+  const [fromDate, setFromDate] = useState(null)
+  const [toDate, setToDate] = useState(null)
 
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
   const b = localStorage.getItem("storedToken").replaceAll('"', "");
   axios.defaults.headers.common["Authorization"] = `bearer ${b}`;
 
-  const getFeedHistory = () => {
+  const postBetweenDates = (dates) => {
     axios
-      .get(
-        "http://localhost:3000/feed-history/all",
-        { userId },
+      .post(
+        "http://localhost:3000/feed-history/between-dates",
+        { dates },
         { method: "cors" },
         { withCredentials: true },
       )
       .then((res) => setFeedHistoryData(res.data))
       .catch((error) => {
-        console.error(error);
+        console.error(error); 
       });
   };
 
+  const handleDateFormSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const formDataToJson = axios.formToJSON(formData);
+    postBetweenDates(formDataToJson);
+  };
+
   useEffect(() => {
-    getFeedHistory();
-  }, []);
+    if(fromDate){
+    const dates = {fromDate, toDate}
+    postBetweenDates(dates)
+    }
+  }, [fromDate]);
 
   const myformat = new Intl.NumberFormat('en-US', {
     minimumIntegerDigits: 2,
@@ -41,7 +52,8 @@ function FeedHistoryPage() {
     const year = today.getFullYear();
     const day = today.getDate();
     setTodaysDate(year + "-" + myformat.format(month) + "-" + myformat.format(day))
-    setDefaultStartDate(year + "-" + myformat.format(month) + "-" + '01')
+    setToDate(year + "-" + myformat.format(month) + "-" + myformat.format(day))
+    setFromDate(year + "-" + myformat.format(month) + "-" + '01')
   }, []);
 
 
@@ -52,23 +64,23 @@ function FeedHistoryPage() {
       </div>
       <div className={styles.tableOptions}>
         
-        <form>
+        <form onSubmit={handleDateFormSubmit}>
           <fieldset>
             <label htmlFor="fromDate">From:</label>
 
             <input
               type="date"
               id="fromDate"
-              name="trip-start"
+              name="fromDate"
               min="2025-01-01"
               max={todaysDate}
-              defaultValue={defaultStartDate} />
+              defaultValue={fromDate} />
 
             <label htmlFor="start">To:</label>
             <input
               type="date"
               id="toDate"
-              name="trip-start"
+              name="toDate"
               min="2025-01-01"
               max={todaysDate}
               defaultValue={todaysDate} />

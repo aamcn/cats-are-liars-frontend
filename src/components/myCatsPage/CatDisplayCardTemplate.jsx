@@ -23,17 +23,22 @@ function CatDisplayCardTemplate({ cat }) {
     <div className={styles.displayCardContainer}>
 
 
-      <div className={styles.tabMenuContainer}>
-        <h2 className={styles.catName}>{cat.name} <PawIcon height="1em" width="1em"/></h2>
-        <button onClick={handleToggleCard} className={styles.tabButton}>{isCardHidden ? <MinimiseIcon className={styles.minimiseIcon} /> : <DownChevron className={styles.downChevron} />}</button>
-      </div>
+     
 
 
-      {isCardHidden && <div>
+      {isCardHidden && 
         <div className={styles.cardHeader}>
           <img className={styles.catCardPhoto} src={null} alt="Cat Photo" />
          
-        </div>
+        </div>}
+
+        <div className={styles.tabMenuContainer}>
+        <h2 className={styles.catName}>{cat.name} <PawIcon height="1em" width="1em"/></h2>
+        <button onClick={handleToggleCard} className={styles.tabButton}>{isCardHidden ? <MinimiseIcon className={styles.minimiseIcon} /> : <DownChevron className={styles.downChevron} />}</button>
+      </div>
+     
+      {isCardHidden && 
+     <div>
         <div className={styles.catDetailsContainer}>
           <h3 className={styles.catDetailsTitle}>Meals:</h3>
           <ul className={styles.catDetailsList}>
