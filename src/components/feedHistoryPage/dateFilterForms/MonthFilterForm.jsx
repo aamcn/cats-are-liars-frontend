@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import styles from "./css/monthFilterForm.module.css"
+import axios from "axios"
+function MonthFilterForm({setFeedHistoryData}) {
 
-function MonthFilterForm() {
-
-    const [months, setMonths] = useState([])
+    const [months, setMonths] = useState([0,1,2,3,4,5,6,7,8,9,10,11])
     const [years, setYears] = useState([])
     const [yearMultiplier, setYearMultiplier] = useState([])
 
@@ -25,30 +25,43 @@ function MonthFilterForm() {
         }
     }, [yearMultiplier])
 
-    
+    const postMonthFilterForm = (date) => {
+        axios
+          .post(
+            "http://localhost:3000/feed-history/all/month-year",
+            { date },
+            { method: "cors" },
+            { withCredentials: true },
+          )
+          .then((res) => setFeedHistoryData(res.data))
+          .catch((error) => {
+            console.error(error); 
+          });
+      };
+      const handleFormSubmit = (event) => {
+        event.preventDefault()
+        const formData = new FormData(event.target)
+        const formDataToJson = axios.formToJSON(formData);
+        postMonthFilterForm(formDataToJson)
+      }
 
-      useEffect(() => {
-        setMonths([])
-        for(let i = 0; i < 12; i++){
-            setMonths(months => [...months, getMonthName(i)])
-        }
-      }, [])
-
-      useEffect(() => {
-        console.log(years, yearMultiplier)
-      }, [years, yearMultiplier])
+      const myMonthformat = new Intl.NumberFormat('en-US', {
+        minimumIntegerDigits: 2,
+      });
 
     return(
         <div className={styles.filterFormContainer}>
-            <form>
-                <select>
+            <form onSubmit={handleFormSubmit}>
+            <label htmlFor="month">Month: </label>
+                <select id="month" name="month">
                     {
                        months.map(month => {
-                        return <option>{month}</option>
+                        return <option value={myMonthformat.format(month + 1)}>{getMonthName(month)}</option>
                        }) 
                     }
                 </select>
-                <select>
+                <label htmlFor="Year">Year: </label>
+                <select id="year" name="year">
                     {
                        years.map(year=> {
                         return <option>{year}</option>

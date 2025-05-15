@@ -26,7 +26,7 @@ function FeedHistoryPage() {
         <h1>Feed History</h1>
       </div>
       <div className={styles.filterFormsContainer}>
-      <MonthFilterForm />
+      <MonthFilterForm setFeedHistoryData={setFeedHistoryData}/>
       <DateRangeFilterForm setFeedHistoryData={setFeedHistoryData}/>
       
       </div>
