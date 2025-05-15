@@ -5,6 +5,8 @@ import MyCatsTab from "./myCatsTab/MyCatsTab";
 import LastFeedTable from "./lastFeedTable/LastFeedTable";
 import AddFeedingForm from "../addFeedingForm/AddFeedingForm";
 import HouseholdTab from "./householdTab/HouseholdTab";
+import PawIcon from "../../assets/svg/paw.svg?react"
+
 function Homepage() {
   const [userCats, setUserCats] = useState([]);
 
@@ -59,7 +61,7 @@ function Homepage() {
   return (
     <div className={styles.homepageContainer}>
       <div className={styles.pageTitle}>
-        <h1>Home</h1>
+        <h1><PawIcon height="1em" width="1em"/> Home <PawIcon height="1em" width="1em"/></h1>
       </div>
       {username && (
         <p className={styles.welcomeMessage}>Welcome back {username}</p>

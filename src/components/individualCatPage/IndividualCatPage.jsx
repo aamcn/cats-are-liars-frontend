@@ -125,7 +125,7 @@ function IndividualCatPage() {
             </div>
             <hr />
             <div className={styles.catInfoSection}>
-              <h3 className={styles.sectionTitle}>Meds:</h3>
+              <h3 className={styles.sectionTitle}>Medication:</h3>
               <ul className={styles.catDetailsList}>
                 {catData.medication.map((item) => {
                   return <li className={styles.listEntry}>{item}</li>;

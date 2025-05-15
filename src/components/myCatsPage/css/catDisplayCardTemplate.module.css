@@ -43,7 +43,7 @@
 .tabMenuContainer{
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-content: center;
   background-color: teal;
   padding: 1em 1em 1em 1em;
   color:wheat;

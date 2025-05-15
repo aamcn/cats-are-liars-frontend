@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { useState } from "react";
 import DownChevron from "../../assets/svg/doubleDownChevron.svg?react"
 import MinimiseIcon from "../../assets/svg/minimiseIcon.svg?react"
+import PawIcon from "../../assets/svg/paw.svg?react"
 import styles from "./css/catDisplayCardTemplate.module.css";
 
 
@@ -23,8 +24,8 @@ function CatDisplayCardTemplate({ cat }) {
 
 
       <div className={styles.tabMenuContainer}>
-        <h2 className={styles.catName}>{cat.name}</h2>
-        <button onClick={handleToggleCard} className={styles.tabButton}>{cat ? <MinimiseIcon className={styles.minimiseIcon} /> : <DownChevron className={styles.downChevron} />}</button>
+        <h2 className={styles.catName}>{cat.name} <PawIcon height="1em" width="1em"/></h2>
+        <button onClick={handleToggleCard} className={styles.tabButton}>{isCardHidden ? <MinimiseIcon className={styles.minimiseIcon} /> : <DownChevron className={styles.downChevron} />}</button>
       </div>
 
 
