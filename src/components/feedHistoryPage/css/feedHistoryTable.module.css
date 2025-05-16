@@ -1,6 +1,6 @@
 .tableContainer {
   border-radius: 0em 0em 1em 1em;
-  margin: 2em 0em 2em 0em;
+  margin: 0em 0em 1em 0em;
   grid-row: 3;
   grid-column: 2;
   overflow: auto;
@@ -21,16 +21,30 @@
 }
 
 .columnTitle {
-  border: solid wheat;
+  justify-content: center;
+  border: solid teal;
   border-top-width: 0;
   border-left-width: 0;
   position: sticky;
   top: 0;
   vertical-align: bottom;
-  padding: 0.5em;
+  padding: 0.5em ;
   color: teal;
+  background-color: wheat;
   text-wrap: wrap;
-  font-size: 3vw;
+  font-size: 3.5vw;
   font-family: "Playwrite US Modern", cursive;
+  align-content: center;
+}
 
+.tableDataContainer{
+  border: 1px solid wheat;
+  border-top-width: 0;
+  border-left-width: 0;
+  padding: 0.5em;
+  font-size: 3.5vw;
+}
+
+.tableDataContainer:last-child {
+  border-right-width: 0;
 }

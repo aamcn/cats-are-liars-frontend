@@ -6,7 +6,7 @@ function FeedHistoryTable( {feedHistoryData}) {
             <div className={styles.tableContainer}>
         <table className={styles.feedHistoryTable}>
           <thead>
-            <tr>
+            <tr className={styles.columnTitleRow}>
               <th className={styles.columnTitle}>Date</th>
               <th className={styles.columnTitle}>Cat</th>
               <th className={styles.columnTitle}>Fed By</th>

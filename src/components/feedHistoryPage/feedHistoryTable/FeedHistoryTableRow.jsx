@@ -1,3 +1,6 @@
+import styles from "../css/feedHistoryTable.module.css"
+
+
 function FeedHistoryTableRow({ entry }) {
 
   const extractedDate = entry.date.split("T");
@@ -6,22 +9,22 @@ function FeedHistoryTableRow({ entry }) {
   
   return (
     <tr>
-      <td>
+      <td className={styles.tableDataContainer}>
         <p>{formattedDate}</p>
       </td>
-      <td>
+      <td className={styles.tableDataContainer}>
         <p>{entry.cat_name}</p>
-      </td>
-      <td>
+      </td >
+      <td className={styles.tableDataContainer}>
         <p>{entry.feeder_username}</p>
       </td>
-      <td>
+      <td className={styles.tableDataContainer} >
         <p>{entry.time}</p>
       </td>
-      <td>
+      <td className={styles.tableDataContainer} >
         <p>{entry.medication_given ? "Yes" : "No"}</p>
       </td>
-      <td>
+      <td  className={styles.tableDataContainer}>
         <p>{entry.notes}</p>
       </td>
     </tr>
