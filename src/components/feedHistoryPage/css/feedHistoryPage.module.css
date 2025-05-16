@@ -1,9 +1,20 @@
 .pageContainer {
   display: grid;
   grid-template-columns: 0fr 10fr 0fr;
-  grid-template-rows: 1fr 2fr 6fr 1fr;
+  grid-template-rows: 1fr 9fr 1fr;
   height: 95vh;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 .pageTitle {
@@ -15,46 +26,72 @@
   justify-content: center;
   align-self: center;
   height: 100%;
-  width: 100%;
   font-size: 3vw;
   margin: 0px;
   font-family: "Playwrite US Modern", cursive;
 }
 
-.filterTitle{
-  font-family: "Playwrite US Modern", cursive;
-  color: wheat;
-  background-color: teal;
-  width:100%;
-  text-align: center;
-  margin: 1em;
-}
-
-.filterSelector{
-  padding-bottom:1em;
+.mainContainer {
+  margin:1em 0em 1em 0em;
+  grid-column: 1/4;
+  grid-row: 2;
 }
 
 .tableOptions {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  grid-row: 2;
-  grid-column: 2;
 }
 
-.pageFooter{
+.pageFooter {
   grid-column: 2;
-  grid-row: 4;
+  grid-row: 3;
   background-color: teal;
+  height: 100%;
 }
 
-.filterFormsContainer{
+.filterFormsContainer {
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
   grid-row: 2;
   grid-column: 2;
-  margin:1em 0em 1em 0em;
+  margin: 1em 0em 1em 0em;
 }
 
+.filterTitle {
+  font-family: "Playwrite US Modern", cursive;
+  color: wheat;
+  padding-left: 0.5em;
+}
+
+.filterSelector {
+  padding-bottom: 1em;
+}
+
+.tabMenuContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: teal;
+  color: wheat;
+  box-shadow: 0px 5px 5px 0px rgb(100, 90, 77);
+  margin-bottom: 1em;
+  font-family: "Playwrite US Modern", cursive;
+  color: wheat;
+  font-size: 4vw;
+  width: 100%;
+}
+
+.tabButton {
+  background-color: teal;
+  color: wheat;
+}
+
+.minimiseIcon,
+.downChevron {
+  width: 1em;
+  height: 1em;
+  color: wheat;
+}

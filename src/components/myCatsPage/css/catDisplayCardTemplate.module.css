@@ -23,7 +23,7 @@
   border: solid wheat;
   border-radius: 1em;
   color: teal;
-  padding:1em;
+  padding: 1em;
 }
 
 .catCardPhoto {
@@ -40,27 +40,27 @@
   font-size: 5vw;
 }
 
-.tabMenuContainer{
+.tabMenuContainer {
   display: flex;
   justify-content: space-between;
   align-content: center;
   background-color: teal;
   padding: 1em 1em 1em 1em;
-  color:wheat;
+  color: wheat;
   box-shadow: 0px 5px 5px 0px rgb(100, 90, 77);
   margin-bottom: 1em;
   font-family: "Playwrite US Modern", cursive;
   border-radius: 1em;
 }
 
-.tabButton{
+.tabButton {
   background-color: teal;
-  color:wheat;
+  color: wheat;
 }
 
-.downChevron, .minimiseIcon{
-  width:1em;
-  height:1em;
-  color:wheat ;
-
+.downChevron,
+.minimiseIcon {
+  width: 1em;
+  height: 1em;
+  color: wheat;
 }

@@ -5,7 +5,7 @@ import MyCatsTab from "./myCatsTab/MyCatsTab";
 import LastFeedTable from "./lastFeedTable/LastFeedTable";
 import AddFeedingForm from "../addFeedingForm/AddFeedingForm";
 import HouseholdTab from "./householdTab/HouseholdTab";
-import PawIcon from "../../assets/svg/paw.svg?react"
+import PawIcon from "../../assets/svg/paw.svg?react";
 
 function Homepage() {
   const [userCats, setUserCats] = useState([]);
@@ -33,13 +33,9 @@ function Homepage() {
       });
   };
 
-
-
   useEffect(() => {
     getCats();
   }, []);
-
-
 
   const handleToggleLastFeedTable = () => {
     if (lastFeedVisibility == true) {
@@ -57,22 +53,29 @@ function Homepage() {
     }
   };
 
-
   return (
     <div className={styles.homepageContainer}>
       <div className={styles.pageTitle}>
-        <h1><PawIcon height="1em" width="1em"/> Home <PawIcon height="1em" width="1em"/></h1>
+        <h1>
+          <PawIcon height="1em" width="1em" /> Home{" "}
+          <PawIcon height="1em" width="1em" />
+        </h1>
       </div>
       {username && (
         <p className={styles.welcomeMessage}>Welcome back {username}</p>
       )}
-      
+
       {!formVisibility && <AddFeedingForm userCats={userCats} />}
-      
+
       <div className={styles.mainContent}>
         <MyCatsTab userCats={userCats} />
-        <LastFeedTable userCats={userCats} handleToggleLastFeedTable={handleToggleLastFeedTable} lastFeedVisibility={lastFeedVisibility} userId={userId} />
-        <HouseholdTab householdId={householdId} userId={userId}/>
+        <LastFeedTable
+          userCats={userCats}
+          handleToggleLastFeedTable={handleToggleLastFeedTable}
+          lastFeedVisibility={lastFeedVisibility}
+          userId={userId}
+        />
+        <HouseholdTab householdId={householdId} userId={userId} />
       </div>
 
       <div className={styles.toggleButtons}>

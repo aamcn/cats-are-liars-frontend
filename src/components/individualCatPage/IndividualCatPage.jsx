@@ -13,7 +13,6 @@ function IndividualCatPage() {
   const [addFeederFormHidden, setAddFeederFormHidden] = useState(true);
   const { householdMembers, storeHouseholdMembers } = useContext(appContext);
 
-
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
   const b = localStorage.getItem("storedToken").replaceAll('"', "");
@@ -86,15 +85,21 @@ function IndividualCatPage() {
 
   return (
     <div>
-
       {!updateFormHidden && <UpdateCatForm catData={catData} />}
-      {!addFeederFormHidden && <AddCatFeederForm catData={catData} householdMembers={householdMembers} />}
+      {!addFeederFormHidden && (
+        <AddCatFeederForm
+          catData={catData}
+          householdMembers={householdMembers}
+        />
+      )}
 
       {catData && (
         <div className={styles.catPageContainer}>
-          {catData && <div className={styles.pageTitle}>
-            <h1>{catData.name}</h1>
-          </div>}
+          {catData && (
+            <div className={styles.pageTitle}>
+              <h1>{catData.name}</h1>
+            </div>
+          )}
 
           <div className={styles.catHeaderContainer}>
             <img
@@ -106,20 +111,26 @@ function IndividualCatPage() {
           </div>
 
           <div className={styles.catInfoContainer}>
-          {catData && <div className={styles.catInfoTitle}>
-            <h2 >{catData.name}'s Info</h2>
-            </div>}
-            <hr/>
+            {catData && (
+              <div className={styles.catInfoTitle}>
+                <h2>{catData.name}'s Info</h2>
+              </div>
+            )}
+            <hr />
             <div className={styles.catInfoSection}>
               <h3 className={styles.sectionTitle}>Household:</h3>
-              <p className={styles.householdName}>{householdMembers[0] ? householdMembers[0].household_name : 'Loading'}</p>
+              <p className={styles.householdName}>
+                {householdMembers[0]
+                  ? householdMembers[0].household_name
+                  : "Loading"}
+              </p>
             </div>
             <hr />
             <div className={styles.catInfoSection}>
               <h3 className={styles.sectionTitle}>Meals:</h3>
               <ul className={styles.catDetailsList}>
                 {catData.meals.map((item) => {
-                  return <li className={styles.listEntry}  >{item}</li>;
+                  return <li className={styles.listEntry}>{item}</li>;
                 })}
               </ul>
             </div>
@@ -133,7 +144,7 @@ function IndividualCatPage() {
               </ul>
             </div>
 
-            <hr />    
+            <hr />
             <div className={styles.catInfoSection}>
               <h3 className={styles.sectionTitle}>Feeders:</h3>
               <ul className={styles.catDetailsList}>

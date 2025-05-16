@@ -1,29 +1,28 @@
-import { useEffect, useState } from "react"
-import styles from "./css/monthFilterForm.module.css"
-import axios from "axios"
+import { useEffect, useState } from "react";
+import styles from "./css/monthFilterForm.module.css";
+import axios from "axios";
 function MonthFilterForm({ setFeedHistoryData }) {
-
-  const [months, setMonths] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
-  const [years, setYears] = useState([])
-  const [yearMultiplier, setYearMultiplier] = useState([])
+  const [months, setMonths] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+  const [years, setYears] = useState([]);
+  const [yearMultiplier, setYearMultiplier] = useState([]);
 
   function getMonthName(monthNumber) {
-    const date = new Date()
-    date.setMonth(monthNumber)
-    return date.toLocaleString('en-EN', { month: "long" })
+    const date = new Date();
+    date.setMonth(monthNumber);
+    return date.toLocaleString("en-EN", { month: "long" });
   }
 
   useEffect(() => {
-    const today = new Date()
-    setYearMultiplier(today.getFullYear() - 2020)
-  }, [])
+    const today = new Date();
+    setYearMultiplier(today.getFullYear() - 2020);
+  }, []);
 
   useEffect(() => {
-    setYears([])
+    setYears([]);
     for (let i = 0; i <= yearMultiplier; i++) {
-      setYears(years => [...years, 2020 + i])
+      setYears((years) => [...years, 2020 + i]);
     }
-  }, [yearMultiplier])
+  }, [yearMultiplier]);
 
   const postMonthFilterForm = (date) => {
     axios
@@ -39,13 +38,13 @@ function MonthFilterForm({ setFeedHistoryData }) {
       });
   };
   const handleFormSubmit = (event) => {
-    event.preventDefault()
-    const formData = new FormData(event.target)
+    event.preventDefault();
+    const formData = new FormData(event.target);
     const formDataToJson = axios.formToJSON(formData);
-    postMonthFilterForm(formDataToJson)
-  }
+    postMonthFilterForm(formDataToJson);
+  };
 
-  const myMonthformat = new Intl.NumberFormat('en-US', {
+  const myMonthformat = new Intl.NumberFormat("en-US", {
     minimumIntegerDigits: 2,
   });
 
@@ -56,21 +55,21 @@ function MonthFilterForm({ setFeedHistoryData }) {
           <div className={styles.monthInput}>
             <label htmlFor="month">Month: </label>
             <select id="month" name="month">
-              {
-                months.map(month => {
-                  return <option value={myMonthformat.format(month + 1)}>{getMonthName(month)}</option>
-                })
-              }
+              {months.map((month) => {
+                return (
+                  <option value={myMonthformat.format(month + 1)}>
+                    {getMonthName(month)}
+                  </option>
+                );
+              })}
             </select>
           </div>
           <div className={styles.yearInput}>
             <label htmlFor="Year">Year: </label>
             <select id="year" name="year">
-              {
-                years.map(year => {
-                  return <option>{year}</option>
-                })
-              }
+              {years.map((year) => {
+                return <option>{year}</option>;
+              })}
             </select>
           </div>
         </fieldset>
@@ -79,8 +78,7 @@ function MonthFilterForm({ setFeedHistoryData }) {
         </div>
       </form>
     </div>
-  )
-
+  );
 }
 
-export default MonthFilterForm
+export default MonthFilterForm;

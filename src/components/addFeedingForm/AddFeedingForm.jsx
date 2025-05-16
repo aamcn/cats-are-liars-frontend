@@ -66,7 +66,6 @@ function AddFeedingForm({ userCats }) {
         className={styles.addFeedingForm}
         onSubmit={handleFeedingFormSubmit}
       >
-
         <fieldset className={styles.formFieldSet}>
           <label htmlFor="cat_name">Cat: </label>
           <select

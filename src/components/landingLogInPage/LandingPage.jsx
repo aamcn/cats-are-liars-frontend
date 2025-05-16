@@ -10,8 +10,7 @@ function LandingPage() {
       <div className={styles.formContainer}>
         <LogInForm />
       </div>
-      <div className={styles.pageFooter}>
-      </div>
+      <div className={styles.pageFooter}></div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import MyCatsDisplayCard from "./MyCatsDisplayCard";
 import axios from "axios";
 import AddCatForm from "./AddCatForm";
 import styles from "./css/myCatsPage.module.css";
-import PawIcon from "../../assets/svg/paw.svg?react"
+import PawIcon from "../../assets/svg/paw.svg?react";
 
 function MyCatsPage() {
   const [cats, setCats] = useState([]);
@@ -43,7 +43,10 @@ function MyCatsPage() {
   return (
     <div className={styles.myCatsPageContainer}>
       <div className={styles.pageTitle}>
-        <h1><PawIcon height="1em" width="1em"/> My Cats <PawIcon height="1em" width="1em"/></h1>
+        <h1>
+          <PawIcon height="1em" width="1em" /> My Cats{" "}
+          <PawIcon height="1em" width="1em" />
+        </h1>
       </div>
       {!isHidden && <AddCatForm toggleAddCatForm={toggleAddCatForm} />}
       <MyCatsDisplayCard cats={cats} />

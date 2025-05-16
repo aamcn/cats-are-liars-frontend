@@ -1,4 +1,5 @@
-.cardsContainer {display: flex;
+.cardsContainer {
+  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   grid-row: 2;

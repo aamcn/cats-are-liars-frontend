@@ -2,38 +2,39 @@
   height: fit-content;
   border-radius: 0em 0em 1em 1em;
   margin: 1em 0em 0em 0em;
-  }
+}
 
-  .tabMenuContainer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: teal;
-    padding: 1em 0em 1em 1em;
-    color:wheat;
-    box-shadow: 0px 5px 5px 0px rgb(100, 90, 77);
-    margin-bottom: 1em;
-    font-family: "Playwrite US Modern", cursive;
-    color: wheat;
-    font-size: 5vw;
-  }
-  
-  .catCardsContainer{
-    display: flex;
-    justify-content: space-around;
-    padding:1em;
-    border-radius: 0em 0em 1em 1em;
-    box-shadow: 0px 5px 5px 0px rgb(100, 90, 77);
-    padding-bottom: 2em;
-  }
-  
-  .tabButton{
-    background-color: teal;
-    color:wheat;
-  }
-  
-  .downChevron, .minimiseIcon{
-    width:1em;
-    height:1em;
-    color:wheat ;
-  }
+.tabMenuContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: teal;
+  padding: 1em 0em 1em 1em;
+  color: wheat;
+  box-shadow: 0px 5px 5px 0px rgb(100, 90, 77);
+  margin-bottom: 1em;
+  font-family: "Playwrite US Modern", cursive;
+  color: wheat;
+  font-size: 5vw;
+}
+
+.catCardsContainer {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+  border-radius: 0em 0em 1em 1em;
+  box-shadow: 0px 5px 5px 0px rgb(100, 90, 77);
+  padding-bottom: 2em;
+}
+
+.tabButton {
+  background-color: teal;
+  color: wheat;
+}
+
+.downChevron,
+.minimiseIcon {
+  width: 1em;
+  height: 1em;
+  color: wheat;
+}

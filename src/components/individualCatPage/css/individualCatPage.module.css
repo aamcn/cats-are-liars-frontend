@@ -4,7 +4,18 @@
   grid-template-rows: 1fr 1fr 4fr 1fr;
   height: 95vh;
   place-items: center;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 .pageTitle {
@@ -20,10 +31,6 @@
   font-size: 3vw;
   margin: 0px;
   font-family: "Playwrite US Modern", cursive;
-}
-
-hr {
-  width: 100%;
 }
 
 .catHeaderContainer {
@@ -49,14 +56,14 @@ hr {
   grid-column: 2;
   overflow: auto;
   background-color: white;
-  width:100%;
+  width: 100%;
   height: 95%;
   margin: 1em 0em 1em 0em;
-  border:solid rgb(4, 73, 73) 4px;
+  border: solid rgb(4, 73, 73) 4px;
   border-radius: 1em;
 }
 
-.catInfoSection{
+.catInfoSection {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -64,12 +71,12 @@ hr {
   padding: 1em 0em 1em 0em;
 }
 
-.catInfoTitle{
+.catInfoTitle {
   position: sticky;
-  top:0%;
+  top: 0%;
   width: 101%;
   font-family: "Playwrite US Modern", cursive;
-  color: wheat ;
+  color: wheat;
   background-color: teal;
   padding: 0.5em 0em 0.5em 0em;
   text-align: center;
@@ -77,28 +84,28 @@ hr {
   box-shadow: 0px 1px 5px 1px black;
 }
 
-.sectionTitle{
-  color:teal;
+.sectionTitle {
+  color: teal;
   font-family: "Playwrite US Modern", cursive;
   text-decoration: underline;
   margin-bottom: 1em;
 }
 
-.householdName{
+.householdName {
   margin: 0em;
-  color:rgb(10, 53, 53);
+  color: rgb(10, 53, 53);
   font-family: "Playwrite US Modern", cursive;
   font-weight: 800;
   font-size: 4vw;
 }
 
-.catDetailsList{
+.catDetailsList {
   text-align: center;
   padding: 0%;
 }
 
-.listEntry{
-  color:teal;
+.listEntry {
+  color: teal;
 }
 
 .toggleButtonsContainer {
@@ -121,31 +128,28 @@ hr {
   background-color: rgb(205, 255, 255);
   outline: solid;
   border-bottom: solid rgb(105, 177, 177);
-  box-shadow: 0em 0.3em 0.1em 0em; 
+  box-shadow: 0em 0.3em 0.1em 0em;
   font-family: "Playwrite US Modern", cursive;
   font-size: 4vw;
   font-weight: 600;
   animation: appearGrow 1s;
 }
 
-
- 
-.toggleButton:active{
+.toggleButton:active {
   transform: translateY(0.1em);
-  box-shadow: inset 0em 0.3em 0.1em 0em; 
+  box-shadow: inset 0em 0.3em 0.1em 0em;
 }
 
-
 @keyframes appearGrow {
-  0%{
-    scale:0;
-  }
- 
-  60%{
-    scale:1.2
+  0% {
+    scale: 0;
   }
 
-  100%{
-    scale:1;
+  60% {
+    scale: 1.2;
+  }
+
+  100% {
+    scale: 1;
   }
 }

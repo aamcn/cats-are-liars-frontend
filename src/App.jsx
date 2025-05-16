@@ -12,22 +12,28 @@ export const appContext = createContext({
 
 function App() {
   const [logInSuccess, setLoginSuccess] = useState(false);
-  const [householdMembers, setHouseholdMembers] = useState([])
-
+  const [householdMembers, setHouseholdMembers] = useState([]);
 
   const changeLogInSuccess = (loginStatus) => {
     setLoginSuccess(loginStatus);
   };
- 
+
   const storeHouseholdMembers = (members) => {
-    setHouseholdMembers(members)
-  }
+    setHouseholdMembers(members);
+  };
 
   useEffect(() => {}, [logInSuccess]);
 
   return (
     <>
-      <appContext.Provider value={{ logInSuccess, changeLogInSuccess, householdMembers, storeHouseholdMembers }}>
+      <appContext.Provider
+        value={{
+          logInSuccess,
+          changeLogInSuccess,
+          householdMembers,
+          storeHouseholdMembers,
+        }}
+      >
         <Header />
         <Outlet />
       </appContext.Provider>

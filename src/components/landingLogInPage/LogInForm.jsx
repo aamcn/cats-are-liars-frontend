@@ -43,7 +43,10 @@ function LogInForm() {
         localStorage.setItem("userId", JSON.stringify(res.data.userId));
         localStorage.setItem("username", JSON.stringify(res.data.username));
         localStorage.setItem("userRole", JSON.stringify(res.data.role));
-        localStorage.setItem("householdId", JSON.stringify(res.data.householdId));
+        localStorage.setItem(
+          "householdId",
+          JSON.stringify(res.data.householdId),
+        );
         changeLogInSuccess(true);
         redirectHome();
       })
@@ -53,7 +56,6 @@ function LogInForm() {
       });
     event.target.reset();
   };
-
 
   return (
     <div className={styles.formContainer}>

@@ -1,44 +1,43 @@
-.tabContainer{
+.tabContainer {
   height: fit-content;
   border-radius: 0em 0em 1em 1em;
   margin: 1em 0em 0em 0em;
 }
 
-.tabMenuContainer{
+.tabMenuContainer {
   display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: teal;
-    padding: 1em 0em 1em 1em;
-    color:wheat;
-    box-shadow: 0px 5px 5px 0px rgb(100, 90, 77);
-    margin-bottom: 1em;
-    font-family: "Playwrite US Modern", cursive;
-    color: wheat;
-    font-size: 5vw;
-  }
+  justify-content: space-between;
+  align-items: center;
+  background-color: teal;
+  padding: 1em 0em 1em 1em;
+  color: wheat;
+  box-shadow: 0px 5px 5px 0px rgb(100, 90, 77);
+  margin-bottom: 1em;
+  font-family: "Playwrite US Modern", cursive;
+  color: wheat;
+  font-size: 5vw;
+}
 
-  .usersContainer{
-    overflow: auto;
-    width: 100%;
-    border-spacing: 0;
-    text-align: center;
-    margin-bottom: 2em;
-    border-radius: 0em 0em 1em 1em;
-    box-shadow: 0px 5px 5px 0px rgb(100, 90, 77);
+.usersContainer {
+  overflow: auto;
+  width: 100%;
+  border-spacing: 0;
+  text-align: center;
+  margin-bottom: 2em;
+  border-radius: 0em 0em 1em 1em;
+  box-shadow: 0px 5px 5px 0px rgb(100, 90, 77);
 
   padding-bottom: 2em;
-  }
+}
 
-  .tabButton{
-    background-color: teal;
-    color:wheat;
-  }
+.tabButton {
+  background-color: teal;
+  color: wheat;
+}
 
-  .downChevron, .minimiseIcon{
-    width:1em;
-    height:1em;
-    color:wheat ;
-  }
-
-  
+.downChevron,
+.minimiseIcon {
+  width: 1em;
+  height: 1em;
+  color: wheat;
+}

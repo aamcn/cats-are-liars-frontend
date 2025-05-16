@@ -12,15 +12,21 @@ function UpdateCatFeederForm({ catData, householdMembers }) {
           <label className={styles.formLabel} htmlFor="catId">
             Cat
           </label>
-          <input type="text" id="catId" value={catData.name} readOnly required></input>
+          <input
+            type="text"
+            id="catId"
+            value={catData.name}
+            readOnly
+            required
+          ></input>
         </fieldset>
         <fieldset className={styles.optionsFieldSet}>
           <label className={styles.formLabel} htmlFor="feederUsername">
             Choose the new feeder.
           </label>
           <select name="feederUsername" id="feederUsername">
-            {householdMembers.map(feeder => {
-              return <option>{feeder.username}</option>
+            {householdMembers.map((feeder) => {
+              return <option>{feeder.username}</option>;
             })}
           </select>
         </fieldset>
