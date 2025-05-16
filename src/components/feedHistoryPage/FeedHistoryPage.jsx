@@ -37,18 +37,20 @@ function FeedHistoryPage() {
 
       <div className={styles.filterFormsContainer}>
           <h2 className={styles.filterTitle}>Filter Options</h2>
-      <div>
+      <div className={styles.filterSelector}>
         <label>Filter results </label>
+        
         <select onChange={toggleFormVisibility}>
           <option>Between Dates</option>
           <option>By Month</option>
         </select>
      </div>
+     <hr/>
      {!isMonthFormHidden && <MonthFilterForm setFeedHistoryData={setFeedHistoryData}/>}
-      {!isDateRangeHidden && <DateRangeFilterForm setFeedHistoryData={setFeedHistoryData}/>} 
-      
+     {!isDateRangeHidden && <DateRangeFilterForm setFeedHistoryData={setFeedHistoryData}/>} 
+     <hr/>
       </div>
-
+    <hr/>
       <FeedHistoryTable feedHistoryData={feedHistoryData} />
       <div className={styles.pageFooter}>
 

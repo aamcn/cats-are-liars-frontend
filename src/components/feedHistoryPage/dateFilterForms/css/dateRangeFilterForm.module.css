@@ -1,0 +1,25 @@
+
+.formContainer{
+   display: flex;
+   justify-content: center;
+   width: 100%;
+}
+.filterForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:0.5em;
+    width: 100%;
+}
+
+.dateFieldSet{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.formButtons{
+    display: flex;
+    justify-content: center;
+    padding-top:1em;
+}

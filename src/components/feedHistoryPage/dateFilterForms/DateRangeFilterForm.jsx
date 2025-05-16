@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios";
-import styles from "./css/monthFilterForm.module.css"
+import styles from "./css/dateRangeFilterForm.module.css"
 
 function DateRangeFilterForm({setFeedHistoryData}) {
 
@@ -51,11 +51,12 @@ function DateRangeFilterForm({setFeedHistoryData}) {
       };
 
     return(
-        <div className={styles.filterFormContainer}>
-        <form onSubmit={handleDateFormSubmit}>
-          <fieldset>
+        <div className={styles.formContainer}>
+        <form className={styles.filterForm} onSubmit={handleDateFormSubmit}>
+          <fieldset className={styles.dateFieldSet}>
+            
+          <div className={styles.toDateContainer}>
             <label htmlFor="fromDate">From:</label>
-
             <input
               type="date"
               id="fromDate"
@@ -63,7 +64,9 @@ function DateRangeFilterForm({setFeedHistoryData}) {
               min="2025-01-01"
               max={todaysDate}
               defaultValue={fromDate} />
+             </div>
 
+            <div className={styles.toDateContainer}>
             <label htmlFor="start">To:</label>
             <input
               type="date"
@@ -72,7 +75,10 @@ function DateRangeFilterForm({setFeedHistoryData}) {
               min="2025-01-01"
               max={todaysDate}
               defaultValue={todaysDate} />
-          </fieldset>
+          
+            </div>
+            </fieldset>
+           
           <div className={styles.formButtons}>
             <button className={styles.submitButtons}>Search</button>
           </div>

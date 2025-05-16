@@ -30,6 +30,10 @@
   margin: 1em;
 }
 
+.filterSelector{
+  padding-bottom:1em;
+}
+
 .tableOptions {
   display: flex;
   justify-content: space-around;
