@@ -4,8 +4,8 @@ function FeedHistoryTable({ feedHistoryData }) {
   return (
     <div className={styles.tableContainer}>
       <table className={styles.feedHistoryTable}>
-        <thead>
-          <tr className={styles.columnTitleRow}>
+        <thead className={styles.columnTitleRow}>
+          <tr >
             <th className={styles.columnTitle}>Date</th>
             <th className={styles.columnTitle}>Cat</th>
             <th className={styles.columnTitle}>Fed By</th>
@@ -14,7 +14,10 @@ function FeedHistoryTable({ feedHistoryData }) {
             <th className={styles.columnTitle}>Notes</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className={styles.tableBody}>
+          <tr>
+            <td className={styles.gapMan} colSpan='6'></td>
+          </tr>
           {feedHistoryData &&
             feedHistoryData.map((entry) => {
               return <FeedHistoryTableRow entry={entry} />;

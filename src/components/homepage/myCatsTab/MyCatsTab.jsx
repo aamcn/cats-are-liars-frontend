@@ -19,7 +19,7 @@ function MyCatsTab({ userCats }) {
   return (
     <div className={styles.tabContainer}>
       <div className={styles.tabMenuContainer}>
-        <p>My Cats</p>
+        <h3>My Cats</h3>
         <button onClick={handleToggleTab} className={styles.tabButton}>
           {catsTabVisible ? (
             <MinimiseIcon className={styles.minimiseIcon} />

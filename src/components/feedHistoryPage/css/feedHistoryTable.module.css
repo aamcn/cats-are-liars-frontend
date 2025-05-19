@@ -1,45 +1,66 @@
 .tableContainer {
   border-radius: 0em 0em 1em 1em;
   overflow: auto;
-  border: 4px solid teal;
   height: 100%;
+  background-color: white;
+  border: solid teal;
 }
 
 .feedHistoryTable {
   overflow: auto;
   white-space: nowrap;
-  border-spacing: 0;
   text-align: center;
   margin-bottom: 2em;
   border-radius: 0em 0em 1em 1em;
   font-size: 3vw;
   text-wrap: wrap;
+  border-collapse: collapse;
+  background-color:aliceblue;
+  
 }
 
 .columnTitle {
   justify-content: center;
-  border: solid teal;
-  border-top-width: 0;
+  border:solid rgb(172, 155, 125);
   border-left-width: 0;
+  border-bottom-width: 0;
   position: sticky;
-  top: 0;
   vertical-align: bottom;
   color: teal;
-  background-color: wheat;
   text-wrap: wrap;
   font-size: 3.5vw;
   font-family: "Playwrite US Modern", cursive;
   align-content: center;
 }
 
+.columnTitleRow{
+  background-color: wheat;
+  box-shadow: 0px 5px 5px 0px rgb(100, 90, 77);
+  padding:0.5em;  
+  border-radius: 1em;
+}
+
 .tableDataContainer {
-  border: 1px solid wheat;
-  border-top-width: 0;
+  border: 1vw solid rgb(0, 141, 141);
   border-left-width: 0;
+  border-right-width: 0;
   padding: 0.5em;
   font-size: 3.5vw;
 }
 
+.columnTitle:last-child{
+  border-right-width: 0;
+}
+
 .tableDataContainer:last-child {
   border-right-width: 0;
+}
+
+.tableDataRow:first-child {
+  border:solid black;
+  border-spacing: 0 15px;
+}
+
+.gapMan{
+  height:1em;
 }

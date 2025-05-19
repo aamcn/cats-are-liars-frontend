@@ -41,10 +41,10 @@ function HouseholdTab() {
   return (
     <div className={styles.tabContainer}>
       <div className={styles.tabMenuContainer}>
-        <p>
+        <h3>
           {householdMembers[0] ? householdMembers[0].household_name : "Loading"}{" "}
-          Household Users
-        </p>
+          Members
+        </h3>
         <button onClick={handleToggleTab} className={styles.tabButton}>
           {!isTabHidden ? (
             <MinimiseIcon className={styles.minimiseIcon} />
@@ -58,9 +58,9 @@ function HouseholdTab() {
         <div className={styles.usersContainer}>
           {householdMembers.map((user) => {
             return (
-              <div>
-                <p>{user.username}</p>
-                <img alt="User Photo"></img>
+              <div className={styles.userContainer}>
+                <img className={styles.userPhoto} alt="User Photo"></img>
+                <p className={styles.username}>{user.username}</p>
               </div>
             );
           })}

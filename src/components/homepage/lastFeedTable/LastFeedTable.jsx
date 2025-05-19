@@ -45,7 +45,7 @@ function LastFeedTable({
   return (
     <div className={styles.tabContainer}>
       <div className={styles.tabMenuContainer}>
-        <p>Last Feed</p>
+        <h3>Last Feed</h3>
         <button
           onClick={handleToggleLastFeedTable}
           className={styles.tabButton}

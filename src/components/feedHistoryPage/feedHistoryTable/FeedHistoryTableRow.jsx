@@ -7,7 +7,7 @@ function FeedHistoryTableRow({ entry }) {
     dateArray[2] + "/" + dateArray[1] + "/" + dateArray[0].slice(2, 4);
 
   return (
-    <tr>
+    <tr className={styles.tableDataRow}>
       <td className={styles.tableDataContainer}>
         <p>{formattedDate}</p>
       </td>

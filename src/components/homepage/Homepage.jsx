@@ -78,7 +78,7 @@ function Homepage() {
         <HouseholdTab householdId={householdId} userId={userId} />
       </div>
 
-      <div className={styles.toggleButtons}>
+      <div className={styles.footerPanel}>
         <button className={styles.toggleButton} onClick={handleToggleDisplay}>
           Add Feeding
         </button>
