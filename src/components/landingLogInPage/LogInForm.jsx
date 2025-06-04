@@ -3,7 +3,8 @@ import axios from "axios";
 import { useContext } from "react";
 import { appContext } from "../../App";
 import { useNavigate } from "react-router-dom";
-import styles from "./css/logInForm.module.css";
+import "./css/logInForm.scss"; 
+
 
 function LogInForm() {
   let navigate = useNavigate();
@@ -58,19 +59,19 @@ function LogInForm() {
   };
 
   return (
-    <div className={styles.formContainer}>
+    <div className="logInFormContainer">
       {errorMessages && <p>{errorMessages}</p>}
       <form
-        className={styles.logInForm}
+        className="logInForm"
         method="POST"
         onSubmit={formSubmission}
       >
-        <fieldset className={styles.fieldset}>
-          <label className={styles.inputLabel} htmlFor="username">
+        <fieldset className="fieldset">
+          <label className="inputLabel" htmlFor="username">
             Username:
           </label>
           <input
-            className={styles.textInput}
+            className="textInput"
             onChange={handleUsernameChange}
             type="text"
             name="username"
@@ -80,11 +81,11 @@ function LogInForm() {
             required
           ></input>
           <br></br>
-          <label className={styles.inputLabel} htmlFor="password">
+          <label className="inputLabel" htmlFor="password">
             Password:{" "}
           </label>
           <input
-            className={styles.textInput}
+            className="textInput"
             onChange={handlePasswordChange}
             type="password"
             id="password"
@@ -92,9 +93,9 @@ function LogInForm() {
             required
           ></input>
         </fieldset>
-        <div className={styles.formButtonsContainer}>
-          <button className={styles.formButton}>Log In</button>
-          <button className={styles.formButton}>Clear</button>
+        <div className="formButtonsContainer">
+          <button className="formButton">Log In</button>
+          <button className="formButton">Clear</button>
         </div>
       </form>
     </div>

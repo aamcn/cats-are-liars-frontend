@@ -1,3 +1,5 @@
+@use "../../../../base.scss";
+
 .catTabCard {
   display: flex;
   flex-direction: column;
@@ -6,8 +8,8 @@
 }
 
 .catProfilePhoto {
-  border: solid wheat;
-  outline: solid teal;
+  border: solid base.$wheat;
+  outline: solid base.$tiffany-blue;
   min-width: 25vw;
   min-height: 25vw;
   border-radius: 50%;
@@ -16,7 +18,7 @@
 }
 
 .catNameLink {
-  color: teal;
+  color: base.$jet;
   font-family: "Playwrite US Modern", cursive;
   text-align: center;
 }

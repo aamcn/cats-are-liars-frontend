@@ -1,8 +1,8 @@
 import axios from "axios";
-import styles from "../css/lastFeedTable.module.css";
-import LastFeedTemplate from "./LastFeedRowTemplate";
-import DownChevron from "../../../assets/svg/doubleDownChevron.svg?react";
-import MinimiseIcon from "../../../assets/svg/minimiseIcon.svg?react";
+import "./lastFeedTable.scss";
+import LastFeedTemplate from "../LastFeedRowTemplate";
+import DownChevron from "../../../../assets/svg/doubleDownChevron.svg?react";
+import MinimiseIcon from "../../../../assets/svg/minimiseIcon.svg?react";
 import { useState, useEffect } from "react";
 
 function LastFeedTable({
@@ -43,39 +43,39 @@ function LastFeedTable({
   }, [userCats]);
 
   return (
-    <div className={styles.tabContainer}>
-      <div className={styles.tabMenuContainer}>
+    <div className="tabContainer">
+      <div className="lastFeedMenuContainer">
         <h3>Last Feed</h3>
         <button
           onClick={handleToggleLastFeedTable}
-          className={styles.tabButton}
+          className="lastFeedTabButton "
         >
           {lastFeedVisibility ? (
-            <MinimiseIcon className={styles.minimiseIcon} />
+            <MinimiseIcon className="minimiseIcon" />
           ) : (
-            <DownChevron className={styles.downChevron} />
+            <DownChevron className="downChevron" />
           )}
         </button>
       </div>
       {lastFeedVisibility && (
-        <table className={styles.lastFeedTable}>
-          <thead className={styles.tableHead}>
-            <tr className={styles.tableRows}>
-              <th className={styles.columnTitle} scope="col">
+        <table className="lastFeedTable">
+          <thead className="tableHead">
+            <tr className="tableRows">
+              <th className="columnTitle" scope="col">
                 Date
               </th>
-              <th className={styles.columnTitle} scope="col">
+              <th className="columnTitle" scope="col">
                 Time
               </th>
-              <th className={styles.columnTitle} scope="col">
+              <th className="columnTitle" scope="col">
                 Name
               </th>
-              <th className={styles.columnTitle} scope="col">
+              <th className="columnTitle" scope="col">
                 Fed By
               </th>
             </tr>
           </thead>
-          <tbody className={styles.tableBody}>
+          <tbody className="tableBody">
             {lastFeedEntry &&
               lastFeedEntry.map((entry) => {
                 return <LastFeedTemplate entry={entry} />;

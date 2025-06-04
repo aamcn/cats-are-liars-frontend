@@ -1,8 +1,8 @@
-import styles from "../css/myCatsTab.module.css";
+import "./myCatsTab.scss";
 import { useState } from "react";
-import CatTabTemplate from "./CatTabTemplate";
-import DownChevron from "../../../assets/svg/doubleDownChevron.svg?react";
-import MinimiseIcon from "../../../assets/svg/minimiseIcon.svg?react";
+import CatTabTemplate from "../catTabTemplate/CatTabTemplate.jsx";
+import DownChevron from "../../../../assets/svg/doubleDownChevron.svg?react";
+import MinimiseIcon from "../../../../assets/svg/minimiseIcon.svg?react";
 
 function MyCatsTab({ userCats }) {
   const [catsTabVisible, setCatsTabVisible] = useState(true);
@@ -16,20 +16,20 @@ function MyCatsTab({ userCats }) {
     }
   };
 
-  return (
-    <div className={styles.tabContainer}>
-      <div className={styles.tabMenuContainer}>
+  return ( 
+    <div className="tabContainer">
+      <div className="myCatsTabContainer">
         <h3>My Cats</h3>
-        <button onClick={handleToggleTab} className={styles.tabButton}>
+        <button onClick={handleToggleTab} className="myCatsTabButton">
           {catsTabVisible ? (
-            <MinimiseIcon className={styles.minimiseIcon} />
+            <MinimiseIcon className="minimiseIcon" />
           ) : (
-            <DownChevron className={styles.downChevron} />
+            <DownChevron className="downChevron" />
           )}
         </button>
       </div>
       {catsTabVisible && (
-        <div className={styles.catCardsContainer}>
+        <div className="catCardsContainer">
           {userCats.map((cat) => {
             return <CatTabTemplate key={cat.id} cat={cat} />;
           })}

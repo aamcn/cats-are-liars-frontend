@@ -1,6 +1,8 @@
+@use "../../../base.scss";
+
 .navBarContainer {
   height: 5vh;
-  background-color: teal;
+  background-color: base.$tiffany-blue ;
   font-family:
     system-ui,
     -apple-system,
@@ -24,5 +26,6 @@
 }
 
 .navLink {
-  color: wheat;
+  color: base.$jet;
+  font-weight: 800;
 }

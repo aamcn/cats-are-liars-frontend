@@ -1,8 +1,10 @@
+@use "../../../base.scss";
+
 .homepageContainer {
   display: grid;
   grid-template-columns: 0fr 10fr 0fr;
   grid-template-rows: 1fr 0.5fr 9.5fr 1fr;
-  height: 95vh;
+  height: 95dvh;
   font-family:
     system-ui,
     -apple-system,
@@ -15,17 +17,18 @@
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
+    background-color: base.$platinum;
 }
 
-.pageTitle {
+.homePageTitle {
   grid-column: 2;
   grid-row: 1;
   display: flex;
   font-style: normal;
   justify-content: center;
   align-content: center;
-  background-color: teal;
-  color: wheat;
+  background-color: base.$tiffany-blue;
+  color: base.$wheat;
   font-family: "Playwrite US Modern", cursive;
   font-size: 3vw;
   margin: 0px;
@@ -33,12 +36,12 @@
 
 .welcomeMessage {
   font-family: "Playwrite US Modern", cursive;
-  color: teal;
+  color: base.$jet;
   grid-column: 2;
   grid-row: 2;
   text-align: center;
   padding: 0.5em;
-  background-color: wheat;
+  background-color: base.$peach;
 }
 
 .mainContent {
@@ -51,7 +54,7 @@
 }
 
 .footerPanel {
-  background-color: teal;
+  background-color: base.$tiffany-blue;
   width: 100%;
   grid-column: 2;
   grid-row: 4;
@@ -63,7 +66,7 @@
 }
 
 .toggleButton {
-  background-color: wheat;
-  color: teal;
+  background-color: base.$peach;
+  color: base.$wheat;
   height: 50%;
 }

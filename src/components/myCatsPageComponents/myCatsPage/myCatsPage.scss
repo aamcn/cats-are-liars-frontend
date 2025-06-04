@@ -1,16 +1,18 @@
+@use "../../../base.scss";
+
 .myCatsPageContainer {
   display: grid;
   grid-template-columns: 0fr 10fr 0fr;
   grid-template-rows: 1fr 9fr 1fr;
-  height: 95vh;
-  background-color: rgb(167, 214, 214);
+  height: 95dvh;
+  background-color: base.$platinum;
 }
 
 .pageTitle {
   display: flex;
   grid-column: 1/4;
   grid-row: 1;
-  background-color: teal;
+  background-color: base.$tiffany-blue;
   color: wheat;
   justify-content: center;
   align-self: center;
@@ -29,7 +31,7 @@
 .toggleButtons {
   position: absolute;
   bottom: 0%;
-  background-color: teal;
+  background-color: base.$tiffany-blue;
   width: 100%;
   grid-column: 2;
   grid-row: 4;
@@ -41,7 +43,7 @@
 }
 
 .toggleButton {
-  background-color: wheat;
-  color: teal;
+  background-color: base.$peach;
+  color: wheat;
   height: 50%;
 }

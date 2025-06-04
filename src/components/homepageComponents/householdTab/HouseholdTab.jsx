@@ -1,4 +1,4 @@
-import styles from "./css/householdTab.module.css";
+import "./css/householdTab.scss";
 import { useEffect, useState, useContext } from "react";
 import { appContext } from "../../../App";
 import DownChevron from "../../../assets/svg/doubleDownChevron.svg?react";
@@ -39,28 +39,28 @@ function HouseholdTab() {
   }, []);
 
   return (
-    <div className={styles.tabContainer}>
-      <div className={styles.tabMenuContainer}>
+    <div className="HouseHoldTabContainer">
+      <div className="houseHoldTabMenuContainer">
         <h3>
           {householdMembers[0] ? householdMembers[0].household_name : "Loading"}{" "}
           Members
         </h3>
-        <button onClick={handleToggleTab} className={styles.tabButton}>
+        <button onClick={handleToggleTab} className="householdTabButton">
           {!isTabHidden ? (
-            <MinimiseIcon className={styles.minimiseIcon} />
+            <MinimiseIcon className="minimiseIcon" />
           ) : (
-            <DownChevron className={styles.downChevron} />
+            <DownChevron className="downChevron" />
           )}
         </button>
       </div>
 
       {!isTabHidden && (
-        <div className={styles.usersContainer}>
+        <div className="usersContainer">
           {householdMembers.map((user) => {
             return (
-              <div className={styles.userContainer}>
-                <img className={styles.userPhoto} alt="User Photo"></img>
-                <p className={styles.username}>{user.username}</p>
+              <div className="userContainer">
+                <img className="userPhoto" alt="User Photo"></img>
+                <p className="username">{user.username}</p>
               </div>
             );
           })}

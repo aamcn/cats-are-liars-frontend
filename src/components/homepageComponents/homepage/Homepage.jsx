@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "./css/homepage.module.css";
-import MyCatsTab from "./myCatsTab/MyCatsTab";
-import LastFeedTable from "./lastFeedTable/LastFeedTable";
-import AddFeedingForm from "../addFeedingForm/AddFeedingForm";
-import HouseholdTab from "./householdTab/HouseholdTab";
-import PawIcon from "../../assets/svg/paw.svg?react";
+import "./homepage.scss";
+import MyCatsTab from "../myCatsTabComponents/myCatsTab/MyCatsTab";
+import LastFeedTable from "../lastFeedTable/lastFeedTable/LastFeedTable";
+import AddFeedingForm from "../../addFeedingForm/AddFeedingForm";
+import HouseholdTab from "../householdTab/HouseholdTab";
+import PawIcon from "../../../assets/svg/paw.svg?react";
 
 function Homepage() {
   const [userCats, setUserCats] = useState([]);
@@ -54,20 +54,20 @@ function Homepage() {
   };
 
   return (
-    <div className={styles.homepageContainer}>
-      <div className={styles.pageTitle}>
+    <div className="homepageContainer">
+      <div className="homePageTitle">
         <h1>
           <PawIcon height="1em" width="1em" /> Home{" "}
           <PawIcon height="1em" width="1em" />
         </h1>
       </div>
       {username && (
-        <p className={styles.welcomeMessage}>Welcome back {username}</p>
+        <p className="welcomeMessage">Welcome back {username}</p>
       )}
 
       {!formVisibility && <AddFeedingForm userCats={userCats} />}
 
-      <div className={styles.mainContent}>
+      <div className="mainContent">
         <MyCatsTab userCats={userCats} />
         <LastFeedTable
           userCats={userCats}
@@ -78,12 +78,12 @@ function Homepage() {
         <HouseholdTab householdId={householdId} userId={userId} />
       </div>
 
-      <div className={styles.footerPanel}>
-        <button className={styles.toggleButton} onClick={handleToggleDisplay}>
+      <div className="footerPanel">
+        <button className="toggleButton" onClick={handleToggleDisplay}>
           Add Feeding
         </button>
         <button
-          className={styles.toggleButton}
+          className="toggleButton"
           onClick={handleToggleLastFeedTable}
         >
           Last Feeds

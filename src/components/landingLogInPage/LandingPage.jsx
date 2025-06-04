@@ -1,16 +1,16 @@
 import LogInForm from "./LogInForm";
-import styles from "./css/landingPage.module.css";
+import "./css/landingPage.scss";
 
 function LandingPage() {
   return (
-    <div className={styles.landingPageContainer}>
-      <div className={styles.pageTitle}>
+    <div className="landingPageContainer">
+      <div className="pageTitle">
         <h1>Cats Are Liars</h1>
       </div>
-      <div className={styles.formContainer}>
+      <div className="logInFormContainer">
         <LogInForm />
       </div>
-      <div className={styles.pageFooter}></div>
+      <div className="pageFooter"></div>
     </div>
   );
 }

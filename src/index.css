@@ -23,7 +23,7 @@ body {
   flex-direction: column;
   justify-content: center;
   min-width: 320px;
-  min-height: 100svh;
+  min-height: 100dvh;
   font-weight: 400;
   background-color: hsl(183, 100%, 91%);
 }
