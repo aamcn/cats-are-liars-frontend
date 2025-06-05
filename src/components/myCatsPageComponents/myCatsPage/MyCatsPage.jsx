@@ -1,7 +1,7 @@
 import { use, useEffect, useState } from "react";
 import MyCatsDisplayCard from "../catDisplayCard/MyCatsDisplayCard";
 import axios from "axios";
-import AddCatForm from "../addCatForm/AddCatForm";
+import AddCatForm from "../../addCatForm/AddCatForm";
 import "./myCatsPage.scss";
 import PawIcon from "../../../assets/svg/paw.svg?react";
 

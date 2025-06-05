@@ -32,12 +32,12 @@ function AddCatForm({ toggleAddCatForm }) {
   };
 
   return (
-    <div className={styles.formContainer}>
+    <div className="formContainer">
       <h3>Add a New Cat</h3>
-      <button className={styles.closeFormButton} onClick={toggleAddCatForm}>
+      <button className="closeFormButton" onClick={toggleAddCatForm}>
         x
       </button>
-      <form className={styles.addCatForm} onSubmit={handleNewCatFormSubmit}>
+      <form className="addCatForm" onSubmit={handleNewCatFormSubmit}>
         <fieldset>
           <label htmlFor="newCatName">Name: </label>
           <input
@@ -71,7 +71,7 @@ function AddCatForm({ toggleAddCatForm }) {
             aria-label="Cats Medication Input"
           ></textarea>
         </fieldset>
-        <div className={styles.formButtons}>
+        <div className="formButtons">
           <button>Submit</button>
           <button onClick={toggleAddCatForm}>Cancel</button>
         </div>

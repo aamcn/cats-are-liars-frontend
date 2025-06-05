@@ -1,6 +1,9 @@
 @use "../../base.scss";
 
-.formBackDrop{
+.feedingformBackDrop{
+  display:flex;
+  justify-content: center;
+  align-items: center;
   height: 100dvh;
   width: auto;
   position: absolute;
@@ -12,18 +15,19 @@
   backdrop-filter: blur(5px);
 }
 
-.formContainer {
+.feedingFormContainer {
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: base.$tiffany-blue;
   padding: 1.1em;
   border-radius: 1em;
+  border:solid base.$platinum;
 }
 
 .addFeedingForm {
   width: auto;
-  height: 80%;
   background-color: base.$wheat;
   border: 0.5em solid base.$peach;
   border-radius: 1em;
@@ -82,17 +86,17 @@
   background-color: base.$peach;
 }
 
-.formTitle {
+.feedingFormTitle {
   font-family: "Playwrite US Modern", cursive;
   place-self: center;
   color: base.$jet;
   padding-bottom: 0.5em;
 }
 
-.closeFormButton {
-  position: absolute;
-  top: 1%;
-  right: 1%;
+.closeFeedingFormButton {
+  position: relative;
+  top: 0%;
+  left: 95%;
   width: fit-content;
   height: auto;
   color: base.$jet;

@@ -59,10 +59,10 @@ function AddFeedingForm({ userCats, handleToggleDisplay }) {
   };
 
   return (
-    <div className="formBackDrop">
-      <div className="formContainer">
-      <h3 className="formTitle">Feeding Form</h3>
-      <button onClick={handleToggleDisplay} className="closeFormButton">X</button>
+    <div className="feedingformBackDrop">
+      <div className="feedingFormContainer">
+              <button onClick={handleToggleDisplay} className="closeFeedingFormButton">X</button>
+      <h3 className="feedingFormTitle">Feeding Form</h3>
       <form
         className="addFeedingForm"
         onSubmit={handleFeedingFormSubmit}
