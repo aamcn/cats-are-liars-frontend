@@ -65,7 +65,7 @@ function Homepage() {
         <p className="welcomeMessage">Welcome back {username}</p>
       )}
 
-      {!formVisibility && <AddFeedingForm userCats={userCats} />}
+      {!formVisibility && <AddFeedingForm userCats={userCats} handleToggleDisplay={handleToggleDisplay}/>}
 
       <div className="mainContent">
         <MyCatsTab userCats={userCats} />
@@ -81,12 +81,6 @@ function Homepage() {
       <div className="footerPanel">
         <button className="footerButton" onClick={handleToggleDisplay}>
           Add Feeding
-        </button>
-        <button
-          className="footerButton"
-          onClick={handleToggleLastFeedTable}
-        >
-          Last Feeds
         </button>
       </div>
     </div>

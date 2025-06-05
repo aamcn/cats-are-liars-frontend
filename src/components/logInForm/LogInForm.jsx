@@ -3,7 +3,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { appContext } from "../../App";
 import { useNavigate } from "react-router-dom";
-import "./css/logInForm.scss"; 
+import "./logInForm.scss"; 
 
 
 function LogInForm() {

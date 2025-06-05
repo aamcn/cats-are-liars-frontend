@@ -1,5 +1,5 @@
-import LogInForm from "./LogInForm";
-import "./css/landingPage.scss";
+import LogInForm from "../logInForm/LogInForm.jsx";
+import "./landingPage.scss";
 
 function LandingPage() {
   return (

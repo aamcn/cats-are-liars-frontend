@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "./addFeedingForm.module.css";
+import "./addFeedingForm.scss";
 
-function AddFeedingForm({ userCats }) {
+function AddFeedingForm({ userCats, handleToggleDisplay }) {
   const [selectedCat, setSelectedCat] = useState(userCats[0]);
   const [medsNeeded, setMedsNeeded] = useState(false);
 
@@ -59,14 +59,15 @@ function AddFeedingForm({ userCats }) {
   };
 
   return (
-    <div className={styles.formContainer}>
-      <h3 className={styles.formTitle}>Feeding Form</h3>
-      <button className={styles.closeFormButton}>X</button>
+    <div className="formBackDrop">
+      <div className="formContainer">
+      <h3 className="formTitle">Feeding Form</h3>
+      <button onClick={handleToggleDisplay} className="closeFormButton">X</button>
       <form
-        className={styles.addFeedingForm}
+        className="addFeedingForm"
         onSubmit={handleFeedingFormSubmit}
       >
-        <fieldset className={styles.formFieldSet}>
+        <fieldset className="formFieldSet">
           <label htmlFor="cat_name">Cat: </label>
           <select
             onChange={handleCatSelectChange}
@@ -82,7 +83,7 @@ function AddFeedingForm({ userCats }) {
               })}
           </select>
         </fieldset>
-        <fieldset className={styles.formFieldSet}>
+        <fieldset className="formFieldSet">
           <label htmlFor="feeder_username">Feeder Username: </label>
           <input
             type="text"
@@ -94,7 +95,7 @@ function AddFeedingForm({ userCats }) {
             required
           ></input>
         </fieldset>
-        <fieldset className={styles.formFieldSet}>
+        <fieldset className="formFieldSet">
           <label htmlFor="time">Fed at: </label>
           <input
             type="time"
@@ -106,12 +107,12 @@ function AddFeedingForm({ userCats }) {
         </fieldset>
 
         {medsNeeded && (
-          <fieldset className={styles.radioFieldSet}>
+          <fieldset className="radioFieldSet">
             <p>Medication Given? </p>
             <p>
               {selectedCat.name} needs: {selectedCat.medication}
             </p>
-            <div className={styles.radioButtons}>
+            <div className="radioButtons">
               <label>Yes: </label>
               <input
                 type="radio"
@@ -133,7 +134,7 @@ function AddFeedingForm({ userCats }) {
           </fieldset>
         )}
 
-        <fieldset className={styles.textAreaFieldSet}>
+        <fieldset className="textAreaFieldSet">
           <label htmlFor="notes">Notes: </label>
           <textarea
             name="notes"
@@ -144,15 +145,16 @@ function AddFeedingForm({ userCats }) {
             aria-label="Notes text input"
           ></textarea>
         </fieldset>
-        <fieldset className={styles.formButtonsContainer}>
-          <button className={styles.submitButton} type="submit">
+        <fieldset className="addFeedingFormButtons">
+          <button className="addFeedingFormButton" type="submit">
             Submit
           </button>
-          <button className={styles.cancelButton} type="submit">
+          <button onClick={handleToggleDisplay} className="addFeedingFormButton" type="submit">
             Cancel
           </button>
         </fieldset>
       </form>
+    </div>
     </div>
   );
 }

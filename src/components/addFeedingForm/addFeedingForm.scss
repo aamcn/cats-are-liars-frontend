@@ -1,25 +1,31 @@
-.formContainer {
+@use "../../base.scss";
+
+.formBackDrop{
+  height: 100dvh;
+  width: auto;
   position: absolute;
-  top: 13.5%;
+  top: 0%;
   left: 0%;
   right: 0%;
-  height: 70%;
-  width: auto;
   z-index: 5;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.formContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: wheat;
+  background-color: base.$tiffany-blue;
   padding: 1.1em;
   border-radius: 1em;
-  border: 2vw solid rgb(205, 255, 255);
 }
 
 .addFeedingForm {
   width: auto;
-  height: 90%;
-  background-color: rgb(206, 255, 244);
-  border: 0.5em solid teal;
+  height: 80%;
+  background-color: base.$wheat;
+  border: 0.5em solid base.$peach;
   border-radius: 1em;
   padding: 1em 0em 1em 0em;
   font-family: "Playwrite US Modern", cursive;
@@ -33,6 +39,7 @@
   justify-content: space-evenly;
   border: none;
   border-bottom: solid 1px;
+  color: base.$jet;
 }
 
 .textAreaFieldSet {
@@ -41,6 +48,7 @@
   justify-content: space-between;
   border: none;
   border-bottom: solid 1px;
+  color: base.$jet;
 }
 
 .radioFieldSet {
@@ -63,16 +71,21 @@
   align-items: center;
 }
 
-.formButtonsContainer {
+.addFeedingFormButtons {
   display: flex;
   justify-content: space-evenly;
   border: none;
 }
 
+.addFeedingFormButton{
+  color:base.$jet;
+  background-color: base.$peach;
+}
+
 .formTitle {
   font-family: "Playwrite US Modern", cursive;
   place-self: center;
-  color: teal;
+  color: base.$jet;
   padding-bottom: 0.5em;
 }
 
@@ -82,6 +95,6 @@
   right: 1%;
   width: fit-content;
   height: auto;
-  color: black;
+  color: base.$jet;
   background-color: rgba(255, 255, 255, 0);
 }
