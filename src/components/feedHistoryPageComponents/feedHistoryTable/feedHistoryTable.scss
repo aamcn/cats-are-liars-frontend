@@ -1,0 +1,67 @@
+@use "../../../base.scss";
+
+.tableContainer {
+  border-radius: 0em 0em 1em 1em;
+  overflow: auto;
+  height: 100%;
+  background-color: white;
+  border: solid base.$tiffany-blue;
+}
+
+.feedHistoryTable {
+  overflow: auto;
+  white-space: nowrap;
+  text-align: center;
+  margin-bottom: 2em;
+  border-radius: 0em 0em 1em 1em;
+  font-size: 3vw;
+  text-wrap: wrap;
+  border-collapse: collapse;
+  background-color:aliceblue;
+}
+
+.columnTitle {
+  justify-content: center;
+  border:solid base.$peach;
+  border-left-width: 0;
+  border-bottom-width: 0;
+  position: sticky;
+  vertical-align: bottom;
+  color: base.$jet;
+  text-wrap: wrap;
+  font-size: 3.5vw;
+  font-family: "Playwrite US Modern", cursive;
+  align-content: center;
+  width:15%;
+}
+
+.columnTitleRow{
+  background-color: base.$tiffany-blue;
+  padding:0.5em;  
+  border-radius: 1em;
+}
+
+.tableDataContainer {
+  border: 1vw solid base.$tiffany-blue;
+  border-left-width: 0;
+  border-right-width: 0;
+  padding: 0.5em;
+  font-size: 3.5vw;
+}
+
+.columnTitle:last-child{
+  border-right-width: 0;
+}
+
+.tableDataContainer:last-child {
+  border-right-width: 0;
+}
+
+.tableDataRow:first-child {
+  border:solid black;
+  border-spacing: 0 15px;
+}
+
+.gapMan{
+  height:1em;
+}

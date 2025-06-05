@@ -17,10 +17,10 @@ function MyCatsTab({ userCats }) {
   };
 
   return ( 
-    <div className="tabContainer">
-      <div className="myCatsTabContainer">
+    <div className="homeCatsTabContainer">
+      <div className="homeCatsTab">
         <h3>My Cats</h3>
-        <button onClick={handleToggleTab} className="myCatsTabButton">
+        <button onClick={handleToggleTab} className="homeCatsTabButton">
           {catsTabVisible ? (
             <MinimiseIcon className="minimiseIcon" />
           ) : (
@@ -29,7 +29,7 @@ function MyCatsTab({ userCats }) {
         </button>
       </div>
       {catsTabVisible && (
-        <div className="catCardsContainer">
+        <div className="homeCatCardsContainer">
           {userCats.map((cat) => {
             return <CatTabTemplate key={cat.id} cat={cat} />;
           })}

@@ -3,7 +3,7 @@ import Homepage from "./components/homepageComponents/homepage/Homepage.jsx";
 import LandingPage from "./components/landingLogInPage/LandingPage.jsx";
 import ErrorPage from "./components/ErrorPage.jsx";
 import IndividualCatPage from "./components/individualCatPage/IndividualCatPage.jsx";
-import FeedHistoryPage from "./components/feedHistoryPage/FeedHistoryPage.jsx";
+import FeedHistoryPage from "./components/feedHistoryPageComponents/feedHistoryPage/FeedHistoryPage.jsx";
 import MyCatsPage from "./components/myCatsPageComponents/myCatsPage/MyCatsPage.jsx";
 
 const routes = [

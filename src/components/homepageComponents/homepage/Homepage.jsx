@@ -79,11 +79,11 @@ function Homepage() {
       </div>
 
       <div className="footerPanel">
-        <button className="toggleButton" onClick={handleToggleDisplay}>
+        <button className="footerButton" onClick={handleToggleDisplay}>
           Add Feeding
         </button>
         <button
-          className="toggleButton"
+          className="footerButton"
           onClick={handleToggleLastFeedTable}
         >
           Last Feeds

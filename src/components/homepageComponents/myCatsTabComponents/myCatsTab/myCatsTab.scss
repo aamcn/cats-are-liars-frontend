@@ -1,13 +1,13 @@
 @use "../../../../base.scss";
 
-.tabContainer {
+.homeCatsTabContainer {
   height: fit-content;
   border-radius: 0em 0em 1em 1em;
   margin: 1em 0em 2em 0em;
   background-color: white;
 }
 
-.myCatsTabContainer {
+.homeCatsTab {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,7 +20,7 @@
   font-size: 4.5vw;
 }
 
-.catCardsContainer {
+.homeCatCardsContainer {
   display: flex;
   justify-content: space-around;
   padding-top: 1em;
@@ -29,7 +29,7 @@
   padding-bottom: 2em;
 }
 
-.myCatsTabButton {
+.homeCatsTabButton {
   background-color: base.$tiffany-blue;
   color: wheat;
 }

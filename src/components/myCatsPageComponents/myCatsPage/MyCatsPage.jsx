@@ -1,7 +1,7 @@
 import { use, useEffect, useState } from "react";
-import MyCatsDisplayCard from "../MyCatsDisplayCard";
+import MyCatsDisplayCard from "../catDisplayCard/MyCatsDisplayCard";
 import axios from "axios";
-import AddCatForm from "../AddCatForm";
+import AddCatForm from "../addCatForm/AddCatForm";
 import "./myCatsPage.scss";
 import PawIcon from "../../../assets/svg/paw.svg?react";
 
@@ -51,8 +51,8 @@ function MyCatsPage() {
       {!isHidden && <AddCatForm toggleAddCatForm={toggleAddCatForm} />}
       <MyCatsDisplayCard cats={cats} />
 
-      <div className="toggleButtons">
-        <button className="toggleButton" onClick={toggleAddCatForm}>
+      <div className="catPageFooter">
+        <button className="catPageFooterButton" onClick={toggleAddCatForm}>
           {isHidden ? "Add A Cat" : "Cancel"}
         </button>
       </div>

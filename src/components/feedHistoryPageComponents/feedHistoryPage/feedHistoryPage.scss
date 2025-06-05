@@ -1,0 +1,101 @@
+@use "../../../base.scss";
+
+.feedHistoryPageContainer {
+  display: grid;
+  grid-template-columns: 0fr 10fr 0fr;
+  grid-template-rows: 1fr 9fr 1fr;
+  height: 95dvh;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+.feedHistoryPageTitle {
+  display: flex;
+  grid-column: 1/4;
+  grid-row: 1;
+  background-color: base.$tiffany-blue;
+  color: base.$wheat;
+  justify-content: center;
+  align-self: center;
+  height: 100%;
+  font-size: 3vw;
+  margin: 0px;
+  font-family: "Playwrite US Modern", cursive;
+}
+
+.feedingHistoryPageFooter {
+  grid-column: 2;
+  grid-row: 3;
+  background-color: base.$tiffany-blue;
+  height: 100%;
+}
+
+.feedHistoryMainContainer {
+  display:flex;
+  flex-direction: column;
+  margin:1em 0em 1em 0em;
+  grid-column: 1/4;
+  grid-row: 2;
+}
+
+.feedFilterFormsContainer {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+  grid-row: 2;
+  background-color: white;
+}
+
+.filterOptionsTabTitle {
+  font-family: "Playwrite US Modern", cursive;
+  color: wheat;
+  padding-left: 0.5em;
+}
+
+.formSelector {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: base.$wheat;
+  width:100%;
+  padding: 1em;
+}
+
+.feedHistoryTabContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: base.$tiffany-blue;
+  color: wheat;
+  box-shadow: 0px 5px 5px 0px rgb(100, 90, 77);
+  margin-bottom: 1em;
+  font-family: "Playwrite US Modern", cursive;
+  color: wheat;
+  font-size: 4vw;
+  width: 100%;
+  padding:1em 0em 1em 0em
+}
+
+.feedHistoryTabButton {
+  background-color: base.$peach;
+  color: wheat;
+}
+
+.minimiseIcon,
+.downChevron {
+  width: 1em;
+  height: 1em;
+  color: wheat;
+}

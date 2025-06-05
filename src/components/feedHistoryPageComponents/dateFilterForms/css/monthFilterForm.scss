@@ -1,0 +1,42 @@
+@use "../../../../base.scss";
+
+.filterFormContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+}
+
+.monthFilterForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.monthDateFieldSet {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.monthFormButtons {
+  display: flex;
+  justify-content: center;
+  padding-top: 1em;
+  
+}
+
+.monthFormButton{
+  background-color: base.$peach;
+  color: base.$wheat;
+}
+
+.monthInput{
+  
+}
+
+.yearInput{
+
+}
