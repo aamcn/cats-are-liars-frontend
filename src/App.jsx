@@ -2,6 +2,7 @@ import { Outlet } from "react-router";
 import "./index.css";
 import Header from "./components/header/Header";
 import { createContext, useEffect, useState } from "react";
+import Footer from "./components/footer/Footer";
 
 export const appContext = createContext({
   loginSuccess: "",
@@ -36,6 +37,7 @@ function App() {
       >
         <Header />
         <Outlet />
+        <Footer />
       </appContext.Provider>
     </>
   );

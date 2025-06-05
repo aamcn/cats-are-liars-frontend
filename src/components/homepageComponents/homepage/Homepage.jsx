@@ -6,6 +6,7 @@ import LastFeedTable from "../lastFeedTable/lastFeedTable/LastFeedTable";
 import AddFeedingForm from "../../addFeedingForm/AddFeedingForm";
 import HouseholdTab from "../householdTab/HouseholdTab";
 import PawIcon from "../../../assets/svg/paw.svg?react";
+import Footer from "../../footer/Footer";
 
 function Homepage() {
   const [userCats, setUserCats] = useState([]);
@@ -78,11 +79,6 @@ function Homepage() {
         <HouseholdTab householdId={householdId} userId={userId} />
       </div>
 
-      <div className="footerPanel">
-        <button className="footerButton" onClick={handleToggleDisplay}>
-          Add Feeding
-        </button>
-      </div>
     </div>
   );
 }

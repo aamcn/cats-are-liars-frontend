@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
   grid-template-rows: 1fr 1fr 4fr 1fr;
-  height: 95vh;
+  height: 85dvh;
   place-items: center;
   font-family:
     system-ui,

@@ -50,12 +50,6 @@ function MyCatsPage() {
       </div>
       {!isHidden && <AddCatForm toggleAddCatForm={toggleAddCatForm} />}
       <MyCatsDisplayCard cats={cats} />
-
-      <div className="catPageFooter">
-        <button className="catPageFooterButton" onClick={toggleAddCatForm}>
-          {isHidden ? "Add A Cat" : "Cancel"}
-        </button>
-      </div>
     </div>
   );
 }

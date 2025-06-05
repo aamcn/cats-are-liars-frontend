@@ -6,6 +6,7 @@ import MonthFilterForm from "../dateFilterForms/MonthFilterForm";
 import DateRangeFilterForm from "../dateFilterForms/DateRangeFilterForm";
 import DownChevron from "../../../assets/svg/doubleDownChevron.svg?react";
 import MinimiseIcon from "../../../assets/svg/minimiseIcon.svg?react";
+import Footer from "../../footer/Footer";
 
 function FeedHistoryPage() {
   const [feedHistoryData, setFeedHistoryData] = useState(null);
@@ -81,7 +82,6 @@ function FeedHistoryPage() {
 
         <FeedHistoryTable feedHistoryData={feedHistoryData} />
       </div>
-      <div className="feedingHistoryPageFooter"></div>
     </div>
   );
 }

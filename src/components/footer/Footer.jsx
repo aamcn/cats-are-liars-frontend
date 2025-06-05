@@ -1,9 +1,11 @@
+import "./footer.scss"
 
-
-function Footer() {
+function Footer({ handleToggleDisplay }) {
   return(
-    <div>
-        
+       <div className="footerPanel">
+        <button className="footerButton" onClick={handleToggleDisplay}>
+          Add Feeding
+        </button>
     </div>
   )
 }

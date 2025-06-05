@@ -154,17 +154,7 @@ function IndividualCatPage() {
               </ul>
             </div>
           </div>
-          <div className={styles.toggleButtonsContainer}>
-            <button className={styles.toggleButton} onClick={toggleUpdateForm}>
-              Update Details
-            </button>
-            <button
-              className={styles.toggleButton}
-              onClick={toggleAddFeederForm}
-            >
-              Update Feeders
-            </button>
-          </div>
+          
         </div>
       )}
     </div>
