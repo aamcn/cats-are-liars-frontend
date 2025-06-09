@@ -60,7 +60,7 @@
 
 .filterOptionsTabTitle {
   font-family: "Playwrite US Modern", cursive;
-  color: wheat;
+  color: base.$wheat;
   padding-left: 0.5em;
 }
 
@@ -69,9 +69,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: base.$wheat;
+  background-color: base.$peach;
   width:100%;
   padding: 1em;
+  color:base.$jet;
 }
 
 .feedHistoryTabContainer {
@@ -83,7 +84,6 @@
   box-shadow: 0px 5px 5px 0px rgb(100, 90, 77);
   margin-bottom: 1em;
   font-family: "Playwrite US Modern", cursive;
-  color: wheat;
   font-size: 4vw;
   width: 100%;
   padding:1em 0em 1em 0em

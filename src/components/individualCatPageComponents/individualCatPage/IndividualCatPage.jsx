@@ -1,10 +1,10 @@
 import { useEffect, useState, useContext } from "react";
-import { appContext } from "../../App";
+import { appContext } from "../../../App";
 import axios from "axios";
 import { useParams } from "react-router";
-import UpdateCatForm from "./UpdateCatForm";
-import styles from "./css/individualCatPage.module.css";
-import AddCatFeederForm from "./AddCatFeederForm";
+import UpdateCatForm from "../updateCatForm/UpdateCatForm";
+import "./individualCatPage.scss";
+import AddCatFeederForm from "../addCatFeederForm/AddCatFeederForm.jsx";
 function IndividualCatPage() {
   const [catData, setCatData] = useState();
   const [feeders, setFeeders] = useState([]);
@@ -94,62 +94,62 @@ function IndividualCatPage() {
       )}
 
       {catData && (
-        <div className={styles.catPageContainer}>
+        <div className="catPageContainer">
           {catData && (
-            <div className={styles.pageTitle}>
+            <div className="pageTitle">
               <h1>{catData.name}</h1>
             </div>
           )}
 
-          <div className={styles.catHeaderContainer}>
+          <div className="catHeaderContainer">
             <img
-              className={styles.catProfilePhoto}
+              className="catProfilePhoto"
               src={null}
               alt="Cat Photo"
             />
             <hr />
           </div>
 
-          <div className={styles.catInfoContainer}>
+          <div className="catInfoContainer">
             {catData && (
-              <div className={styles.catInfoTitle}>
+              <div className="catInfoTitle">
                 <h2>{catData.name}'s Info</h2>
               </div>
             )}
             <hr />
-            <div className={styles.catInfoSection}>
-              <h3 className={styles.sectionTitle}>Household:</h3>
-              <p className={styles.householdName}>
+            <div className="catInfoSection">
+              <h3 className="sectionTitle">Household:</h3>
+              <p className="householdName">
                 {householdMembers[0]
                   ? householdMembers[0].household_name
                   : "Loading"}
               </p>
             </div>
             <hr />
-            <div className={styles.catInfoSection}>
-              <h3 className={styles.sectionTitle}>Meals:</h3>
-              <ul className={styles.catDetailsList}>
+            <div className="catInfoSection">
+              <h3 className="sectionTitle">Meals:</h3>
+              <ul className="catDetailsList">
                 {catData.meals.map((item) => {
-                  return <li className={styles.listEntry}>{item}</li>;
+                  return <li className="listEntry">{item}</li>;
                 })}
               </ul>
             </div>
             <hr />
-            <div className={styles.catInfoSection}>
-              <h3 className={styles.sectionTitle}>Medication:</h3>
-              <ul className={styles.catDetailsList}>
+            <div className="catInfoSection">
+              <h3 className="sectionTitle">Medication:</h3>
+              <ul className="catDetailsList">
                 {catData.medication.map((item) => {
-                  return <li className={styles.listEntry}>{item}</li>;
+                  return <li className="listEntry">{item}</li>;
                 })}
               </ul>
             </div>
 
             <hr />
-            <div className={styles.catInfoSection}>
-              <h3 className={styles.sectionTitle}>Feeders:</h3>
-              <ul className={styles.catDetailsList}>
+            <div className="catInfoSection">
+              <h3 className="sectionTitle">Feeders:</h3>
+              <ul className="catDetailsList">
                 {feeders.map((item) => {
-                  return <li className={styles.listEntry}>{item}</li>;
+                  return <li className="listEntry">{item}</li>;
                 })}
               </ul>
             </div>
