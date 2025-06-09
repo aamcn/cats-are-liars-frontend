@@ -1,11 +1,13 @@
 import { useEffect, useState, useContext } from "react";
-import { appContext } from "../../../App";
+import { appContext } from "../../../App.jsx";
 import axios from "axios";
 import { useParams } from "react-router";
-import UpdateCatForm from "../updateCatForm/UpdateCatForm";
-import "./individualCatPage.scss";
+import UpdateCatForm from "../updateCatForm/UpdateCatForm.jsx";
+import "./catProfilePage.scss";
 import AddCatFeederForm from "../addCatFeederForm/AddCatFeederForm.jsx";
-function IndividualCatPage() {
+
+
+function CatProfilePage() {
   const [catData, setCatData] = useState();
   const [feeders, setFeeders] = useState([]);
   const param = useParams();
@@ -94,14 +96,14 @@ function IndividualCatPage() {
       )}
 
       {catData && (
-        <div className="catPageContainer">
+        <div className="catProfilePageContainer">
           {catData && (
-            <div className="pageTitle">
+            <div className="catProfilePageTitle">
               <h1>{catData.name}</h1>
             </div>
           )}
 
-          <div className="catHeaderContainer">
+          <div className="catProfileHeaderContainer">
             <img
               className="catProfilePhoto"
               src={null}
@@ -110,46 +112,46 @@ function IndividualCatPage() {
             <hr />
           </div>
 
-          <div className="catInfoContainer">
+          <div className="catProfileInfoContainer">
             {catData && (
-              <div className="catInfoTitle">
+              <div className="catProfileInfoTitle">
                 <h2>{catData.name}'s Info</h2>
               </div>
             )}
             <hr />
-            <div className="catInfoSection">
-              <h3 className="sectionTitle">Household:</h3>
-              <p className="householdName">
+            <div className="catProfileInfoSection">
+              <h3 className="catProfileSectionTitle">Household:</h3>
+              <p className="catProfileHouseholdName">
                 {householdMembers[0]
                   ? householdMembers[0].household_name
                   : "Loading"}
               </p>
             </div>
             <hr />
-            <div className="catInfoSection">
-              <h3 className="sectionTitle">Meals:</h3>
-              <ul className="catDetailsList">
+            <div className="catProfileInfoSection">
+              <h3 className="catProfileSectionTitle">Meals:</h3>
+              <ul className="catProfileDetailsList">
                 {catData.meals.map((item) => {
-                  return <li className="listEntry">{item}</li>;
+                  return <li className="catProfileListEntry">{item}</li>;
                 })}
               </ul>
             </div>
             <hr />
-            <div className="catInfoSection">
-              <h3 className="sectionTitle">Medication:</h3>
-              <ul className="catDetailsList">
+            <div className="catProfileInfoSection">
+              <h3 className="catProfileSectionTitle">Medication:</h3>
+              <ul className="catProfileDetailsList">
                 {catData.medication.map((item) => {
-                  return <li className="listEntry">{item}</li>;
+                  return <li className="catProfileListEntry">{item}</li>;
                 })}
               </ul>
             </div>
 
             <hr />
-            <div className="catInfoSection">
-              <h3 className="sectionTitle">Feeders:</h3>
-              <ul className="catDetailsList">
+            <div className="catProfileInfoSection">
+              <h3 className="catProfileSectionTitle">Feeders:</h3>
+              <ul className="catProfileDetailsList">
                 {feeders.map((item) => {
-                  return <li className="listEntry">{item}</li>;
+                  return <li className="catProfileListEntry">{item}</li>;
                 })}
               </ul>
             </div>
@@ -161,4 +163,4 @@ function IndividualCatPage() {
   );
 }
 
-export default IndividualCatPage;
+export default CatProfilePage;

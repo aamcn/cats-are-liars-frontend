@@ -1,4 +1,7 @@
-.catPageContainer {
+@use "../../../base.scss" ;
+
+
+.catProfilePageContainer {
   display: grid;
   grid-template-columns: 1fr 10fr 1fr;
   grid-template-rows: 1fr 1fr 4fr 1fr;
@@ -18,12 +21,12 @@
     sans-serif;
 }
 
-.pageTitle {
+.catProfilePageTitle {
   display: flex;
   grid-column: 1/4;
   grid-row: 1;
-  background-color: teal;
-  color: beige;
+  background-color: base.$tiffany-blue;
+  color: base.$wheat;
   justify-content: center;
   align-self: center;
   height: 100%;
@@ -34,7 +37,7 @@
   
 }
 
-.catHeaderContainer {
+.catProfileHeaderContainer {
   align-content: center;
   grid-row: 2;
   grid-column: 2;
@@ -46,17 +49,18 @@
   min-width: 40vw;
   min-height: 40vw;
   border-radius: 50%;
-  border: 0.4em solid teal;
-  outline: 0.4em solid wheat;
+  border: 0.4em solid  base.$tiffany-blue;
+  outline: 0.4em solid  base.$wheat;
+  background-color: base.$platinum;
   box-shadow: 0px 8px 10px 0px rgb(28, 77, 77);
   margin: 1em;
 }
 
-.catInfoContainer {
+.catProfileInfoContainer {
   grid-row: 3;
   grid-column: 2;
   overflow: auto;
-  background-color: white;
+  background-color:  base.$platinum;
   width: 100%;
   height: 95%;
   margin: 1em 0em 1em 0em;
@@ -64,7 +68,7 @@
   border-radius: 1em;
 }
 
-.catInfoSection {
+.catProfileInfoSection {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -72,48 +76,60 @@
   padding: 1em 0em 1em 0em;
 }
 
-.catInfoTitle {
+.catProfileInfoTitle {
   position: sticky;
   top: 0%;
   width: 101%;
   font-family: "Playwrite US Modern", cursive;
   color: wheat;
-  background-color: teal;
+  background-color: base.$tiffany-blue;
   padding: 0.5em 0em 0.5em 0em;
   text-align: center;
   text-decoration: underline;
   box-shadow: 0px 1px 5px 1px black;
 }
 
-.sectionTitle {
+.catProfileSectionTitle {
   color: teal;
   font-family: "Playwrite US Modern", cursive;
   text-decoration: underline;
   margin-bottom: 1em;
 }
 
-.householdName {
+.catProfileHouseholdName {
   margin: 0em;
-  color: rgb(10, 53, 53);
+  color: base.$jet;
   font-family: "Playwrite US Modern", cursive;
   font-weight: 800;
   font-size: 4vw;
 }
 
-.catDetailsList {
+.catProfileDetailsList {
   text-align: center;
   padding: 0%;
 }
 
-.listEntry {
-  color: teal;
+.catProfileListEntry {
+  color:base.$jet;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
-.toggleButtonsContainer {
+.catProfileToggleButtonsContainer {
   position: absolute;
   bottom: 0%;
   justify-content: space-evenly;
-  background-color: teal;
+  background-color: base.$tiffany-blue;
   width: 100%;
   grid-row: 4;
   grid-column: 2;
@@ -123,8 +139,8 @@
   align-items: center;
 }
 
-.toggleButton {
-  color: teal;
+.catProfileToggleButton {
+  color: base.$tiffany-blue;
   height: 50%;
   background-color: rgb(205, 255, 255);
   outline: solid;
@@ -136,7 +152,7 @@
   animation: appearGrow 1s;
 }
 
-.toggleButton:active {
+.catProfileToggleButton:active {
   transform: translateY(0.1em);
   box-shadow: inset 0em 0.3em 0.1em 0em;
 }
