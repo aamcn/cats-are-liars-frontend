@@ -9,11 +9,19 @@ export const appContext = createContext({
   changeLogInSuccess: () => {},
   householdMembers: [],
   storeHouseholdMembers: () => {},
+  usersCats: [],
+  storeUsersCats: () => {}
+
 });
 
 function App() {
   const [logInSuccess, setLoginSuccess] = useState(false);
   const [householdMembers, setHouseholdMembers] = useState([]);
+  const [usersCats, setUsersCats] = useState([])
+
+  const storeUsersCats = (cats) => {
+    setUsersCats(cats)
+  }
 
   const changeLogInSuccess = (loginStatus) => {
     setLoginSuccess(loginStatus);
@@ -33,6 +41,8 @@ function App() {
           changeLogInSuccess,
           householdMembers,
           storeHouseholdMembers,
+          usersCats, 
+          storeUsersCats
         }}
       >
         <Header />

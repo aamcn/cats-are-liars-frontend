@@ -13,7 +13,7 @@ const [IsToolBarHidden, setIsToolBarHidden] = useState(true)
   return(
       <div className="footerPanel">
         <button onClick={toggleToolBar}>Tool Bar</button>
-        {!IsToolBarHidden && <ToolBar formNames={formNames} formToggle={formToggle}/>}
+        {!IsToolBarHidden && <ToolBar formNames={formNames} toggleToolBar={toggleToolBar} formToggle={formToggle}/>}
       </div>
   )
 }

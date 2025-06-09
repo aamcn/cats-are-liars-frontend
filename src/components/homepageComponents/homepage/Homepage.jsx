@@ -7,10 +7,11 @@ import AddFeedingForm from "../../addFeedingForm/AddFeedingForm";
 import HouseholdTab from "../householdTab/HouseholdTab";
 import PawIcon from "../../../assets/svg/paw.svg?react";
 import Footer from "../../footer/Footer";
+import { useContext } from "react";
+import { appContext } from "../../../App";
 
 function Homepage() {
-  const [userCats, setUserCats] = useState([]);
-
+   const { usersCats, storeUsersCats } = useContext(appContext);
   const [formVisibility, setFormVisibility] = useState(null);
   const [lastFeedVisibility, setLastFeedVisibility] = useState(true);
 
@@ -28,7 +29,7 @@ function Homepage() {
         { method: "cors" },
         { withCredentials: true },
       )
-      .then((res) => setUserCats(res.data))
+      .then((res) => storeUsersCats(res.data))
       .catch((error) => {
         console.error(error);
       });
@@ -66,12 +67,12 @@ function Homepage() {
         <p className="welcomeMessage">Welcome back {username}</p>
       )}
 
-      {formVisibility == 'Log a Feeding' && <AddFeedingForm userCats={userCats} toggleAddFeedingForm={toggleAddFeedingForm}/>}
+      {formVisibility == 'Log a Feeding' && <AddFeedingForm userCats={usersCats} toggleAddFeedingForm={toggleAddFeedingForm}/>}
 
       <div className="mainContent">
-        <MyCatsTab userCats={userCats} />
+        <MyCatsTab userCats={usersCats} />
         <LastFeedTable
-          userCats={userCats}
+          userCats={usersCats}
           handleToggleLastFeedTable={handleToggleLastFeedTable}
           lastFeedVisibility={lastFeedVisibility}
           userId={userId}

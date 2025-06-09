@@ -78,21 +78,6 @@ function CatProfilePage() {
     }
   };
 
-  const toggleUpdateForm = () => {
-    if (updateFormHidden == true) {
-      setUpdateFormHidden(false);
-    } else {
-      setUpdateFormHidden(true);
-    }
-  };
-
-  const toggleAddFeederForm = () => {
-    if (addFeederFormHidden == true) {
-      setAddFeederFormHidden(false);
-    } else {
-      setAddFeederFormHidden(true);
-    }
-  };
 
   return (
     <div>

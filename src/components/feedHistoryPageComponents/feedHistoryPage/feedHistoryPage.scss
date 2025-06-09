@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 0fr 10fr 0fr;
   grid-template-rows: 1fr 9fr 1fr;
-  height: 85dvh;
+  height: 95dvh;
   font-family:
     system-ui,
     -apple-system,
@@ -70,8 +70,8 @@
   justify-content: center;
   align-items: center;
   background-color: base.$peach;
-  width:100%;
-  padding: 1em;
+  width:100vw;
+  padding: 1em 0em 1em 0em;
   color:base.$jet;
 }
 

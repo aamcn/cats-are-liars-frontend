@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./addFeedingForm.scss";
+import { useContext } from "react";
+import { appContext } from "../../App";
 
-function AddFeedingForm({ userCats, toggleAddFeedingForm }) {
-  const [selectedCat, setSelectedCat] = useState(userCats[0]);
+function AddFeedingForm({ formToggle }) {
+  const [selectedCat, setSelectedCat] = useState(null);
   const [medsNeeded, setMedsNeeded] = useState(false);
-
+  const { usersCats, storeUsersCats } = useContext(appContext);
+  
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
   const b = localStorage.getItem("storedToken").replaceAll('"', "");
@@ -13,10 +16,13 @@ function AddFeedingForm({ userCats, toggleAddFeedingForm }) {
 
   const handleCatSelectChange = (event) => {
     event.preventDefault();
-    const findCat = userCats.filter((cat) => {
+    if(event.target.value != 'Choose Your Cat'){
+      const findCat = usersCats.filter((cat) => {
       return cat.name === event.target.value;
     });
     setSelectedCat(findCat[0]);
+    }
+    
   };
 
   useEffect(() => {
@@ -26,6 +32,10 @@ function AddFeedingForm({ userCats, toggleAddFeedingForm }) {
       setMedsNeeded(true);
     }
   }, [selectedCat]);
+
+  useEffect(() => {
+    setSelectedCat(usersCats[0])
+  }, [])
 
   const handleFeedingFormSubmit = (event) => {
     event.preventDefault();
@@ -61,7 +71,7 @@ function AddFeedingForm({ userCats, toggleAddFeedingForm }) {
   return (
     <div className="feedingformBackDrop">
       <div className="feedingFormContainer">
-              <button onClick={toggleAddFeedingForm} className="closeFeedingFormButton">X</button>
+              <button onClick={formToggle} className="closeFeedingFormButton">X</button>
       <h3 className="feedingFormTitle">Feeding Form</h3>
       <form
         className="addFeedingForm"
@@ -76,9 +86,9 @@ function AddFeedingForm({ userCats, toggleAddFeedingForm }) {
             aria-label="Cat name selector"
             required
           >
-            <option value={""}>Choose Your Cat</option>
-            {userCats &&
-              userCats.map((cat) => {
+            <option value={null}>Choose Your Cat</option>
+            {usersCats &&
+              usersCats.map((cat) => {
                 return <option>{cat.name}</option>;
               })}
           </select>
@@ -149,7 +159,7 @@ function AddFeedingForm({ userCats, toggleAddFeedingForm }) {
           <button className="addFeedingFormButton" type="submit">
             Submit
           </button>
-          <button onClick={toggleAddFeedingForm} className="addFeedingFormButton" type="submit">
+          <button onClick={formToggle} className="addFeedingFormButton" type="button">
             Cancel
           </button>
         </fieldset>

@@ -7,8 +7,12 @@ import DateRangeFilterForm from "../dateFilterForms/DateRangeFilterForm";
 import DownChevron from "../../../assets/svg/doubleDownChevron.svg?react";
 import MinimiseIcon from "../../../assets/svg/minimiseIcon.svg?react";
 import Footer from "../../footer/Footer";
+import { useContext } from "react";
+import { appContext } from "../../../App";
+import AddFeedingForm from "../../addFeedingForm/AddFeedingForm";
 
 function FeedHistoryPage() {
+  const { usersCats, storeUsersCats } = useContext(appContext);
   const [feedHistoryData, setFeedHistoryData] = useState(null);
   const [isTabHidden, setIsTabHidden] = useState(true);
   const [isMonthFormHidden, setIsMonthFormHidden] = useState(true);
@@ -16,6 +20,7 @@ function FeedHistoryPage() {
   const [todaysDate, setTodaysDate] = useState(null);
   const [fromDate, setFromDate] = useState(null);
   const [toDate, setToDate] = useState(null);
+  const [formToDisplay, setFormToDisplay] = useState(null);
 
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
@@ -42,6 +47,15 @@ function FeedHistoryPage() {
     }
   };
 
+   const toggleFormDisplay = (event) => {
+    console.log(event.target.value)
+    if (formToDisplay != event.target.value) {
+      setFormToDisplay(event.target.value);
+    } else {
+      setFormToDisplay(null);
+    }
+  };
+
   return (
     <div className="feedHistoryPageContainer">
       <div className="feedHistoryPageTitle">
@@ -49,6 +63,7 @@ function FeedHistoryPage() {
       </div>
 
       <div className="feedHistoryMainContainer">
+      {formToDisplay == 'Log a Feeding' && <AddFeedingForm  formToggle={toggleFormDisplay}/>}
         <div className="feedHistoryTabContainer">
           <h2 className="filterOptionsTabTitle">Filter Options</h2>
           <button onClick={handleToggleTab} className="feedHistoryTabButton">
@@ -79,9 +94,10 @@ function FeedHistoryPage() {
             <hr />
           </div>
         )}
-
-        <FeedHistoryTable feedHistoryData={feedHistoryData} />
+      <FeedHistoryTable feedHistoryData={feedHistoryData}/>
       </div>
+        
+        <Footer formToggle={toggleFormDisplay} formNames={['Log a Feeding']}/>
     </div>
   );
 }
