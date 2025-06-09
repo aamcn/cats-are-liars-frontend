@@ -2,8 +2,6 @@ import axios from "axios";
 import "./addCatForm.scss";
 
 function AddCatForm({ toggleFormDisplay }) {
-  const username = localStorage.getItem("username").replaceAll('"', "");
-  const userId = localStorage.getItem("userId").replaceAll('"', "");
   const b = localStorage.getItem("storedToken").replaceAll('"', "");
   axios.defaults.headers.common["Authorization"] = `bearer ${b}`;
 

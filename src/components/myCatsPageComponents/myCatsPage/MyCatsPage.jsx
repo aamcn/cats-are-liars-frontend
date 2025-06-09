@@ -10,7 +10,6 @@ function MyCatsPage() {
   const [cats, setCats] = useState([]);
   const [formToDisplay, setFormToDisplay] = useState(null);
 
-
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
   const b = localStorage.getItem("storedToken").replaceAll('"', "");
@@ -50,10 +49,12 @@ function MyCatsPage() {
           <PawIcon height="1em" width="1em" />
         </h1>
       </div>
-      {formToDisplay == 'Add a Cat' && <AddCatForm  toggleFormDisplay={toggleFormDisplay}/>}
+      {formToDisplay == "Add a Cat" && (
+        <AddCatForm toggleFormDisplay={toggleFormDisplay} />
+      )}
 
       <MyCatsDisplayCard cats={cats} />
-      <Footer formToggle={toggleFormDisplay}  formNames={['Add a Cat']}/>
+      <Footer formToggle={toggleFormDisplay} formNames={["Add a Cat"]} />
     </div>
   );
 }

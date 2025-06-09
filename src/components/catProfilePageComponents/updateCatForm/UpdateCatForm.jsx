@@ -30,7 +30,9 @@ function UpdateCatForm({ catData, formToggle }) {
 
   return (
     <div className="formContainer">
-      <button onClick={formToggle} value="t" className="closeFormButton">X</button>
+      <button onClick={formToggle} value="t" className="closeFormButton">
+        X
+      </button>
       <form className="updateCatForm" onSubmit={handleFormSubmit}>
         <fieldset className="formFieldSet">
           <label className="formLabel" htmlFor="newName">
@@ -70,7 +72,9 @@ function UpdateCatForm({ catData, formToggle }) {
         </fieldset>
         <div className="formButtonsContainer">
           <button type="Submit">Submit</button>
-          <button onClick={formToggle} type="button">Cancel</button>
+          <button onClick={formToggle} type="button">
+            Cancel
+          </button>
         </div>
       </form>
     </div>

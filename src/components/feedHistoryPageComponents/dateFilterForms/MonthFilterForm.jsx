@@ -74,7 +74,7 @@ function MonthFilterForm({ setFeedHistoryData }) {
           </div>
         </fieldset>
         <div className="monthFormButtons">
-          <button className="monthFormButton" >Submit</button>
+          <button className="monthFormButton">Submit</button>
         </div>
       </form>
     </div>

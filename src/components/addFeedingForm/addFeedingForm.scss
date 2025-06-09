@@ -1,7 +1,7 @@
 @use "../../base.scss";
 
-.feedingformBackDrop{
-  display:flex;
+.feedingformBackDrop {
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 90dvh;
@@ -23,7 +23,7 @@
   background-color: base.$tiffany-blue;
   padding: 1.1em;
   border-radius: 1em;
-  border:solid base.$platinum;
+  border: solid base.$platinum;
 }
 
 .addFeedingForm {
@@ -81,8 +81,8 @@
   border: none;
 }
 
-.addFeedingFormButton{
-  color:base.$jet;
+.addFeedingFormButton {
+  color: base.$jet;
   background-color: base.$peach;
 }
 

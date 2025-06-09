@@ -11,7 +11,7 @@ import { useContext } from "react";
 import { appContext } from "../../../App";
 
 function Homepage() {
-   const { usersCats, storeUsersCats } = useContext(appContext);
+  const { usersCats, storeUsersCats } = useContext(appContext);
   const [formVisibility, setFormVisibility] = useState(null);
   const [lastFeedVisibility, setLastFeedVisibility] = useState(true);
 
@@ -63,11 +63,14 @@ function Homepage() {
           <PawIcon height="1em" width="1em" />
         </h1>
       </div>
-      {username && (
-        <p className="welcomeMessage">Welcome back {username}</p>
-      )}
+      {username && <p className="welcomeMessage">Welcome back {username}</p>}
 
-      {formVisibility == 'Log a Feeding' && <AddFeedingForm userCats={usersCats} toggleAddFeedingForm={toggleAddFeedingForm}/>}
+      {formVisibility == "Log a Feeding" && (
+        <AddFeedingForm
+          userCats={usersCats}
+          formToggle={toggleAddFeedingForm}
+        />
+      )}
 
       <div className="mainContent">
         <MyCatsTab userCats={usersCats} />
@@ -79,7 +82,7 @@ function Homepage() {
         />
         <HouseholdTab householdId={householdId} userId={userId} />
       </div>
-      <Footer formToggle={toggleAddFeedingForm} formNames={['Log a Feeding']}/>
+      <Footer formToggle={toggleAddFeedingForm} formNames={["Log a Feeding"]} />
     </div>
   );
 }

@@ -8,7 +8,7 @@ import MyCatsPage from "./components/myCatsPageComponents/myCatsPage/MyCatsPage.
 
 const routes = [
   {
-    path: "/", 
+    path: "/",
     element: <App />,
     children: [
       { index: true, element: <LandingPage /> },

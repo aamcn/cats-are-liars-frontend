@@ -7,7 +7,6 @@ import "./catProfilePage.scss";
 import AddCatFeederForm from "../addCatFeederForm/AddCatFeederForm.jsx";
 import Footer from "../../footer/Footer.jsx";
 
-
 function CatProfilePage() {
   const [catData, setCatData] = useState();
   const [feeders, setFeeders] = useState([]);
@@ -69,8 +68,8 @@ function CatProfilePage() {
     }
   }, [catData]);
 
-   const toggleFormDisplay = (event) => {
-    console.log(event.target.value)
+  const toggleFormDisplay = (event) => {
+    console.log(event.target.value);
     if (formToDisplay != event.target.value) {
       setFormToDisplay(event.target.value);
     } else {
@@ -78,18 +77,19 @@ function CatProfilePage() {
     }
   };
 
-
   return (
     <div>
-      {catData && formToDisplay == `Update ${catData? catData.name : null}'s Info` && <UpdateCatForm catData={catData} formToggle={toggleFormDisplay} />}
-      {catData && formToDisplay == `Add a Feeder` &&
+      {catData &&
+        formToDisplay == `Update ${catData ? catData.name : null}'s Info` && (
+          <UpdateCatForm catData={catData} formToggle={toggleFormDisplay} />
+        )}
+      {catData && formToDisplay == `Add a Feeder` && (
         <AddCatFeederForm
           catData={catData}
           householdMembers={householdMembers}
           formToggle={toggleFormDisplay}
         />
-      }
-
+      )}
       {catData && (
         <div className="catProfilePageContainer">
           {catData && (
@@ -99,11 +99,7 @@ function CatProfilePage() {
           )}
 
           <div className="catProfileHeaderContainer">
-            <img
-              className="catProfilePhoto"
-              src={null}
-              alt="Cat Photo"
-            />
+            <img className="catProfilePhoto" src={null} alt="Cat Photo" />
             <hr />
           </div>
 
@@ -151,11 +147,15 @@ function CatProfilePage() {
               </ul>
             </div>
           </div>
-          
         </div>
       )}
-{      catData && <Footer formToggle={toggleFormDisplay} formNames={['Add a Feeder', `Update ${catData.name}'s Info`]}/>
-}    </div>
+      {catData && (
+        <Footer
+          formToggle={toggleFormDisplay}
+          formNames={["Add a Feeder", `Update ${catData.name}'s Info`]}
+        />
+      )}{" "}
+    </div>
   );
 }
 

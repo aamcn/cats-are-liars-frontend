@@ -47,8 +47,8 @@ function FeedHistoryPage() {
     }
   };
 
-   const toggleFormDisplay = (event) => {
-    console.log(event.target.value)
+  const toggleFormDisplay = (event) => {
+    console.log(event.target.value);
     if (formToDisplay != event.target.value) {
       setFormToDisplay(event.target.value);
     } else {
@@ -63,7 +63,9 @@ function FeedHistoryPage() {
       </div>
 
       <div className="feedHistoryMainContainer">
-      {formToDisplay == 'Log a Feeding' && <AddFeedingForm  formToggle={toggleFormDisplay}/>}
+        {formToDisplay == "Log a Feeding" && (
+          <AddFeedingForm formToggle={toggleFormDisplay} />
+        )}
         <div className="feedHistoryTabContainer">
           <h2 className="filterOptionsTabTitle">Filter Options</h2>
           <button onClick={handleToggleTab} className="feedHistoryTabButton">
@@ -94,10 +96,10 @@ function FeedHistoryPage() {
             <hr />
           </div>
         )}
-      <FeedHistoryTable feedHistoryData={feedHistoryData}/>
+        <FeedHistoryTable feedHistoryData={feedHistoryData} />
       </div>
-        
-        <Footer formToggle={toggleFormDisplay} formNames={['Log a Feeding']}/>
+
+      <Footer formToggle={toggleFormDisplay} formNames={["Log a Feeding"]} />
     </div>
   );
 }

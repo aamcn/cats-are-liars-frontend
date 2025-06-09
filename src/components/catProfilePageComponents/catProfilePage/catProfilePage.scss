@@ -1,5 +1,4 @@
-@use "../../../base.scss" ;
-
+@use "../../../base.scss";
 
 .catProfilePageContainer {
   display: grid;
@@ -34,7 +33,6 @@
   font-size: 3vw;
   margin: 0px;
   font-family: "Playwrite US Modern", cursive;
-  
 }
 
 .catProfileHeaderContainer {
@@ -49,8 +47,8 @@
   min-width: 40vw;
   min-height: 40vw;
   border-radius: 50%;
-  border: 0.4em solid  base.$tiffany-blue;
-  outline: 0.4em solid  base.$wheat;
+  border: 0.4em solid base.$tiffany-blue;
+  outline: 0.4em solid base.$wheat;
   background-color: base.$platinum;
   box-shadow: 0px 8px 10px 0px rgb(28, 77, 77);
   margin: 1em;
@@ -60,7 +58,7 @@
   grid-row: 3;
   grid-column: 2;
   overflow: auto;
-  background-color:  base.$platinum;
+  background-color: base.$platinum;
   width: 100%;
   height: 95%;
   margin: 1em 0em 1em 0em;
@@ -110,7 +108,7 @@
 }
 
 .catProfileListEntry {
-  color:base.$jet;
+  color: base.$jet;
   font-family:
     system-ui,
     -apple-system,

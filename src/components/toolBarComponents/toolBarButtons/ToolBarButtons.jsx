@@ -1,13 +1,10 @@
-import "./toolBarButtons.scss"
-function ToolBarButtons({buttonText}){
-    
-
-
-    return(
-        <>
-            <button className="toolBarButton">{buttonText}</button>
-        </>
-    )
+import "./toolBarButtons.scss";
+function ToolBarButtons({ buttonText }) {
+  return (
+    <>
+      <button className="toolBarButton">{buttonText}</button>
+    </>
+  );
 }
 
-export default ToolBarButtons
+export default ToolBarButtons;

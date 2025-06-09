@@ -42,16 +42,16 @@
 }
 
 .feedHistoryMainContainer {
-  display:flex;
+  display: flex;
   flex-direction: column;
-  margin:1em 0em 1em 0em;
+  margin: 1em 0em 1em 0em;
   grid-column: 1/4;
   grid-row: 2;
 }
 
 .feedFilterFormsContainer {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   grid-row: 2;
@@ -65,14 +65,14 @@
 }
 
 .formSelector {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: base.$peach;
-  width:100vw;
+  width: 100vw;
   padding: 1em 0em 1em 0em;
-  color:base.$jet;
+  color: base.$jet;
 }
 
 .feedHistoryTabContainer {
@@ -86,7 +86,7 @@
   font-family: "Playwrite US Modern", cursive;
   font-size: 4vw;
   width: 100%;
-  padding:1em 0em 1em 0em
+  padding: 1em 0em 1em 0em;
 }
 
 .feedHistoryTabButton {

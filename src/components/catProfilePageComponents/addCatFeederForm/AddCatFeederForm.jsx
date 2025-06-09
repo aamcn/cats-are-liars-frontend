@@ -32,7 +32,9 @@ function UpdateCatFeederForm({ catData, householdMembers, formToggle }) {
         </fieldset>
         <div className="formButtonsContainer">
           <button type="submit">Submit</button>
-          <button onClick={formToggle} type="button">Cancel</button>
+          <button onClick={formToggle} type="button">
+            Cancel
+          </button>
         </div>
       </form>
     </div>
