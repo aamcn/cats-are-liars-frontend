@@ -2,6 +2,8 @@
 
 .footerPanel {
   background-color: base.$tiffany-blue;
+  grid-column: 2;
+  grid-row: 4;
   display: flex;
   flex-direction: row;
   height: 10dvh;
