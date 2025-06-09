@@ -1,0 +1,20 @@
+@use "../../../base.scss";
+
+
+.toolBar{
+    position:absolute;
+    z-index: 9;
+    bottom:15%;
+    height: 10dvh;
+    width: 100dvw;
+    left: 0%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.toolBarToggleButton{
+    background-color: base.$wheat;
+    padding:1em;
+    border-radius:50%;
+}

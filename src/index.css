@@ -22,10 +22,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100dvh;
+  width: 100dvw;
   min-width: 320px;
-  min-height: 100dvh;
   font-weight: 400;
   background-color: hsl(183, 100%, 91%);
+  overflow: hidden;
 }
 
 h1 {

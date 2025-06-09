@@ -1,7 +1,6 @@
 import { use, useEffect, useState } from "react";
 import MyCatsDisplayCard from "../catDisplayCard/MyCatsDisplayCard";
 import axios from "axios";
-import AddCatForm from "../../addCatForm/AddCatForm";
 import "./myCatsPage.scss";
 import PawIcon from "../../../assets/svg/paw.svg?react";
 
@@ -32,13 +31,7 @@ function MyCatsPage() {
     getCats();
   }, []);
 
-  const toggleAddCatForm = () => {
-    if (isHidden) {
-      setIsHidden(false);
-    } else {
-      setIsHidden(true);
-    }
-  };
+  
 
   return (
     <div className="myCatsPageContainer">
@@ -48,7 +41,7 @@ function MyCatsPage() {
           <PawIcon height="1em" width="1em" />
         </h1>
       </div>
-      {!isHidden && <AddCatForm toggleAddCatForm={toggleAddCatForm} />}
+      
       <MyCatsDisplayCard cats={cats} />
     </div>
   );

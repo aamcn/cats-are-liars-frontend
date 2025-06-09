@@ -7,7 +7,7 @@
   text-align: center;
 }
 
-.catProfilePhoto {
+.catTabProfilePhoto {
   border: solid base.$wheat;
   outline: solid base.$tiffany-blue;
   min-width: 25vw;
@@ -17,8 +17,10 @@
   box-shadow: 0em 0.3em 0.3em 0em rgb(0, 0, 0);
 }
 
-.catNameLink {
-  color: base.$jet;
+.catTabNameLink {
+  color: base.$peach;
   font-family: "Playwrite US Modern", cursive;
+  font-weight: 1000;
+  font-size: 5vw;
   text-align: center;
 }

@@ -39,7 +39,7 @@ function HouseholdTab() {
   }, []);
 
   return (
-    <div className="HouseHoldTabContainer">
+    <div className="houseHoldTabContainer">
       <div className="houseHoldTabMenuContainer">
         <h3>
           {householdMembers[0] ? householdMembers[0].household_name : "Loading"}{" "}
@@ -55,12 +55,12 @@ function HouseholdTab() {
       </div>
 
       {!isTabHidden && (
-        <div className="usersContainer">
+        <div className="houseHoldUsersContainer">
           {householdMembers.map((user) => {
             return (
-              <div className="userContainer">
-                <img className="userPhoto" alt="User Photo"></img>
-                <p className="username">{user.username}</p>
+              <div className="houseHoldUserContainer">
+                <img className="houseHoldUserPhoto" alt="User Photo"></img>
+                <p className="houseHoldUsername">{user.username}</p>
               </div>
             );
           })}

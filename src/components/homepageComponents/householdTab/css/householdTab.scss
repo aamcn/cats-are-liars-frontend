@@ -1,6 +1,6 @@
 @use "../../../../base.scss";
 
-.HouseHoldTabContainer {
+.houseHoldTabContainer {
   height: fit-content;
   border-radius: 0em 0em 1em 1em;
   margin: 1em 0em 3em 0em;
@@ -22,7 +22,7 @@
 }
 
 
-.usersContainer {
+.houseHoldUsersContainer {
   display: flex;
   justify-content: space-between;
   padding-top: 1em;
@@ -31,19 +31,19 @@
   padding-bottom: 2em;
 }
 
-.userContainer {
+.houseHoldUserContainer {
   height: 100%;
   width: 100%;
   text-align: center;
 }
 
-.username {
+.houseHoldUsername {
   color: teal;
   font-family: "Playwrite US Modern", cursive;
   text-align: center;
 }
 
-.userPhoto {
+.houseHoldUserPhoto {
   border: solid wheat;
   outline: solid base.$tiffany-blue;
   background-color: base.$platinum;
