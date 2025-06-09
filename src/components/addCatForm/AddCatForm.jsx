@@ -1,7 +1,7 @@
 import axios from "axios";
 import "./addCatForm.scss";
 
-function AddCatForm({ toggleAddCatForm }) {
+function AddCatForm({ toggleFormDisplay }) {
   const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
   const b = localStorage.getItem("storedToken").replaceAll('"', "");
@@ -34,7 +34,7 @@ function AddCatForm({ toggleAddCatForm }) {
   return (
     <div className="formContainer">
       <h3>Add a New Cat</h3>
-      <button className="closeFormButton" onClick={toggleAddCatForm}>
+      <button className="closeFormButton" onClick={toggleFormDisplay}>
         x
       </button>
       <form className="addCatForm" onSubmit={handleNewCatFormSubmit}>
@@ -73,7 +73,7 @@ function AddCatForm({ toggleAddCatForm }) {
         </fieldset>
         <div className="formButtons">
           <button>Submit</button>
-          <button onClick={toggleAddCatForm}>Cancel</button>
+          <button onClick={toggleFormDisplay}>Cancel</button>
         </div>
       </form>
     </div>

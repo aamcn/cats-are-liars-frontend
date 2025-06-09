@@ -1,7 +1,7 @@
 import axios from "axios";
 import "./updateCatForm.scss";
 
-function UpdateCatForm({ catData }) {
+function UpdateCatForm({ catData, formToggle }) {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -30,7 +30,7 @@ function UpdateCatForm({ catData }) {
 
   return (
     <div className="formContainer">
-      <button className="closeFormButton">X</button>
+      <button onClick={formToggle} value="t" className="closeFormButton">X</button>
       <form className="updateCatForm" onSubmit={handleFormSubmit}>
         <fieldset className="formFieldSet">
           <label className="formLabel" htmlFor="newName">
@@ -70,7 +70,7 @@ function UpdateCatForm({ catData }) {
         </fieldset>
         <div className="formButtonsContainer">
           <button type="Submit">Submit</button>
-          <button type="Submit">Cancel</button>
+          <button onClick={formToggle} type="button">Cancel</button>
         </div>
       </form>
     </div>

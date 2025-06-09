@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "./addCatFeederForm.scss";
-function UpdateCatFeederForm({ catData, householdMembers }) {
+function UpdateCatFeederForm({ catData, householdMembers, formToggle }) {
   useEffect(() => {
     console.log(catData);
   }, []);
@@ -32,7 +32,7 @@ function UpdateCatFeederForm({ catData, householdMembers }) {
         </fieldset>
         <div className="formButtonsContainer">
           <button type="submit">Submit</button>
-          <button type="submit">Cancel</button>
+          <button onClick={formToggle} type="button">Cancel</button>
         </div>
       </form>
     </div>

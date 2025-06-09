@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./addFeedingForm.scss";
 
-function AddFeedingForm({ userCats, handleToggleDisplay }) {
+function AddFeedingForm({ userCats, toggleAddFeedingForm }) {
   const [selectedCat, setSelectedCat] = useState(userCats[0]);
   const [medsNeeded, setMedsNeeded] = useState(false);
 
@@ -61,7 +61,7 @@ function AddFeedingForm({ userCats, handleToggleDisplay }) {
   return (
     <div className="feedingformBackDrop">
       <div className="feedingFormContainer">
-              <button onClick={handleToggleDisplay} className="closeFeedingFormButton">X</button>
+              <button onClick={toggleAddFeedingForm} className="closeFeedingFormButton">X</button>
       <h3 className="feedingFormTitle">Feeding Form</h3>
       <form
         className="addFeedingForm"
@@ -149,7 +149,7 @@ function AddFeedingForm({ userCats, handleToggleDisplay }) {
           <button className="addFeedingFormButton" type="submit">
             Submit
           </button>
-          <button onClick={handleToggleDisplay} className="addFeedingFormButton" type="submit">
+          <button onClick={toggleAddFeedingForm} className="addFeedingFormButton" type="submit">
             Cancel
           </button>
         </fieldset>

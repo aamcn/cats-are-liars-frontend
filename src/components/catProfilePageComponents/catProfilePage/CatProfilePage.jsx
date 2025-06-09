@@ -5,14 +5,14 @@ import { useParams } from "react-router";
 import UpdateCatForm from "../updateCatForm/UpdateCatForm.jsx";
 import "./catProfilePage.scss";
 import AddCatFeederForm from "../addCatFeederForm/AddCatFeederForm.jsx";
+import Footer from "../../footer/Footer.jsx";
 
 
 function CatProfilePage() {
   const [catData, setCatData] = useState();
   const [feeders, setFeeders] = useState([]);
   const param = useParams();
-  const [updateFormHidden, setUpdateFormHidden] = useState(true);
-  const [addFeederFormHidden, setAddFeederFormHidden] = useState(true);
+  const [formToDisplay, setFormToDisplay] = useState(null);
   const { householdMembers, storeHouseholdMembers } = useContext(appContext);
 
   const username = localStorage.getItem("username").replaceAll('"', "");
@@ -69,6 +69,15 @@ function CatProfilePage() {
     }
   }, [catData]);
 
+   const toggleFormDisplay = (event) => {
+    console.log(event.target.value)
+    if (formToDisplay != event.target.value) {
+      setFormToDisplay(event.target.value);
+    } else {
+      setFormToDisplay(null);
+    }
+  };
+
   const toggleUpdateForm = () => {
     if (updateFormHidden == true) {
       setUpdateFormHidden(false);
@@ -87,13 +96,14 @@ function CatProfilePage() {
 
   return (
     <div>
-      {!updateFormHidden && <UpdateCatForm catData={catData} />}
-      {!addFeederFormHidden && (
+      {catData && formToDisplay == `Update ${catData? catData.name : null}'s Info` && <UpdateCatForm catData={catData} formToggle={toggleFormDisplay} />}
+      {catData && formToDisplay == `Add a Feeder` &&
         <AddCatFeederForm
           catData={catData}
           householdMembers={householdMembers}
+          formToggle={toggleFormDisplay}
         />
-      )}
+      }
 
       {catData && (
         <div className="catProfilePageContainer">
@@ -159,7 +169,8 @@ function CatProfilePage() {
           
         </div>
       )}
-    </div>
+{      catData && <Footer formToggle={toggleFormDisplay} formNames={['Add a Feeder', `Update ${catData.name}'s Info`]}/>
+}    </div>
   );
 }
 
