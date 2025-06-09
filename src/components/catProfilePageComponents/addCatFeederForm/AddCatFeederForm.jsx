@@ -1,10 +1,9 @@
-import { useEffect } from "react";
 import "./addCatFeederForm.scss";
-function UpdateCatFeederForm({ catData, householdMembers, formToggle }) {
-  useEffect(() => {
-    console.log(catData);
-  }, []);
 
+
+function UpdateCatFeederForm({ catData, householdMembers, formToggle }) {
+
+ 
   return (
     <div className="formContainer">
       <form className="addCatFeederForm">

@@ -14,10 +14,9 @@ function CatProfilePage() {
   const [formToDisplay, setFormToDisplay] = useState(null);
   const { householdMembers, storeHouseholdMembers } = useContext(appContext);
 
-  const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
-  const b = localStorage.getItem("storedToken").replaceAll('"', "");
-  axios.defaults.headers.common["Authorization"] = `bearer ${b}`;
+  const formattedToken = localStorage.getItem("storedToken").replaceAll('"', "");
+  axios.defaults.headers.common["Authorization"] = `bearer ${formattedToken}`;
 
   const getCatByName = (catName) => {
     axios

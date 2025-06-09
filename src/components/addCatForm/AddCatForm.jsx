@@ -2,16 +2,23 @@ import axios from "axios";
 import "./addCatForm.scss";
 
 function AddCatForm({ toggleFormDisplay }) {
-  const b = localStorage.getItem("storedToken").replaceAll('"', "");
-  axios.defaults.headers.common["Authorization"] = `bearer ${b}`;
 
+  //Remove quotation marks from token and store as the axios token bearer header ready to send to the server.
+  const formattedToken = localStorage.getItem("storedToken").replaceAll('"', "");
+  axios.defaults.headers.common["Authorization"] = `bearer ${formattedToken}`;
+
+
+  //Create formData object when form is submitted.
   const handleNewCatFormSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
+    //convert formData to JSON
     const formToJson = axios.formToJSON(formData);
+    //Pass the formData JSON as argument to the axios post function. 
     postNewCatFormData(formToJson);
   };
 
+  //Post formData argument to the server URL.
   const postNewCatFormData = (formData) => {
     let body = formData;
     axios

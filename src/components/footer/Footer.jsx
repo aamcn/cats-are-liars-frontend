@@ -13,7 +13,7 @@ function Footer({ formToggle, formNames }) {
 
   return (
     <div className="footerPanel">
-      <button onClick={toggleToolBar}>Tool Bar</button>
+      <button className="toolBarToggleButton" onClick={toggleToolBar}>Tool Bar</button>
       {!IsToolBarHidden && (
         <ToolBar
           formNames={formNames}

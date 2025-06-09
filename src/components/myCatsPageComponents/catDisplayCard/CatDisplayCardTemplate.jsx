@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import { useState } from "react";
 import DownChevron from "../../../assets/svg/doubleDownChevron.svg?react";
 import MinimiseIcon from "../../../assets/svg/minimiseIcon.svg?react";

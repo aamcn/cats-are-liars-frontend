@@ -11,7 +11,11 @@
   align-items: center;
 }
 
-.footerButton {
-  background-color: base.$peach;
-  color: base.$wheat;
+
+.toolBarToggleButton{
+  background-color: base.$wheat;
+  color: base.$jet;
+  border-radius: 50%;
+  height:16dvw;
+  width:16dvw;
 }

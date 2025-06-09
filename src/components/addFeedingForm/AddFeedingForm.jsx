@@ -9,10 +9,15 @@ function AddFeedingForm({ formToggle }) {
   const [medsNeeded, setMedsNeeded] = useState(false);
   const { usersCats, storeUsersCats } = useContext(appContext);
 
-  const username = localStorage.getItem("username").replaceAll('"', "");
-  const b = localStorage.getItem("storedToken").replaceAll('"', "");
-  axios.defaults.headers.common["Authorization"] = `bearer ${b}`;
 
+  const username = localStorage.getItem("username").replaceAll('"', "");
+  const formattedToken = localStorage.getItem("storedToken").replaceAll('"', "");
+  axios.defaults.headers.common["Authorization"] = `bearer ${formattedToken}`;
+
+  /*
+    When a selection option is chosen the value is used to filter the correct cat from 'usersCats' by name.
+    If the correct catObject is found its stored in 'selectedCat' state.
+    */
   const handleCatSelectChange = (event) => {
     event.preventDefault();
     if (event.target.value != "Choose Your Cat") {
@@ -23,32 +28,38 @@ function AddFeedingForm({ formToggle }) {
     }
   };
 
+  /*
+  If the selectedCat medication equals "none" medsNeeded is set to false, this hides the 'Medication Given?'
+  section of the form. If selectedCat.medication contains medication medsNeeded is set to true and the 
+  selectedCat.medication array is mapped and rendered as form inputs.
+  */
   useEffect(() => {
-    if (selectedCat && selectedCat.medication == "none") {
-      setMedsNeeded(false);
-    } else {
-      setMedsNeeded(true);
-    }
+    selectedCat && selectedCat.medication == "none" ? setMedsNeeded(false) : setMedsNeeded(true);
   }, [selectedCat]);
 
+  //On render the selected cat is set to the first entry in the array which is 'Choose Your Cat' prompt.
   useEffect(() => {
     setSelectedCat(usersCats[0]);
   }, []);
 
+  //Creates a formData object from the submitted forms data. 
   const handleFeedingFormSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
+    //Appends the form with arguments needed for database identification.
     formData.append("catid", `${selectedCat.catid}`);
     formData.append("authorised_feeders", `${selectedCat.feeder_userid}`);
     formData.append("medication_needed", `${medsNeeded}`);
     if (medsNeeded == false) {
       formData.append("medication_given", "false");
     }
+    //Converts the formData to JSON and passes it to the 'postFeedingForm' axios post function.
     const formDataToJson = axios.formToJSON(formData);
     console.log(formDataToJson);
     postFeedingForm(formDataToJson);
   };
 
+  //Posts passed in formData to server URL and responds with server response or error message. 
   const postFeedingForm = (formData) => {
     let body = formData;
     axios
