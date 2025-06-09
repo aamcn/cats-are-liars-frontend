@@ -2,7 +2,7 @@ import { useState } from "react";
 import ToolBar from "../toolBarComponents/toolBar/ToolBar";
 import "./footer.scss"
 
-function Footer() {
+function Footer({ formToggle, formNames }) {
 const [IsToolBarHidden, setIsToolBarHidden] = useState(true)
 
 
@@ -10,11 +10,10 @@ const [IsToolBarHidden, setIsToolBarHidden] = useState(true)
     IsToolBarHidden == true ? setIsToolBarHidden(false) : setIsToolBarHidden(true)
   }
 
-
   return(
       <div className="footerPanel">
         <button onClick={toggleToolBar}>Tool Bar</button>
-        {!IsToolBarHidden && <ToolBar />}
+        {!IsToolBarHidden && <ToolBar formNames={formNames} formToggle={formToggle}/>}
       </div>
   )
 }

@@ -11,7 +11,7 @@ import Footer from "../../footer/Footer";
 function Homepage() {
   const [userCats, setUserCats] = useState([]);
 
-  const [formVisibility, setFormVisibility] = useState(true);
+  const [formVisibility, setFormVisibility] = useState(null);
   const [lastFeedVisibility, setLastFeedVisibility] = useState(true);
 
   const username = localStorage.getItem("username").replaceAll('"', "");
@@ -46,11 +46,11 @@ function Homepage() {
     }
   };
 
-  const handleToggleDisplay = () => {
-    if (formVisibility == true) {
-      setFormVisibility(false);
+  const toggleAddFeedingForm = (event) => {
+    if (formVisibility != event.target.value) {
+      setFormVisibility(event.target.value);
     } else {
-      setFormVisibility(true);
+      setFormVisibility(null);
     }
   };
 
@@ -66,7 +66,7 @@ function Homepage() {
         <p className="welcomeMessage">Welcome back {username}</p>
       )}
 
-      {!formVisibility && <AddFeedingForm userCats={userCats} handleToggleDisplay={handleToggleDisplay}/>}
+      {formVisibility == 'Log a Feeding' && <AddFeedingForm userCats={userCats} toggleAddFeedingForm={toggleAddFeedingForm}/>}
 
       <div className="mainContent">
         <MyCatsTab userCats={userCats} />
@@ -78,7 +78,7 @@ function Homepage() {
         />
         <HouseholdTab householdId={householdId} userId={userId} />
       </div>
-
+      <Footer formToggle={toggleAddFeedingForm} formNames={['Log a Feeding']}/>
     </div>
   );
 }

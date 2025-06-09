@@ -1,14 +1,13 @@
 import ToolBarButtons from "../toolBarButtons/ToolBarButtons.jsx";
 import "./toolBar.scss"
 
-function ToolBar({}){
+function ToolBar({formToggle, formNames}){
 
     return(
         <div className="toolBar">
-            <ToolBarButtons  buttonText="Add Feeding"/>
-            <ToolBarButtons  buttonText="Add Cat"/>
-            <ToolBarButtons  buttonText="Add Feeder"/>
-            <ToolBarButtons  buttonText="Update Cat"/>
+            {formNames.map(name => {
+                return <button onClick={formToggle} value={name}>{name}</button>
+            })}
         </div>
     )
 }
