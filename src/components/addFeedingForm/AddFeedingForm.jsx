@@ -97,7 +97,7 @@ function AddFeedingForm({ formToggle }) {
               <option value={null}>Choose Your Cat</option>
               {usersCats &&
                 usersCats.map((cat) => {
-                  return <option>{cat.name}</option>;
+                  return <option key={cat.id}>{cat.name}</option>;
                 })}
             </select>
           </fieldset>

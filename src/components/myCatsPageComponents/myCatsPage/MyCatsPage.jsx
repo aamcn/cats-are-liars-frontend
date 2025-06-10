@@ -43,7 +43,7 @@ function MyCatsPage() {
 
   return (
     <div className="myCatsPageContainer">
-      <div className="pageTitle">
+      <div className="myCatsPageTitle">
         <h1>
           <PawIcon height="1em" width="1em" /> My Cats{" "}
           <PawIcon height="1em" width="1em" />

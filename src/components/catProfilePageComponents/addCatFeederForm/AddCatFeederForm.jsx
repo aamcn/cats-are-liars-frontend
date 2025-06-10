@@ -1,8 +1,8 @@
 import "./addCatFeederForm.scss";
 
 
-function UpdateCatFeederForm({ catData, householdMembers, formToggle }) {
-
+function AddCatFeederForm({ catData, householdMembers, formToggle }) {
+console.log(householdMembers)
  
   return (
     <div className="formContainer">
@@ -25,7 +25,7 @@ function UpdateCatFeederForm({ catData, householdMembers, formToggle }) {
           </label>
           <select name="feederUsername" id="feederUsername">
             {householdMembers.map((feeder) => {
-              return <option>{feeder.username}</option>;
+              return <option key={feeder.id}>{feeder.username}</option>;
             })}
           </select>
         </fieldset>
@@ -40,4 +40,4 @@ function UpdateCatFeederForm({ catData, householdMembers, formToggle }) {
   );
 }
 
-export default UpdateCatFeederForm;
+export default AddCatFeederForm;

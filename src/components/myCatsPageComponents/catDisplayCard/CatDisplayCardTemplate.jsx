@@ -5,7 +5,7 @@ import PawIcon from "../../../assets/svg/paw.svg?react";
 import "./catDisplayCardTemplate.scss";
 
 function CatDisplayCardTemplate({ cat }) {
-  const [isCardHidden, setIsCardHidden] = useState(false);
+  const [isCardHidden, setIsCardHidden] = useState(true);
 
   const handleToggleCard = () => {
     if (isCardHidden == true) {

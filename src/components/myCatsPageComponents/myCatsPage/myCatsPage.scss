@@ -3,12 +3,12 @@
 .myCatsPageContainer {
   display: grid;
   grid-template-columns: 0fr 10fr 0fr;
-  grid-template-rows: 1fr 10fr 1fr;
+  grid-template-rows: 1fr 10fr 0fr 1fr;
   height: 95dvh;
   background-color: base.$platinum;
 }
 
-.pageTitle {
+.myCatsPageTitle {
   display: flex;
   grid-column: 1/4;
   grid-row: 1;
@@ -21,6 +21,7 @@
   font-size: 3vw;
   margin: 0px;
   font-family: "Playwrite US Modern", cursive;
+  border-bottom: 0.5em solid base.$peach
 }
 
 .addCatButton {

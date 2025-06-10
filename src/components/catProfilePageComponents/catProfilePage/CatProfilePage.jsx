@@ -48,7 +48,7 @@ function CatProfilePage() {
         { withCredentials: true },
       )
       .then((res) => {
-        if (!res.data[0].username == "undefined") {
+        if (res.data[0].username === undefined) {
           return;
         }
         const data = res.data;
