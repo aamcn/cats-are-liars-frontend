@@ -1,0 +1,38 @@
+@use "../../../base.scss";
+
+.catContainer {
+  height:14dvw;
+  width:14dvw;
+  background-color: pink;
+  z-index:1;
+  border:solid;
+  border-radius:50%;
+}
+
+
+
+.earLeft {
+   position: relative;
+   right:  3.8dvw;
+   bottom: 2.5dvw;
+   width: 0px;
+   height: 0px;
+   border-style: solid;
+   border-width: 0 4dvw 7dvw  5dvw;
+   border-color: transparent transparent pink transparent;
+   transform: rotate(-44deg);
+   z-index:5;
+}
+
+.earRight {
+  position: relative;
+   right: -8.6dvw;
+   bottom: 9.5dvw;
+   width: 0px;
+   height: 0px;
+   border-style: solid;
+   border-width: 0 5vw 7vw  4vw;
+   border-color: transparent transparent pink transparent ;
+   transform: rotate(42deg);
+   z-index:5;
+}

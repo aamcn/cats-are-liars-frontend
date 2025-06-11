@@ -9,13 +9,17 @@
   height: 10dvh;
   justify-content: space-around;
   align-items: center;
+  font-size: 1.5dvh;
 }
 
 
 .toolBarToggleButton{
-  background-color: base.$wheat;
+  display:flex;
+  align-content: center;
+  background-color: base.$peach;
   color: base.$jet;
   border-radius: 50%;
-  height:16dvw;
-  width:16dvw;
+  height:8dvh;
+  width:8dvh;
+  box-shadow: 0px 0px 2px 2px ;
 }

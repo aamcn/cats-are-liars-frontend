@@ -14,7 +14,7 @@ const routes = [
       { index: true, element: <LandingPage /> },
       { path: "/home", element: <Homepage /> },
       { path: "/my-cats", element: <MyCatsPage /> },
-      { path: "feed-history", element: <FeedHistoryPage /> },
+      { path: "/feed-history", element: <FeedHistoryPage /> },
       { path: "/cat-view/:catName", element: <CatProfilePage /> },
     ],
     errorElement: <ErrorPage />,
