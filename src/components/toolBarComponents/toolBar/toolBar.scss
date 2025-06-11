@@ -2,9 +2,9 @@
 
 .toolBar {
   position: absolute;
-  z-index: 9;
-  bottom: 12%;
-  height: 90dvh;
+  z-index: 8;
+  bottom: 10dvh;
+  height: 100dvh;
   width: 100dvw;
   left: 0%;
   display: flex;
@@ -12,6 +12,7 @@
   align-items: end;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
+  padding:0em 0em 1em 0em;
 }
 
 .formToggleButton {
@@ -20,4 +21,13 @@
   height:20vw;
   width: 20vw;
   border-radius: 50%;
+  animation: slideUp 0.2s;
+  
+}
+
+@keyframes slideUp {
+  0%{
+    scale:0;
+   opacity: 0;
+  }
 }
