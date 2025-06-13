@@ -12,7 +12,7 @@ function CatProfilePage() {
   const [feeders, setFeeders] = useState([]);
   const param = useParams();
   const [formToDisplay, setFormToDisplay] = useState(null);
-  const { householdMembers, storeHouseholdMembers } = useContext(appContext);
+  const { householdMembers} = useContext(appContext);
 
   const userId = localStorage.getItem("userId").replaceAll('"', "");
   const formattedToken = localStorage.getItem("storedToken").replaceAll('"', "");

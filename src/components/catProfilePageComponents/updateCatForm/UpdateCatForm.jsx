@@ -12,7 +12,6 @@ function UpdateCatForm({ catData, formToggle }) {
   };
 
   const postFeedingForm = (formData) => {
-    let body = formData;
     axios
       .post(
         `http://localhost:3000/cats/cat-id/${catData.catid}/update`,

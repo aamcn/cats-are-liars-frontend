@@ -7,7 +7,7 @@ import { appContext } from "../../App";
 function AddFeedingForm({ formToggle }) {
   const [selectedCat, setSelectedCat] = useState(null);
   const [medsNeeded, setMedsNeeded] = useState(false);
-  const { usersCats, storeUsersCats } = useContext(appContext);
+  const { usersCats} = useContext(appContext);
 
 
   const username = localStorage.getItem("username").replaceAll('"', "");

@@ -1,9 +1,7 @@
 import axios from "axios";
 import "./addCatForm.scss";
 
-function AddCatForm({ toggleAddCatForm }) {
-  const b = localStorage.getItem("storedToken").replaceAll('"', "");
-  axios.defaults.headers.common["Authorization"] = `bearer ${b}`;
+
 function AddCatForm({ toggleFormDisplay }) {
 
   //Remove quotation marks from token and store as the axios token bearer header ready to send to the server.
@@ -87,5 +85,4 @@ function AddCatForm({ toggleFormDisplay }) {
     </div>
   );
 }
-
 export default AddCatForm;
