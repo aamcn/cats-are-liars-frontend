@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./css/monthFilterForm.scss";
 import axios from "axios";
 function MonthFilterForm({ setFeedHistoryData }) {
-  const [months, setMonths] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+  const [months] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
   const [years, setYears] = useState([]);
   const [yearMultiplier, setYearMultiplier] = useState([]);
 
