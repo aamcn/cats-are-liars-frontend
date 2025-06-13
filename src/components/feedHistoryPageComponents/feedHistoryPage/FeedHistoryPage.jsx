@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import "./feedHistoryPage.scss";
 import FeedHistoryTable from "../feedHistoryTable/FeedHistoryTable";
@@ -12,18 +12,12 @@ import { appContext } from "../../../App";
 import AddFeedingForm from "../../addFeedingForm/AddFeedingForm";
 
 function FeedHistoryPage() {
-  const { usersCats, storeUsersCats } = useContext(appContext);
   const [feedHistoryData, setFeedHistoryData] = useState(null);
   const [isTabHidden, setIsTabHidden] = useState(true);
   const [isMonthFormHidden, setIsMonthFormHidden] = useState(true);
   const [isDateRangeHidden, setIsDateRangeHidden] = useState(false);
-  const [todaysDate, setTodaysDate] = useState(null);
-  const [fromDate, setFromDate] = useState(null);
-  const [toDate, setToDate] = useState(null);
   const [formToDisplay, setFormToDisplay] = useState(null);
 
-  const username = localStorage.getItem("username").replaceAll('"', "");
-  const userId = localStorage.getItem("userId").replaceAll('"', "");
   const b = localStorage.getItem("storedToken").replaceAll('"', "");
   axios.defaults.headers.common["Authorization"] = `bearer ${b}`;
 
