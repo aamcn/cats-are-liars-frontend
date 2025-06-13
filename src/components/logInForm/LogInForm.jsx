@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useContext } from "react";
 import { appContext } from "../../App";
@@ -10,7 +10,7 @@ function LogInForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessages, setErrorMessage] = useState("");
-  const { logInSuccess, changeLogInSuccess } = useContext(appContext);
+  const {changeLogInSuccess } = useContext(appContext);
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);

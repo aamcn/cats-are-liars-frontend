@@ -7,8 +7,6 @@ import DateRangeFilterForm from "../dateFilterForms/DateRangeFilterForm";
 import DownChevron from "../../../assets/svg/doubleDownChevron.svg?react";
 import MinimiseIcon from "../../../assets/svg/minimiseIcon.svg?react";
 import Footer from "../../footer/Footer";
-import { useContext } from "react";
-import { appContext } from "../../../App";
 import AddFeedingForm from "../../addFeedingForm/AddFeedingForm";
 
 function FeedHistoryPage() {
