@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import { useState } from "react";
 import DownChevron from "../../../assets/svg/doubleDownChevron.svg?react";
 import MinimiseIcon from "../../../assets/svg/minimiseIcon.svg?react";
@@ -6,7 +5,7 @@ import PawIcon from "../../../assets/svg/paw.svg?react";
 import "./catDisplayCardTemplate.scss";
 
 function CatDisplayCardTemplate({ cat }) {
-  const [isCardHidden, setIsCardHidden] = useState(false);
+  const [isCardHidden, setIsCardHidden] = useState(true);
 
   const handleToggleCard = () => {
     if (isCardHidden == true) {

@@ -5,7 +5,7 @@ function FeedHistoryTable({ feedHistoryData }) {
     <div className="tableContainer">
       <table className="feedHistoryTable">
         <thead className="columnTitleRow">
-          <tr >
+          <tr>
             <th className="columnTitle">Date</th>
             <th className="columnTitle">Cat</th>
             <th className="columnTitle">Fed By</th>
@@ -16,7 +16,7 @@ function FeedHistoryTable({ feedHistoryData }) {
         </thead>
         <tbody className="tableBody">
           <tr>
-            <td className="gapMan" colSpan='6'></td>
+            <td className="gapMan" colSpan="6"></td>
           </tr>
           {feedHistoryData &&
             feedHistoryData.map((entry) => {

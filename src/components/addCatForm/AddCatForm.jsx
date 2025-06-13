@@ -4,14 +4,24 @@ import "./addCatForm.scss";
 function AddCatForm({ toggleAddCatForm }) {
   const b = localStorage.getItem("storedToken").replaceAll('"', "");
   axios.defaults.headers.common["Authorization"] = `bearer ${b}`;
+function AddCatForm({ toggleFormDisplay }) {
 
+  //Remove quotation marks from token and store as the axios token bearer header ready to send to the server.
+  const formattedToken = localStorage.getItem("storedToken").replaceAll('"', "");
+  axios.defaults.headers.common["Authorization"] = `bearer ${formattedToken}`;
+
+
+  //Create formData object when form is submitted.
   const handleNewCatFormSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
+    //convert formData to JSON
     const formToJson = axios.formToJSON(formData);
+    //Pass the formData JSON as argument to the axios post function. 
     postNewCatFormData(formToJson);
   };
 
+  //Post formData argument to the server URL.
   const postNewCatFormData = (formData) => {
     let body = formData;
     axios
@@ -32,7 +42,7 @@ function AddCatForm({ toggleAddCatForm }) {
   return (
     <div className="formContainer">
       <h3>Add a New Cat</h3>
-      <button className="closeFormButton" onClick={toggleAddCatForm}>
+      <button className="closeFormButton" onClick={toggleFormDisplay}>
         x
       </button>
       <form className="addCatForm" onSubmit={handleNewCatFormSubmit}>
@@ -71,7 +81,7 @@ function AddCatForm({ toggleAddCatForm }) {
         </fieldset>
         <div className="formButtons">
           <button>Submit</button>
-          <button onClick={toggleAddCatForm}>Cancel</button>
+          <button onClick={toggleFormDisplay}>Cancel</button>
         </div>
       </form>
     </div>

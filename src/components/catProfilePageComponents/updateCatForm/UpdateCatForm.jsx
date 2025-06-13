@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
 import axios from "axios";
-import styles from "./css/updateCatForm.module.css";
+import "./updateCatForm.scss";
 
-function UpdateCatForm({ catData }) {
+function UpdateCatForm({ catData, formToggle }) {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -30,11 +29,13 @@ function UpdateCatForm({ catData }) {
   };
 
   return (
-    <div className={styles.formContainer}>
-      <button className={styles.closeFormButton}>X</button>
-      <form className={styles.updateCatForm} onSubmit={handleFormSubmit}>
-        <fieldset className={styles.formFieldSet}>
-          <label className={styles.formLabel} htmlFor="newName">
+    <div className="formContainer">
+      <button onClick={formToggle} value="t" className="closeFormButton">
+        X
+      </button>
+      <form className="updateCatForm" onSubmit={handleFormSubmit}>
+        <fieldset className="formFieldSet">
+          <label className="formLabel" htmlFor="newName">
             Cat Name:
           </label>
           <input
@@ -46,8 +47,8 @@ function UpdateCatForm({ catData }) {
             required
           ></input>
         </fieldset>
-        <fieldset className={styles.textAreaFieldSet}>
-          <label className={styles.formLabel} htmlFor="newMeals">
+        <fieldset className="textAreaFieldSet">
+          <label className="formLabel" htmlFor="newMeals">
             Meals:
           </label>
           <textarea
@@ -58,8 +59,8 @@ function UpdateCatForm({ catData }) {
             required
           ></textarea>
         </fieldset>
-        <fieldset className={styles.textAreaFieldSet}>
-          <label className={styles.formLabel} htmlFor="newMedication">
+        <fieldset className="textAreaFieldSet">
+          <label className="formLabel" htmlFor="newMedication">
             Medication
           </label>
           <textarea
@@ -69,9 +70,11 @@ function UpdateCatForm({ catData }) {
             aria-label="New cat medication input."
           ></textarea>
         </fieldset>
-        <div className={styles.formButtonsContainer}>
+        <div className="formButtonsContainer">
           <button type="Submit">Submit</button>
-          <button type="Submit">Cancel</button>
+          <button onClick={formToggle} type="button">
+            Cancel
+          </button>
         </div>
       </form>
     </div>

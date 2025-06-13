@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import LogOutButton from "../elements/LogOutButton";
-import  "./navBar.scss";
+import "./navBar.scss";
 import { useContext } from "react";
 
 import { appContext } from "../../App";

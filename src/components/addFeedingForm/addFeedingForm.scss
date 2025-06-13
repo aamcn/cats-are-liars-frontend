@@ -1,18 +1,18 @@
 @use "../../base.scss";
 
-.feedingformBackDrop{
-  display:flex;
+.feedingformBackDrop {
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 100dvh;
+  height: 90dvh;
   width: auto;
   position: absolute;
   top: 0%;
   left: 0%;
   right: 0%;
   z-index: 5;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+  // -webkit-backdrop-filter: blur(5px);
+  // backdrop-filter: blur(5px);
 }
 
 .feedingFormContainer {
@@ -23,7 +23,7 @@
   background-color: base.$tiffany-blue;
   padding: 1.1em;
   border-radius: 1em;
-  border:solid base.$platinum;
+  border: solid base.$platinum;
 }
 
 .addFeedingForm {
@@ -81,8 +81,8 @@
   border: none;
 }
 
-.addFeedingFormButton{
-  color:base.$jet;
+.addFeedingFormButton {
+  color: base.$jet;
   background-color: base.$peach;
 }
 

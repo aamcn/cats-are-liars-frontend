@@ -3,8 +3,8 @@ import { Link } from "react-router";
 function CatTabTemplate({ cat }) {
   return (
     <div className="catTabCard">
-      <img className="catProfilePhoto" src={null} alt="Cat Photo"></img>
-      <Link className="catNameLink" to={`/cat-view/${cat.name}`}>
+      <img className="catTabProfilePhoto" src={null} alt="Cat Photo"></img>
+      <Link className="catTabNameLink" to={`/cat-view/${cat.name}`}>
         {cat.name}
       </Link>
     </div>

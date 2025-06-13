@@ -2,7 +2,6 @@
 
 .footerPanel {
   background-color: base.$tiffany-blue;
-  width: 100%;
   grid-column: 2;
   grid-row: 4;
   display: flex;
@@ -10,9 +9,19 @@
   height: 10dvh;
   justify-content: space-around;
   align-items: center;
+  font-size: 1.5dvh;
+  z-index:9;
 }
 
-.footerButton {
+
+.toolBarToggleButton{
+  display:flex;
+  align-content: center;
   background-color: base.$peach;
-  color: base.$wheat;
+  color: base.$jet;
+  border-radius: 50%;
+  height:8dvh;
+  width:8dvh;
+  box-shadow: 0px 0px 2px 2px;
+  z-index:9;
 }

@@ -1,0 +1,33 @@
+@use "../../../base.scss";
+
+.toolBar {
+  position: absolute;
+  z-index: 8;
+  bottom: 10dvh;
+  height: 100dvh;
+  width: 100dvw;
+  left: 0%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: end;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  padding:0em 0em 1em 0em;
+}
+
+.formToggleButton {
+  background-color: base.$peach;
+  padding:1em;
+  height:20vw;
+  width: 20vw;
+  border-radius: 50%;
+  animation: slideUp 0.2s;
+  
+}
+
+@keyframes slideUp {
+  0%{
+    scale:0;
+   opacity: 0;
+  }
+}

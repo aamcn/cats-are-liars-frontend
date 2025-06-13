@@ -7,11 +7,12 @@ import AddFeedingForm from "../../addFeedingForm/AddFeedingForm";
 import HouseholdTab from "../householdTab/HouseholdTab";
 import PawIcon from "../../../assets/svg/paw.svg?react";
 import Footer from "../../footer/Footer";
+import { useContext } from "react";
+import { appContext } from "../../../App";
 
 function Homepage() {
-  const [userCats, setUserCats] = useState([]);
-
-  const [formVisibility, setFormVisibility] = useState(true);
+  const { usersCats, storeUsersCats } = useContext(appContext);
+  const [formVisibility, setFormVisibility] = useState(null);
   const [lastFeedVisibility, setLastFeedVisibility] = useState(true);
 
   const username = localStorage.getItem("username").replaceAll('"', "");
@@ -28,7 +29,7 @@ function Homepage() {
         { method: "cors" },
         { withCredentials: true },
       )
-      .then((res) => setUserCats(res.data))
+      .then((res) => storeUsersCats(res.data))
       .catch((error) => {
         console.error(error);
       });
@@ -46,11 +47,11 @@ function Homepage() {
     }
   };
 
-  const handleToggleDisplay = () => {
-    if (formVisibility == true) {
-      setFormVisibility(false);
+  const toggleAddFeedingForm = (event) => {
+    if (formVisibility != event.target.value) {
+      setFormVisibility(event.target.value);
     } else {
-      setFormVisibility(true);
+      setFormVisibility(null);
     }
   };
 
@@ -62,23 +63,26 @@ function Homepage() {
           <PawIcon height="1em" width="1em" />
         </h1>
       </div>
-      {username && (
-        <p className="welcomeMessage">Welcome back {username}</p>
+      {username && <p className="welcomeMessage">Welcome back {username}</p>}
+
+      {formVisibility == "Log a Feeding" && (
+        <AddFeedingForm
+          userCats={usersCats}
+          formToggle={toggleAddFeedingForm}
+        />
       )}
 
-      {!formVisibility && <AddFeedingForm userCats={userCats} handleToggleDisplay={handleToggleDisplay}/>}
-
       <div className="mainContent">
-        <MyCatsTab userCats={userCats} />
+        <MyCatsTab userCats={usersCats} />
         <LastFeedTable
-          userCats={userCats}
+          userCats={usersCats}
           handleToggleLastFeedTable={handleToggleLastFeedTable}
           lastFeedVisibility={lastFeedVisibility}
           userId={userId}
         />
         <HouseholdTab householdId={householdId} userId={userId} />
       </div>
-
+      <Footer formToggle={toggleAddFeedingForm} formNames={["Log a Feeding"]} />
     </div>
   );
 }

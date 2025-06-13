@@ -3,8 +3,7 @@ import axios from "axios";
 import { useContext } from "react";
 import { appContext } from "../../App";
 import { useNavigate } from "react-router-dom";
-import "./logInForm.scss"; 
-
+import "./logInForm.scss";
 
 function LogInForm() {
   let navigate = useNavigate();
@@ -61,11 +60,7 @@ function LogInForm() {
   return (
     <div className="logInFormContainer">
       {errorMessages && <p>{errorMessages}</p>}
-      <form
-        className="logInForm"
-        method="POST"
-        onSubmit={formSubmission}
-      >
+      <form className="logInForm" method="POST" onSubmit={formSubmission}>
         <fieldset className="fieldset">
           <label className="inputLabel" htmlFor="username">
             Username:
