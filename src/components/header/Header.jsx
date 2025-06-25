@@ -1,7 +1,11 @@
 import NavBar from "../navbar/NavBar";
 
 function Header() {
-  return <NavBar />;
+  return (
+    <div data-testid="header">
+   <NavBar />;
+  </div>
+  )
 }
 
 export default Header;
