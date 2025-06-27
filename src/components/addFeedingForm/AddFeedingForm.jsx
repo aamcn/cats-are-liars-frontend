@@ -79,7 +79,7 @@ function AddFeedingForm({ formToggle }) {
 
   return (
     <div className="feedingformBackDrop">
-      <div className="feedingFormContainer">
+      <div data-testid="feedingFormContainer" className="feedingFormContainer">
         <button onClick={formToggle} className="closeFeedingFormButton">
           X
         </button>
@@ -128,7 +128,7 @@ function AddFeedingForm({ formToggle }) {
             <fieldset className="radioFieldSet">
               <p>Medication Given? </p>
               <p>
-                {selectedCat.name} needs: {selectedCat.medication}
+                {selectedCat ? selectedCat.name : null} needs: {selectedCat? selectedCat.medication : null}
               </p>
               <div className="radioButtons">
                 <label>Yes: </label>
