@@ -38,7 +38,7 @@ function AddCatForm({ toggleFormDisplay }) {
   };
 
   return (
-    <div className="formContainer">
+    <div data-testid="addCatForm" className="formContainer">
       <h3>Add a New Cat</h3>
       <button className="closeFormButton" onClick={toggleFormDisplay}>
         x

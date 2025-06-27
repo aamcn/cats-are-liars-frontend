@@ -3,10 +3,10 @@ import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import Header from "./Header";
 
-describe("blah", () => {
+describe("Add Cat Form", () => {
 
 
- it("Should render a card displaying the arguments from the pokemonCardDetails object prop", () => {
+ it("Should render component", () => {
     
     render(
           <Header/>
