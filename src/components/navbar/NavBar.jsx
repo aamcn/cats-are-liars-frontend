@@ -8,7 +8,7 @@ function NavBar() {
   const { logInSuccess, changeLogInSuccess } = useContext(appContext);
 
   return (
-    <div className="navBarContainer">
+    <div className="navBarContainer" data-testid="navBar">
       <div className="navLinksContainer">
         {logInSuccess && (
           <Link className="navLink" to="/home">
