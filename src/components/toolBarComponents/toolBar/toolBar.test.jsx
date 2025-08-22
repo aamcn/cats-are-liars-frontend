@@ -35,7 +35,6 @@ describe("ToolBar", () => {
       expect(buttons[2]).toHaveTextContent("Form3");
     });
 
-    
   });
 
   describe("button click events", () => {
