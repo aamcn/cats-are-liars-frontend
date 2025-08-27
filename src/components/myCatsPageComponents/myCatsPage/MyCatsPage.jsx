@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import MyCatsDisplayCard from "../catDisplayCard/MyCatsDisplayCard";
 import AddCatForm from "../../addCatForm/AddCatForm";
 import Footer from "../../footer/Footer";
@@ -10,7 +10,6 @@ function MyCatsPage() {
   const [cats, setCats] = useState([]);
   const [formToDisplay, setFormToDisplay] = useState(null);
 
-  const username = localStorage.getItem("username").replaceAll('"', "");
   const userId = localStorage.getItem("userId").replaceAll('"', "");
   const b = localStorage.getItem("storedToken").replaceAll('"', "");
   axios.defaults.headers.common["Authorization"] = `bearer ${b}`;

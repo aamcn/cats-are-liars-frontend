@@ -1,4 +1,4 @@
-import CatDisplayCardTemplate from "./CatDisplayCardTemplate";
+import CatDisplayCardTemplate from "../catDisplayCardTemplate/CatDisplayCardTemplate";
 import "./myCatsDisplayCard.scss";
 function MyCatsDisplayCard({ cats }) {
   return (
