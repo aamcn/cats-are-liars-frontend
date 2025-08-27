@@ -68,7 +68,6 @@ function CatProfilePage() {
   }, [catData]);
 
   const toggleFormDisplay = (event) => {
-    console.log(event.target.value);
     if (formToDisplay != event.target.value) {
       setFormToDisplay(event.target.value);
     } else {
