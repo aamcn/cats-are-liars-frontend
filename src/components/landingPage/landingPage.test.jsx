@@ -26,4 +26,5 @@ describe("LandingPage", () => {
     expect(titleElement).toBeInTheDocument();
   });
 
+
 });

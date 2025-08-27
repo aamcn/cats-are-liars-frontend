@@ -8,7 +8,8 @@ import { appContext } from "../../../../App.jsx";
 
 function MyCatsTab() {
   const [catsTabVisible, setCatsTabVisible] = useState(true);
-  const { usersCats, storeUsersCats } = useContext(appContext);
+  const { usersCats } = useContext(appContext);
+
   const handleToggleTab = () => {
     if (catsTabVisible == true) {
       setCatsTabVisible(false);
