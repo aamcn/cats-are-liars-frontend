@@ -2,7 +2,6 @@ import LandingPage from "./LandingPage";
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect, beforeEach, vi } from "vitest";
 import { BrowserRouter } from "react-router-dom";
-import LogInForm from "../logInForm/LogInForm";
 
 const renderWithRouter = (container) => {
     return render(<BrowserRouter>{container}</BrowserRouter>);
@@ -11,6 +10,7 @@ const renderWithRouter = (container) => {
 beforeEach(() => {
     vi.resetAllMocks();
 });
+
 
 describe("LandingPage", () => {
   
@@ -26,5 +26,10 @@ describe("LandingPage", () => {
     expect(titleElement).toBeInTheDocument();
   });
 
+    it("renders the heading with correct text content", () => {
+    renderWithRouter(<LandingPage />);
+    const logInComponent = screen.getByTestId("log-in-form-container")
+    expect(logInComponent).toBeInTheDocument();
+  });
 
 });

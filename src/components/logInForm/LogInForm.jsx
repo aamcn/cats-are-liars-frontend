@@ -58,7 +58,7 @@ function LogInForm() {
   };
 
   return (
-    <div className="logInFormContainer">
+    <div className="logInFormContainer" data-testid="log-in-form-container">
       {errorMessages && <p>{errorMessages}</p>}
       <form className="logInForm" method="POST" onSubmit={formSubmission}>
         <fieldset className="fieldset">
