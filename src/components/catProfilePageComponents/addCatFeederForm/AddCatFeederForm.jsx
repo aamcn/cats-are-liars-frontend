@@ -1,11 +1,9 @@
 import "./addCatFeederForm.scss";
 
-
 function AddCatFeederForm({ catData, householdMembers, formToggle }) {
-console.log(householdMembers)
  
   return (
-    <div className="formContainer">
+    <div className="formContainer" data-testid="add-feeder-form-container">
       <form className="addCatFeederForm">
         <fieldset className="formFieldSet">
           <label className="formLabel" htmlFor="catId">
@@ -15,6 +13,7 @@ console.log(householdMembers)
             type="text"
             id="catId"
             value={catData.name}
+            data-testid="cat-name-input"
             readOnly
             required
           ></input>
