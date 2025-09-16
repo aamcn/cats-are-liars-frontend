@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import MyCatsDisplayCard from "../catDisplayCard/MyCatsDisplayCard";
+import MyCatsDisplayCard from "../catDisplayCard/myCatsDisplayCard/MyCatsDisplayCard";
 import AddCatForm from "../../addCatForm/AddCatForm";
 import Footer from "../../footer/Footer";
 import axios from "axios";
