@@ -8,6 +8,7 @@ import DownChevron from "../../../assets/svg/doubleDownChevron.svg?react";
 import MinimiseIcon from "../../../assets/svg/minimiseIcon.svg?react";
 import Footer from "../../footer/Footer";
 import AddFeedingForm from "../../addFeedingForm/AddFeedingForm";
+import PageTitle from "../../pageTItle/PageTItle";
 
 function FeedHistoryPage() {
   const [feedHistoryData, setFeedHistoryData] = useState(null);
@@ -50,9 +51,7 @@ function FeedHistoryPage() {
 
   return (
     <div className="feedHistoryPageContainer">
-      <div className="feedHistoryPageTitle">
-        <h1>Feed History</h1>
-      </div>
+      <PageTitle title="Feed History" />
 
       <div className="feedHistoryMainContainer">
         {formToDisplay == "Log a Feeding" && (

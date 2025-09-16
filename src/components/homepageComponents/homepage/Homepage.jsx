@@ -9,6 +9,7 @@ import PawIcon from "../../../assets/svg/paw.svg?react";
 import Footer from "../../footer/Footer";
 import { useContext } from "react";
 import { appContext } from "../../../App";
+import PageTitle from "../../pageTItle/PageTItle";
 
 function Homepage() {
   const { usersCats, storeUsersCats } = useContext(appContext);
@@ -57,12 +58,7 @@ function Homepage() {
 
   return (
     <div className="homepageContainer">
-      <div className="homePageTitle">
-        <h1>
-          <PawIcon height="1em" width="1em" /> Home{" "}
-          <PawIcon height="1em" width="1em" />
-        </h1>
-      </div>
+     <PageTitle title="Cats Are Liars" />
       {username && <p className="welcomeMessage">Welcome back {username}</p>}
 
       {formVisibility == "Log a Feeding" && (

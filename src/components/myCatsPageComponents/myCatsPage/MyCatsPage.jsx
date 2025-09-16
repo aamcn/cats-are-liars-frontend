@@ -5,6 +5,7 @@ import Footer from "../../footer/Footer";
 import axios from "axios";
 import "./myCatsPage.scss";
 import PawIcon from "../../../assets/svg/paw.svg?react";
+import PageTitle from "../../pageTItle/PageTItle";
 
 function MyCatsPage() {
   const [cats, setCats] = useState([]);
@@ -42,12 +43,7 @@ function MyCatsPage() {
 
   return (
     <div className="myCatsPageContainer">
-      <div className="myCatsPageTitle">
-        <h1>
-          <PawIcon height="1em" width="1em" /> My Cats{" "}
-          <PawIcon height="1em" width="1em" />
-        </h1>
-      </div>
+      <PageTitle title="My Cats" />
       {formToDisplay == "Add a Cat" && (
         <AddCatForm toggleFormDisplay={toggleFormDisplay} />
       )}

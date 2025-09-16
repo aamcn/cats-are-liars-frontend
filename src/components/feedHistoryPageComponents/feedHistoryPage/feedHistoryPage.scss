@@ -19,21 +19,6 @@
     sans-serif;
 }
 
-.feedHistoryPageTitle {
-  display: flex;
-  grid-column: 1/4;
-  grid-row: 1;
-  background-color: base.$tiffany-blue;
-  color: base.$wheat;
-  justify-content: center;
-  align-self: center;
-  height: 100%;
-  font-size: 3vw;
-  margin: 0px;
-  font-family: "Playwrite US Modern", cursive;
-  border-bottom: 0.5em solid base.$peach;
-}
-
 .feedingHistoryPageFooter {
   grid-column: 2;
   grid-row: 3;
