@@ -12,6 +12,7 @@ const routes = [
     element: <App />,
     children: [
       { index: true, element: <LandingPage /> },
+      { path: "/cats-are-liars-frontend", element: <LandingPage /> },
       { path: "/home", element: <Homepage /> },
       { path: "/my-cats", element: <MyCatsPage /> },
       { path: "/feed-history", element: <FeedHistoryPage /> },
