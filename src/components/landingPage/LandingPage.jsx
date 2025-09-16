@@ -4,12 +4,12 @@ import "./landingPage.scss";
 function LandingPage() {
   return (
     <div className="landingPageContainer" data-testid="landing-page-container">
-      <div className="pageTitle">
-        <h1>Cats Are Liars</h1>
+      <div className="main-title-container">
+        <h1 className="main-title" aria-label="Cats Are Liars">
+          Cats Are Liars
+        </h1>
       </div>
-      <div className="logInFormContainer">
-        <LogInForm/>
-      </div>
+      <LogInForm />
       <div className="pageFooter"></div>
     </div>
   );
