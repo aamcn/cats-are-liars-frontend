@@ -5,7 +5,7 @@ import "./landingPage.scss";
 function LandingPage() {
   return (
     <div className="landingPageContainer" data-testid="landing-page-container">
-     <PageTitle title="Cats Are Liars" />
+      <PageTitle title="Cats Are Liars" />
       <LogInForm />
       <div className="pageFooter"></div>
     </div>

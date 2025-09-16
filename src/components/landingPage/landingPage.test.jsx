@@ -4,32 +4,29 @@ import { describe, it, expect, beforeEach, vi } from "vitest";
 import { BrowserRouter } from "react-router-dom";
 
 const renderWithRouter = (container) => {
-    return render(<BrowserRouter>{container}</BrowserRouter>);
+  return render(<BrowserRouter>{container}</BrowserRouter>);
 };
 
 beforeEach(() => {
-    vi.resetAllMocks();
+  vi.resetAllMocks();
 });
 
-
 describe("LandingPage", () => {
-  
-    it("renders without crashing", () => {
+  it("renders without crashing", () => {
     renderWithRouter(<LandingPage />);
-    const heading = screen.getByTestId("landing-page-container");
-    expect(heading).toBeInTheDocument();
+    const pageContainer = screen.getByTestId("landing-page-container");
+    expect(pageContainer).toBeInTheDocument();
   });
 
-  it("renders the heading with correct text content", () => {
+  it("renders the page title", () => {
     renderWithRouter(<LandingPage />);
-    const titleElement = screen.getByRole("heading", { name: /cats are liars/i });
-    expect(titleElement).toBeInTheDocument();
+    const titleComponent = screen.getByText("Cats Are Liars");
+    expect(titleComponent).toBeInTheDocument();
   });
 
-    it("renders the heading with correct text content", () => {
+  it("renders the log in form", () => {
     renderWithRouter(<LandingPage />);
-    const logInComponent = screen.getByTestId("log-in-form-container")
+    const logInComponent = screen.getByTestId("log-in-form-container");
     expect(logInComponent).toBeInTheDocument();
   });
-
 });
