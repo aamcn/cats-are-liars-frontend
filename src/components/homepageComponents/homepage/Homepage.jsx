@@ -5,7 +5,7 @@ import MyCatsTab from "../myCatsTabComponents/myCatsTab/MyCatsTab";
 import LastFeedTable from "../lastFeedTable/lastFeedTable/LastFeedTable";
 import AddFeedingForm from "../../addFeedingForm/AddFeedingForm";
 import HouseholdTab from "../householdTab/HouseholdTab";
-import PawIcon from "../../../assets/svg/paw.svg?react";
+import PawIcon from "../../../assets/svg/paw.svg";
 import Footer from "../../footer/Footer";
 import { useContext } from "react";
 import { appContext } from "../../../App";
