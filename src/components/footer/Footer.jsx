@@ -1,8 +1,7 @@
 import { useState } from "react";
 import ToolBar from "../toolBarComponents/toolBar/ToolBar";
 import "./footer.scss";
-import PawIcon from "../../assets/svg/paw.svg?react";
-
+import PawIcon from "../../assets/svg/paw.svg";
 
 function Footer({ formToggle, formNames }) {
   const [IsToolBarHidden, setIsToolBarHidden] = useState(true);
