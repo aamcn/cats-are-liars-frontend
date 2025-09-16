@@ -10,22 +10,22 @@ function NavBar({logInSuccess, changeLogInSuccess}) {
     <div className="navBarContainer" data-testid="navBar">
       <div className="navLinksContainer">
         {logInSuccess && (
-          <Link className="navLink" to="/home" data-testid="home-link">
+          <Link className="navLink" to="/cats-are-liars-frontend/home" data-testid="home-link">
             Home
           </Link>
         )}
         {logInSuccess && (
-          <Link className="navLink" to="/my-cats" data-testid="my-cats-link">
+          <Link className="navLink" to="/cats-are-liars-frontend/my-cats" data-testid="my-cats-link">
             My Cats
           </Link>
         )}
         {logInSuccess && (
-          <Link className="navLink" to="/feed-history" data-testid="feed-history-link">
+          <Link className="navLink" to="/cats-are-liars-frontend/feed-history" data-testid="feed-history-link">
             Feed History
           </Link>
         )}
-        
-          <Link className="navLink" to="/" data-testid="log-in-link" onClick={() => changeLogInSuccess(false)}>
+
+          <Link className="navLink" to="/cats-are-liars-frontend/" data-testid="log-in-link" onClick={() => changeLogInSuccess(false)}>
             Log In
           </Link>
         
