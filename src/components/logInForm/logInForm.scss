@@ -15,6 +15,14 @@
   animation: appearGrow 1s;
 }
 
+.logInFormContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-row: 2;
+  grid-column: 2;
+}
+
 .logInForm {
   text-align: left;
   background-color: base.$tiffany-blue;

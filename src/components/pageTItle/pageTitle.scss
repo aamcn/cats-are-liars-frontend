@@ -21,3 +21,10 @@
   border-bottom: 0.5em solid base.$peach;
   animation: slideInLeft 0.5s;
 }
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+}
