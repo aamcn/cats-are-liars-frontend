@@ -1,26 +1,23 @@
 @use "../../base.scss";
 
-.logInBackDrop {
-  grid-row: 2;
-  grid-column: 2;
-  flex-direction: column;
-  justify-content: center;
-  background-color: base.$peach;
-  padding: 1em;
-  border-radius: 1em;
-  border: solid #84dbdb;
-  border-width: 0.5vw 0vw 0vw 0vw;
-  border-bottom: 2vw solid rgb(0, 107, 107);
-  box-shadow: 0px 10px 10px 0px rgb(0, 49, 49);
-  animation: appearGrow 1s;
-}
-
 .logInFormContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   grid-row: 2;
   grid-column: 2;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
 }
 
 .logInForm {
@@ -30,45 +27,45 @@
   border-bottom: 0.4em solid base.$peach;
   border-radius: 1em;
   padding: 1em 0em 1em 0em;
-  font-family: "Playwrite US Modern", cursive;
   line-height: 1.5em;
+  box-shadow: 0px 10px 10px 0px #84dbdb;
+  animation: appearGrow 1s;
 }
 
 .textInput {
   margin: 1em;
-  border: solid base.$platinum;
+  justify-self: flex-end;
 }
 
-.fieldset {
-  display: flex;
-  flex-direction: column;
-  grid-template-columns: 1fr;
+.login-fieldset {
   border: none;
   border-bottom: solid 1px;
   text-align: center;
-  color: base.$jet;
-  font-weight: 1000;
+  font-weight: 500;
   font-size: 4vw;
   color: base.$platinum;
 }
 
-.formButtonsContainer {
+.login-buttons-container {
   display: flex;
   justify-content: space-evenly;
-  border: none;
   padding: 1em;
+  font-family: "Playwrite US Modern", cursive;
 }
 
 .formButton {
   background-color: base.$peach;
   color: base.$wheat;
-  font-weight: 1000;
+  font-weight: 500;
   animation: appearGrow 1s;
+  padding: 0.3em;
+  font-size: 2dvh;
+  box-shadow: inset 0em 0.1em 0.1em 0em base.$wheat;
 }
 
 .formButton:active {
   transform: translateY(0.1em);
-  box-shadow: inset 0em 0.3em 0.1em 0em;
+  box-shadow: inset 0em -0.1em 0.1em 0.1em base.$jet;
 }
 
 @keyframes appearGrow {

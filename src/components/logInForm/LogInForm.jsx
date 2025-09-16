@@ -61,7 +61,7 @@ function LogInForm() {
     <div className="logInFormContainer" data-testid="log-in-form-container">
       {errorMessages && <p>{errorMessages}</p>}
       <form className="logInForm" method="POST" onSubmit={formSubmission}>
-        <fieldset className="fieldset">
+        <fieldset className="login-fieldset">
           <label className="inputLabel" htmlFor="username">
             Username:
           </label>
@@ -88,7 +88,7 @@ function LogInForm() {
             required
           ></input>
         </fieldset>
-        <div className="formButtonsContainer">
+        <div className="login-buttons-container">
           <button className="formButton">Log In</button>
           <button className="formButton">Clear</button>
         </div>
