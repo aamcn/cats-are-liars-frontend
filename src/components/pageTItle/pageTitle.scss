@@ -1,0 +1,23 @@
+@use "../../base";
+
+.page-title {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.page-title-container {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  font-style: normal;
+  justify-content: center;
+  align-content: center;
+  background-color: base.$peach;
+  color: base.$tiffany-blue;
+  font-family: "Playwrite US Modern", cursive;
+  font-size: 3vw;
+  margin: 0px;
+  border-bottom: 0.5em solid base.$peach;
+  animation: slideInLeft 0.5s;
+}
