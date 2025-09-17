@@ -4,6 +4,8 @@ import { useContext } from "react";
 import { appContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 import "./logInForm.scss";
+import LoginButton from "./logInButton";
+import ProfileInfo from "../landingPage/profileInfo";
 
 function LogInForm() {
   let navigate = useNavigate();
@@ -61,7 +63,9 @@ function LogInForm() {
     <div className="logInFormContainer" data-testid="log-in-form-container">
       {errorMessages && <p>{errorMessages}</p>}
       <form className="logInForm" method="POST" onSubmit={formSubmission}>
-        <fieldset className="login-fieldset">
+              <ProfileInfo />
+
+        <fieldset className="fieldset">
           <label className="inputLabel" htmlFor="username">
             Username:
           </label>
@@ -88,7 +92,7 @@ function LogInForm() {
             required
           ></input>
         </fieldset>
-        <div className="login-buttons-container">
+        <div className="formButtonsContainer">
           <button className="formButton">Log In</button>
           <button className="formButton">Clear</button>
         </div>
