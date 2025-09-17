@@ -1,6 +1,7 @@
 import { Link } from "react-router";
-import LogOutButton from "../elements/LogOutButton";
+import LogOutButton from "./LogoutButton";
 import "./navBar.scss";
+import LoginButton from "../logInForm/logInButton";
 // import { useContext } from "react";
 
 // import { appContext } from "../../App";
@@ -9,6 +10,7 @@ function NavBar({logInSuccess, changeLogInSuccess}) {
   return (
     <div className="navBarContainer" data-testid="navBar">
       <div className="navLinksContainer">
+       
         {logInSuccess && (
           <Link className="navLink" to="/cats-are-liars-frontend/home" data-testid="home-link">
             Home
@@ -24,10 +26,11 @@ function NavBar({logInSuccess, changeLogInSuccess}) {
             Feed History
           </Link>
         )}
-
-          <Link className="navLink" to="/cats-are-liars-frontend/" data-testid="log-in-link" onClick={() => changeLogInSuccess(false)}>
+         <LogOutButton />
+          <LoginButton />
+          {/* <Link className="navLink" to="/cats-are-liars-frontend/" data-testid="log-in-link" onClick={() => changeLogInSuccess(false)}>
             Log In
-          </Link>
+          </Link> */}
         
         {/* {logInSuccess && <LogOutButton />} */}
       </div>
