@@ -2,6 +2,7 @@ import { Outlet } from "react-router";
 import "./index.css";
 import Header from "./components/header/Header";
 import { createContext, useEffect, useState } from "react";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 export const appContext = createContext({
   loginSuccess: "",
@@ -43,8 +44,18 @@ function App() {
           storeUsersCats,
         }}
       >
-        <Header />
+       
+    <Auth0Provider
+    domain="https://dev-eg3mr7qabo77ds86.us.auth0.com"
+    clientId="1muBuHjfePBSE70PfAKRrMi7iUwAYrKN"
+    authorizationParams={{
+      redirect_uri: window.location.origin
+    }}
+  >
+  <Header />
         <Outlet />
+          </Auth0Provider>
+
       </appContext.Provider>
     </>
   );
