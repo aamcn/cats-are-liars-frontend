@@ -1,7 +1,8 @@
+
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
-const ProfileInfo = () => {
+const UserDisplay = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
 
   if (isLoading) {
@@ -10,7 +11,7 @@ const ProfileInfo = () => {
 
   return (
     isAuthenticated && (
-      <div>
+      <div className="user-display" data-testid="user-display">
         <h2>{user.name}</h2>
         <p>{user.email}</p>
       </div>
@@ -18,4 +19,4 @@ const ProfileInfo = () => {
   );
 };
 
-export default ProfileInfo;
+export default UserDisplay;
