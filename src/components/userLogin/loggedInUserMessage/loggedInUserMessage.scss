@@ -1,0 +1,30 @@
+@use "../../../base.scss";
+
+.logged-in-user-message {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  margin: 1em;
+  font-family: "Arial", sans-serif;
+}
+
+.welcome-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Playwrite US Modern", cursive;
+}
+
+.welcome-title {
+  font-family: "Playwrite US Modern", cursive;
+}
+
+.not-you-message {
+  font-size: 1.5dvh;
+  font-family: "Arial", sans-serif;
+  padding: 1em;
+  color: #333;
+}
