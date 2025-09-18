@@ -14,9 +14,11 @@ function LogInMenu() {
           <LoggedInUserMessage />
         )}
         {!isAuthenticated && (
-          <div className="logInMenuButtons">
-            <h2 className="welcome-message">Welcome</h2>
-            <p className="login-prompt">Please log in or sign up to continue</p>
+          <div className="generic-welcome-container">
+            <div className="generic-welcome-title-container">
+              <h2 className="generic-welcome-title">Welcome</h2>
+              </div> 
+              <p className="login-prompt">Please log in or sign up to continue</p>
             <LoginButton />
           </div>
         )}
