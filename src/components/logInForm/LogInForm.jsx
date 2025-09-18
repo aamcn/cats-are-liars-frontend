@@ -5,7 +5,6 @@ import { appContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 import "./logInForm.scss";
 import LoginButton from "./logInButton";
-import ProfileInfo from "../landingPage/profileInfo";
 
 function LogInForm() {
   let navigate = useNavigate();
@@ -63,7 +62,6 @@ function LogInForm() {
     <div className="logInFormContainer" data-testid="log-in-form-container">
       {errorMessages && <p>{errorMessages}</p>}
       <form className="logInForm" method="POST" onSubmit={formSubmission}>
-              <ProfileInfo />
 
         <fieldset className="fieldset">
           <label className="inputLabel" htmlFor="username">
