@@ -10,15 +10,13 @@ function LogInMenu() {
   return (
     <div className="logInMenuContainer" data-testid="log-in-menu-container">
       <div className="logInMenu">
-        {isAuthenticated && (
-          <LoggedInUserMessage />
-        )}
+        {isAuthenticated && <LoggedInUserMessage />}
         {!isAuthenticated && (
           <div className="generic-welcome-container">
             <div className="generic-welcome-title-container">
               <h2 className="generic-welcome-title">Welcome</h2>
-              </div> 
-              <p className="login-prompt">Please log in or sign up to continue</p>
+            </div>
+            <p className="login-prompt">Please log in or sign up to continue</p>
             <LoginButton />
           </div>
         )}

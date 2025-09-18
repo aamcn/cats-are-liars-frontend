@@ -1,7 +1,7 @@
 @use "../../base.scss";
 
-.logInMenuContainer{
- display: flex;
+.logInMenuContainer {
+  display: flex;
   justify-content: center;
   align-items: center;
   grid-row: 2;
@@ -13,14 +13,14 @@
     "Segoe UI",
     Roboto,
     Oxygen,
-    Ubuntu, 
+    Ubuntu,
     Cantarell,
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
 }
 
-.logInMenu{
+.logInMenu {
   text-align: left;
   background-color: base.$tiffany-blue;
   border-top: 0.2em solid rgb(255, 241, 215);
@@ -62,5 +62,3 @@
   padding: 1em;
   color: #333;
 }
-
-
