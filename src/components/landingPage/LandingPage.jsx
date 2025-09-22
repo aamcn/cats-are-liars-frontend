@@ -1,4 +1,4 @@
-import LogInMenu from "../userLogin/LogInMenu.jsx";
+import LogInMenu from "../userLogin/loginMenu/LogInMenu.jsx";
 import PageTitle from "../pageTItle/PageTItle.jsx";
 import "./landingPage.scss";
 

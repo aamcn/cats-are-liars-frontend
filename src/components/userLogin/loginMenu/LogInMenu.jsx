@@ -1,7 +1,7 @@
 import "./logInMenu.scss";
-import LoginButton from "./LoginButton";
-import LoggedInUserMessage from "./loggedInUserMessage/LoggedInUserMessage";
-import LogoutButton from "../navbar/LogoutButton";
+import LoginButton from "../loginButton/LoginButton";
+import LoggedInUserMessage from "../loggedInUserMessage/LoggedInUserMessage";
+import LogoutButton from "../../navbar/LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function LogInMenu() {
