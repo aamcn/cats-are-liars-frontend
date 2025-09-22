@@ -13,10 +13,8 @@ function LoggedInUserMessage() {
 
   return (
     <div className="logged-in-user-message">
-      <div className="welcome-title-container">
         <h2 className="welcome-title">Welcome Back</h2>
-      </div>
-      <p className="user-name">{user?.name}</p>
+      <p className="users-name">{user?.nickname}</p>
       <p className="not-you-message">
         Not you? <LogoutButton />
       </p>
