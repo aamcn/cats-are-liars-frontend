@@ -1,0 +1,8 @@
+@use "../../../base.scss";
+
+.loginButton{
+    background-color:  base.$wheat;
+    font-weight: 700;
+    color: base.$tiffany-blue;
+    border: 0.2em solid base.$peach;
+}
