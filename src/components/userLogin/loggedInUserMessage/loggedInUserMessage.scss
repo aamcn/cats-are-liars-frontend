@@ -7,24 +7,26 @@
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  margin: 1em;
   font-family: "Arial", sans-serif;
-}
-
-.welcome-title-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Playwrite US Modern", cursive;
 }
 
 .welcome-title {
   font-family: "Playwrite US Modern", cursive;
+  color: base.$peach; 
+  font-size: 3.5dvh;
+  margin:0.5em;
+}
+
+.users-name {
+  font-size: 2dvh;
+  font-family: "Arial", sans-serif;
+  padding: 1em;
+  color: #333;
 }
 
 .not-you-message {
   font-size: 1.5dvh;
   font-family: "Arial", sans-serif;
-  padding: 1em;
   color: #333;
 }
+
