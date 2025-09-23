@@ -47,9 +47,9 @@ function HouseholdTab() {
         </h3>
         <button onClick={handleToggleTab} className="householdTabButton">
           {!isTabHidden ? (
-            <MinimiseIcon className="minimiseIcon" />
+            <img src={MinimiseIcon} className="minimiseIcon" />
           ) : (
-            <DownChevron className="downChevron" />
+            <img src={DownChevron} className="downChevron" />
           )}
         </button>
       </div>

@@ -1,8 +1,8 @@
 import axios from "axios";
 import "./lastFeedTable.scss";
 import LastFeedTemplate from "../LastFeedRowTemplate";
-import DownChevron from "../../../../assets/svg/doubleDownChevron.svg?react";
-import MinimiseIcon from "../../../../assets/svg/minimiseIcon.svg?react";
+import DownChevron from "../../../../assets/svg/doubleDownChevron.svg";
+import MinimiseIcon from "../../../../assets/svg/minimiseIcon.svg";
 import { useState, useEffect } from "react";
 
 function LastFeedTable({
@@ -51,9 +51,9 @@ function LastFeedTable({
           className="lastFeedTabButton "
         >
           {lastFeedVisibility ? (
-            <MinimiseIcon className="minimiseIcon" />
+            <img src={MinimiseIcon} className="minimiseIcon" />
           ) : (
-            <DownChevron className="downChevron" />
+            <img src={DownChevron} className="downChevron" />
           )}
         </button>
       </div>
