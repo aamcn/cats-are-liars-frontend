@@ -44,7 +44,6 @@ function App() {
           storeUsersCats,
         }}
       >
-       
     <Auth0Provider
     domain="https://dev-eg3mr7qabo77ds86.us.auth0.com"
     clientId="1muBuHjfePBSE70PfAKRrMi7iUwAYrKN"
